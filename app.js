@@ -3,9 +3,7 @@ var restify = require('restify');
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-   console.log('%s listening to %s', server.name, server.url); 
-});
+
 
 // Create chat bot
 var connector = new builder.ChatConnector({
@@ -14,6 +12,19 @@ var connector = new builder.ChatConnector({
 });
 
 server.post('/api/messages', connector.listen());
+
+
+// Serve a static web page
+server.get(/.*/, restify.serveStatic({
+        'directory': '.',
+        'default': 'index.html'
+}));
+
+server.listen(process.env.port || process.env.PORT || 3978, function () {
+   console.log('%s listening to %s', server.name, server.url); 
+});
+
+
 
 var bot = new builder.UniversalBot(connector, function (session) { 
      session.send("Sorry, Ich konnte die Eingabe leider nicht verstehen. Bitte schreiben Sie \'Hilfe\' für mehr Informationen"); 
@@ -41,32 +52,7 @@ bot.on('conversationUpdate', function (message) {
 
 bot.dialog('greeting', function(session, args){
 
-
-    var cards = [
-        new builder.HeroCard(session)
-            .title('BotFramework Hero Card')
-            .subtitle('Your bots — wherever your users are talking')
-            .text('Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.')
-            .images([
-                builder.CardImage.create(session, 'https://www.mayato.com/wp-content/uploads/2016/07/CEO-Dr.-Marcus-Dill_300dpi.jpg')
-            ])
-            .buttons([
-                builder.CardAction.openUrl(session, 'https://docs.botframework.com/en-us/', 'Get Started')
-            ]),
-
-        new builder.ThumbnailCard(session)
-            .title('DocumentDB')
-            .subtitle('Blazing fast, planet-scale NoSQL')
-            .text('NoSQL service for highly available, globally distributed apps—take full advantage of SQL and JavaScript over document and key-value data without the hassles of on-premises or virtual machine-based cloud database options.')
-            .images([
-                builder.CardImage.create(session, 'https://docs.microsoft.com/en-us/azure/documentdb/media/documentdb-introduction/json-database-resources1.png')
-            ])
-            .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/documentdb/', 'Learn More')
-            ])
-    ];
-
-    var msg = new builder.Message(session)
+   var msg = new builder.Message(session)
         .attachmentLayout(builder.AttachmentLayout.carousel)
         .attachments(cards);
     session.send(msg);
