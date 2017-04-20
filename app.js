@@ -4,6 +4,8 @@ var restify = require('restify');
 // Setup Restify Server
 var server = restify.createServer();
 
+//departments of mayato
+var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"];
 
 // Create chat bot
 var connector = new builder.ChatConnector({
@@ -88,7 +90,7 @@ bot.dialog('feeling', [
 bot.dialog('getContactPerson', [
     function(session, args, next){
         var departmentEntity = builder.EntityRecognizer.findEntity(args.intent.entities, "department");
-        var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"]
+
         
         if (departmentEntity){
         
