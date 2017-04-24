@@ -43,7 +43,7 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id === message.address.bot.id) {
                 var reply = new builder.Message()
                     .address(message.address)
-                    .text("Hallo, ich bin der Mayato ChatBot! Wie kann ich Ihnen behilflich sein?");
+                    .text("Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein?");
                 bot.send(reply);
             }
         });
@@ -51,6 +51,9 @@ bot.on('conversationUpdate', function (message) {
 });
 
 
+//=========================================================
+// Greeting
+//=========================================================
 
 bot.dialog('greeting', function(session, args){
 
@@ -76,11 +79,69 @@ bot.dialog('feeling', [
     },
 
     function(session, results){
-        session.send('Wie kann ich helfen?')
+        session.send('Was kann ich für Sie tun?')
     }
 
 ]).triggerAction({
     matches:'feeling'
+});
+
+//=========================================================
+// Humanor Machine
+//=========================================================
+
+bot.dialog('HumanOrMachine', 
+    function(session, args){    
+        session.send("Mensch oder Computer? Das ist eine gute Frage. Für manche bin ich ein Computer aber mit menschlichem Verhalten.")
+
+    }
+).triggerAction({
+    matches:'HumanOrMachine'
+});
+
+//=========================================================
+// Bot-Question
+//=========================================================
+
+bot.dialog('name', 
+    function(session, args){    
+        session.send("Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden")
+
+    }
+).triggerAction({
+    matches:'name'
+});
+
+//=========================================================
+// Age
+//=========================================================
+
+bot.dialog('age', 
+    function(session, args){    
+        var today = new Date();
+        var birthday = new Date(2017, 3, 20);
+
+        var timeDiff = Math.abs(today.getTime() - birthday.getTime());
+
+
+        session.send("Ehrlich gesagt bin ich genau %s Tage alt.", Math.ceil(timeDiff/(1000*60*60*24)));
+
+    }
+).triggerAction({
+    matches:'age'
+});
+
+//=========================================================
+// GetHelp
+//=========================================================
+
+bot.dialog('getHelp', 
+    function(session, args){    
+        session.send("Ich kann dir helfen alles über Mayato herauszufinden. Frag mich zum Beispiel Welchen Service die Mayato GmbH anbietet? Oder in welchen Bereichen wir für unsere Kunden IT-Lösungen anbieten.");
+
+    }
+).triggerAction({
+    matches:'getHelp'
 });
 
 //=========================================================
@@ -275,6 +336,9 @@ bot.dialog('getServiceInformation', [
            switch(selection){
                 case "Customer Analytics":
                     session.send("Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics")
+                    break;
+                default:
+                    session.send("Leider kann ich Ihnen nicht weiterhelfen. Da muss ich mal mit meinem Entwickler reden.")
             }
             
         } 
