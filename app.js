@@ -4,6 +4,7 @@ var restify = require('restify');
 // Setup Restify Server
 var server = restify.createServer();
 
+
 //departments of mayato
 var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"];
 
@@ -30,7 +31,13 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 
 var bot = new builder.UniversalBot(connector, function (session) { 
      session.send("Sorry, Ich konnte die Eingabe leider nicht verstehen. Bitte schreiben Sie \'Hilfe\' für mehr Informationen"); 
- }); 
+ });
+
+ // Set default locale
+bot.set('localizerSettings', {
+    botLocalePath: './locale',
+    defaultLocale: 'en'
+})
  
 // Add global LUIS recognizer to bot 
 var model = process.env.model || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/19fd82bb-c6a8-4ed7-ba2b-eabe2ff3edf5?subscription-key=6db68835a1ec41518c5ac8b77c8aea58&staging=true&verbose=true&timezoneOffset=0.0&q='; 
@@ -52,17 +59,25 @@ bot.on('conversationUpdate', function (message) {
 
 
 //=========================================================
+// None
+//=========================================================
+
+bot.dialog('None', 
+    function(session, args){    
+        session.send("Leider hab ich Sie nicht verstanden. Ich glaube, ich muss mal mit meinem Entwickler reden");
+        session.send("Schreiben Sie Hilfe um mehr über mich zu erfahren.")
+
+    }
+);
+
+
+//=========================================================
 // Greeting
 //=========================================================
 
 bot.dialog('greeting', function(session, args){
 
-   var msg = new builder.Message(session)
-        .attachmentLayout(builder.AttachmentLayout.carousel)
-        .attachments(cards);
-    session.send(msg);
-
-    session.send('Schönen Guten Tag! Was beschäftigt Sie?')
+    session.send('Schönen Guten Tag! Was beschäftigt Sie?');
 }).triggerAction({
     matches:'greeting'
 });
@@ -92,7 +107,7 @@ bot.dialog('feeling', [
 
 bot.dialog('HumanOrMachine', 
     function(session, args){    
-        session.send("Mensch oder Computer? Das ist eine gute Frage. Für manche bin ich ein Computer aber mit menschlichem Verhalten.")
+        session.send("Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!")
 
     }
 ).triggerAction({
@@ -123,7 +138,7 @@ bot.dialog('age',
 
         var timeDiff = Math.abs(today.getTime() - birthday.getTime());
 
-
+    
         session.send("Ehrlich gesagt bin ich genau %s Tage alt.", Math.ceil(timeDiff/(1000*60*60*24)));
 
     }
@@ -157,7 +172,7 @@ bot.dialog('getContactPerson', [
         
             next({response: departmentEntity});
         }else{
-            builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button});
+            builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
         }
     },
     function(session, results, next){
@@ -320,7 +335,7 @@ bot.dialog('getServiceInformation', [
         var departmentEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'department');
 
         if(departmentEntity){
-            //next({ response: cityEntity.entity });
+            next({ response: cityEntity.entity });
 
         }else {
         
@@ -329,7 +344,7 @@ bot.dialog('getServiceInformation', [
         }
     },
 
-    function (session, results) {
+    function (session, results, next) {
         if (results.response) {
             var selection = results.response.entity;
 
@@ -337,8 +352,8 @@ bot.dialog('getServiceInformation', [
                 case "Customer Analytics":
                     session.send("Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics")
                     break;
-                default:
-                    session.send("Leider kann ich Ihnen nicht weiterhelfen. Da muss ich mal mit meinem Entwickler reden.")
+                //default:
+                    //session.send("Leider kann ich Ihnen nicht weiterhelfen. Da muss ich mal mit meinem Entwickler reden.")
             }
             
         } 
@@ -351,10 +366,30 @@ bot.dialog('getServiceInformation', [
 // Get Customer
 //=========================================================
 
-bot.dialog('getCustomer', function(session, args){
-    session.send('Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bankb- oder Industrie-Branche');
-    session.send('Hier eine Auswahl von erfolgreich umgesetzten Projekten');
+bot.dialog('getCustomer', [
 
+    function(session, args){
+        session.send('Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche');
+        session.send('Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben.');
+
+        builder.Prompts.confirm(session, "Wollen Sie sich auch Case Studies ansehen?");
+
+    },
+
+    function (session, results){
+        if(results.response){
+            session.beginDialog('CaseStudies')
+        }
+    }
+]).triggerAction({
+    matches:'getCustomer'
+});
+
+//=========================================================
+// Get Case Studies
+//=========================================================
+
+bot.dialog('CaseStudies', function(session, args){
 
     session.send('Hier eine Auswahl von erfolgreich umgesetzten Projekten')
 
@@ -393,7 +428,7 @@ bot.dialog('getCustomer', function(session, args){
     session.send(message);
 
 }).triggerAction({
-    matches:'getCustomer'
+    matches:'getCaseStudies'
 });
 
 //=========================================================
@@ -401,7 +436,7 @@ bot.dialog('getCustomer', function(session, args){
 //=========================================================
 
 bot.dialog('goodbye', function(session, args){
-    session.send('Auf Wiederseheen. Ich wünsche Ihnen einen schönen Tag')
+    session.endDialog('Auf Wiedersehen. Ich wünsche Ihnen einen schönen Tag')
 
 
 }).triggerAction({
