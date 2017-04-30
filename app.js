@@ -58,6 +58,9 @@ bot.on('conversationUpdate', function (message) {
 });
 
 
+//Sub-Dialogs
+bot.library(require('./Bot/dialogs/basicDialogs').createLibrary());
+
 //=========================================================
 // None
 //=========================================================
@@ -72,81 +75,6 @@ bot.dialog('None',
 
 
 //=========================================================
-// Greeting
-//=========================================================
-
-bot.dialog('greeting', function(session, args){
-
-    session.send('Schönen Guten Tag! Was beschäftigt Sie?');
-}).triggerAction({
-    matches:'greeting'
-});
-
-//=========================================================
-// Feeling
-//=========================================================
-
-bot.dialog('feeling', [
-    function(session, args){
-        var feeling = ['Mir geht`s super und selber?', 'ein bisschen müde und selber?', 'danke gut und selber?'];
-        
-        builder.Prompts.text(session, feeling[Math.floor(Math.random()*(3-0)+0)]);
-    },
-
-    function(session, results){
-        session.send('Was kann ich für Sie tun?')
-    }
-
-]).triggerAction({
-    matches:'feeling'
-});
-
-//=========================================================
-// Humanor Machine
-//=========================================================
-
-bot.dialog('HumanOrMachine', 
-    function(session, args){    
-        session.send("Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!")
-
-    }
-).triggerAction({
-    matches:'HumanOrMachine'
-});
-
-//=========================================================
-// Bot-Question
-//=========================================================
-
-bot.dialog('name', 
-    function(session, args){    
-        session.send("Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden")
-
-    }
-).triggerAction({
-    matches:'name'
-});
-
-//=========================================================
-// Age
-//=========================================================
-
-bot.dialog('age', 
-    function(session, args){    
-        var today = new Date();
-        var birthday = new Date(2017, 3, 20);
-
-        var timeDiff = Math.abs(today.getTime() - birthday.getTime());
-
-    
-        session.send("Ehrlich gesagt bin ich genau %s Tage alt.", Math.ceil(timeDiff/(1000*60*60*24)));
-
-    }
-).triggerAction({
-    matches:'age'
-});
-
-//=========================================================
 // GetHelp
 //=========================================================
 
@@ -157,6 +85,20 @@ bot.dialog('getHelp',
     }
 ).triggerAction({
     matches:'getHelp'
+});
+
+//=========================================================
+// mayato
+//=========================================================
+
+bot.dialog('mayato', 
+    function(session, args){
+
+        session.send("Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien");
+
+    }
+).triggerAction({
+    matches:'mayato'
 });
 
 //=========================================================
@@ -429,16 +371,4 @@ bot.dialog('CaseStudies', function(session, args){
 
 }).triggerAction({
     matches:'getCaseStudies'
-});
-
-//=========================================================
-// Goodbye
-//=========================================================
-
-bot.dialog('goodbye', function(session, args){
-    session.endDialog('Auf Wiedersehen. Ich wünsche Ihnen einen schönen Tag')
-
-
-}).triggerAction({
-    matches:'goodbye'
 });
