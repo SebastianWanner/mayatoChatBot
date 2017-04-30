@@ -3,7 +3,8 @@ var builder = require('botbuilder');
 
 var lib = new builder.Library('customer');
 
-
+//departments of mayato
+var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"];
 
 //=========================================================
 // Get Customer
@@ -80,64 +81,84 @@ lib.dialog('CaseStudies', function(session, args){
 
 lib.dialog('getContactPerson', [
     function(session, args, next){
-        var departmentEntity = builder.EntityRecognizer.findEntity(args.intent.entities, "department");
 
+        if(args.serviceInformation){
+            next({response: args.serviceInformation.type});
+        } else{
+
+        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'customer analytics');
+        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'data science');
+        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'financial analytics');
+        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'industry analytics');
+        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'it operations analytics');
+        var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'technology');
         
-        if (departmentEntity){
-        
-            next({response: departmentEntity});
-        }else{
-            builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
+    
+            if(customerAnalyticsEntity){
+                next({ response: customerAnalyticsEntity.type});
+
+            }else if (dataScienceEntity) {
+                next({ response: customerAnalyticsEntity.type});
+
+            }else if (dataScienceEntity) {
+                next({ response: customerAnalyticsEntity.type});
+
+            }else if (dataScienceEntity) {
+                next({ response: customerAnalyticsEntity.type});
+
+            }else if (dataScienceEntity) {
+                next({ response: customerAnalyticsEntity.type});
+
+            }else if (dataScienceEntity) {
+                next({ response: customerAnalyticsEntity.type});
+            }else{
+                builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
+            }
         }
     },
+
     function(session, results, next){
         if (!results.response){
             session.send("Die Angabe war falsch");
             return;
         }
 
-        
-        var department = builder.EntityRecognizer.findBestMatch(departments, results.response.entity);
+         session.send("Ihr Ansprechpartner in diesem Bereich ist:")
 
-        switch(department.entity){
+        switch(results.response){
             case "customer analytics":
-                session.send("Ihr Ansprechpartner im Bereich Customer Analytics ist:")
-
+            
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Peter Neckel");
-                contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: peter.neckel@mayato.com");
+                contactCard.text("Tel-Nr.: +49/30 4174 4270 10 \n E-Mail: peter.neckel@mayato.com");
                 var message = new builder.Message(session).addAttachment(contactCard);
-                session.send(message);
+                session.endDialog(message);
                 break;
             case "financial analytics":
-                session.send("Ihr Ansprechpartner im Bereich Financial Analytics ist:")
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Georg Heeren");
                 contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: georg.heeren@mayato.com");
                 var message = new builder.Message(session).addAttachment(contactCard);
-                session.send(message);
+                session.endDialog(message);
                 break;
             case "industry analytics":
-                session.send("Ihr Ansprechpartner im Bereich Industry Analytics ist:")
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Eric Ecker");
                 contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: eric.ecker@mayato.com");
                 var message = new builder.Message(session).addAttachment(contactCard);
-                session.send(message);
+                session.endDialog(message);
                 break;
             case "it operations analytics":
-                session.send("Ihr Ansprechpartner im Bereich IT Operations Aanalytics ist:")
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Eric Ecker");
                 contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: eric.ecker@mayato.com");
                 var message = new builder.Message(session).addAttachment(contactCard);
-                session.send(message);
+                session.endDialog(message);
                 break;
             case "data science":
-                session.send("Ihr Ansprechpartner im Bereich Data Science ist:")
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Dr. Marcus Dill");
@@ -149,20 +170,16 @@ lib.dialog('getContactPerson', [
                 builder.Prompts.choice(session, "Für welche Themen interessieren Sie sich?", "Strategie und Methodik|DWH und Big Data|Reporting, Planung und Analytics|Datenanalysen mit SAP|Datenanalysen mit SAS", {listStyle: builder.ListStyle.button});
                 break;
             case "training":
-                session.send("Ihr Ansprechpartner im Bereich IT Operations Aanalytics ist:")
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("mayato Training");
                 contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: training@mayato.com");
                 var message = new builder.Message(session).addAttachment(contactCard);
-                session.send(message);
+                session.endDialog(message);
                 break;
             default:
-                session.send("Sorry, ich habe keinen Ansprechpartner gefunden")
+                session.endDialog("Sorry, leider konnte ich keinen passenden Ansprechpartner finden")
             }
-
-
-
     },
 
      function(session, results){
@@ -174,6 +191,8 @@ lib.dialog('getContactPerson', [
                     var contactCard = new builder.HeroCard(session);
                     contactCard.title("Georg Heeren");
                     contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: georg.heeren@mayato.com");
+                    var message = new builder.Message(session).addAttachment(contactCard);
+                    session.endDialog(message);
                     break;
                 case "DWH und Big Data", "Datenanalysen mit SAP":
                     session.send("Ihr Ansprechpartner im Bereich IT Operations Aanalytics ist:")
@@ -181,6 +200,8 @@ lib.dialog('getContactPerson', [
                     var contactCard = new builder.HeroCard(session);
                     contactCard.title("Dr. Marcus Dill");
                     contactCard.text("Tel-Nr.: +49/30 4174 4270 10\nE-Mail: marcus.dill@mayato.com");
+                    var message = new builder.Message(session).addAttachment(contactCard);
+                    session.endDialog(message);
                     break;
                 default:
 
