@@ -8,12 +8,12 @@ var lib = new builder.Library('services');
 
 lib.dialog('getServiceInformation', [
     function(session, args, next){
-        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'customer analytics');
-        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'data science');
-        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'financial analytics');
-        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'industry analytics');
-        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'it operations analytics');
-        var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'technology');
+        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Customer Analytics');
+        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Data Science');
+        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Financial Analytics');
+        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Industry Analytics');
+        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'IT Operations Analytics');
+        var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Technology');
 
         //if(args.entities[0]){
             //console.log(args.entities[0]["entity"]);
@@ -54,6 +54,8 @@ lib.dialog('getServiceInformation', [
             session.send('Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics.')
             builder.Prompts.choice(session, "Wähle einen Bereich aus, um mehr Informationen zu erhalten", "Customer Analytics|Industry Analytics|IT Operations Analytics|Financial Analytics|Technology", {listStyle: builder.ListStyle.button}, {maxRetries: 2}); 
         }
+
+        
     },
 
     function (session, results, next) {
@@ -63,13 +65,15 @@ lib.dialog('getServiceInformation', [
             return;
         }
 
-        if (typeof results.response.type !== "undefined"){
+/*        if (typeof results.response.type !== "undefined"){
             selection = results.response.type;
         } else{
             selection = results.response.entity;
             results.response.type = results.response.entity;
     
-        }
+        }*/
+
+        selection = results.response.entity;
 
            switch(selection){
                 case "Customer Analytics":

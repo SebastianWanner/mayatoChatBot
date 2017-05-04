@@ -87,11 +87,11 @@ lib.dialog('getContactPerson', [
             next({response: args.serviceInformation});
         } else{
 
-        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'customer analytics');
-        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'data science');
-        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'financial analytics');
-        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'industry analytics');
-        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'it operations analytics');
+        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Customer Analytics');
+        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Data Science');
+        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Financial Analytics');
+        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Industry Analytics');
+        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'IT Operations Analytics');
         var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'technology');
         
     
@@ -135,7 +135,7 @@ lib.dialog('getContactPerson', [
         }
         
         //session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(contactDepartment));
-        session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(contactDepartment));
+        session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(results.response.entity));
         console.log(results.response);
 
 
