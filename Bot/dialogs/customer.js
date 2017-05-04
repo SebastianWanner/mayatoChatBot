@@ -134,13 +134,13 @@ lib.dialog('getContactPerson', [
             contactDepartment = results.response.type;
         }
         
-        session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(contactDepartment));
+        //session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(contactDepartment));
         session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(contactDepartment));
         console.log(results.response);
 
 
         switch(contactDepartment){
-            case "customer analytics":
+            case "Customer Analytics":
             
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Peter Neckel");
@@ -148,7 +148,7 @@ lib.dialog('getContactPerson', [
                 var message = new builder.Message(session).addAttachment(contactCard);
                 session.endDialog(message);
                 break;
-            case "financial analytics":
+            case "Financial Analytics":
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Georg Heeren");
@@ -156,7 +156,7 @@ lib.dialog('getContactPerson', [
                 var message = new builder.Message(session).addAttachment(contactCard);
                 session.endDialog(message);
                 break;
-            case "industry analytics":
+            case "Industry Analytics":
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Eric Ecker");
@@ -164,7 +164,7 @@ lib.dialog('getContactPerson', [
                 var message = new builder.Message(session).addAttachment(contactCard);
                 session.endDialog(message);
                 break;
-            case "it operations analytics":
+            case "IT Operations Analytics":
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Eric Ecker");
@@ -172,7 +172,7 @@ lib.dialog('getContactPerson', [
                 var message = new builder.Message(session).addAttachment(contactCard);
                 session.endDialog(message);
                 break;
-            case "data science":
+            case "Data Science":
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("Dr. Marcus Dill");
@@ -180,10 +180,10 @@ lib.dialog('getContactPerson', [
                 var message = new builder.Message(session).addAttachment(contactCard);
                 session.send(message);
                 break;
-            case "technology":
+            case "Technology":
                 builder.Prompts.choice(session, "Für welche Themen interessieren Sie sich?", "Strategie und Methodik|DWH und Big Data|Reporting, Planung und Analytics|Datenanalysen mit SAP|Datenanalysen mit SAS", {listStyle: builder.ListStyle.button});
                 break;
-            case "training":
+            case "Training":
 
                 var contactCard = new builder.HeroCard(session);
                 contactCard.title("mayato Training");
