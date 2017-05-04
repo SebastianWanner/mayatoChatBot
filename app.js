@@ -14,8 +14,10 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-server.post('/api/messages', connector.listen());
+// Create connector for debug
+//var connector = new builder.ConsoleConnector().listen();
 
+server.post('/api/messages', connector.listen());
 
 // Serve a static web page
 server.get(/.*/, restify.serveStatic({

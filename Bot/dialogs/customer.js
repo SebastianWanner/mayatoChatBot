@@ -1,10 +1,11 @@
 
 var builder = require('botbuilder');
+var botUtils = require("../utils/botUtils");
 
 var lib = new builder.Library('customer');
 
 //departments of mayato
-var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"];
+var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "technology"];
 
 //=========================================================
 // Get Customer
@@ -82,8 +83,8 @@ lib.dialog('CaseStudies', function(session, args){
 lib.dialog('getContactPerson', [
     function(session, args, next){
 
-        if(args.serviceInformation){
-            next({response: args.serviceInformation.type});
+        if(typeof args.serviceInformation !== "undefined"){
+            next({response: args.serviceInformation});
         } else{
 
         var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'customer analytics');
@@ -95,22 +96,22 @@ lib.dialog('getContactPerson', [
         
     
             if(customerAnalyticsEntity){
-                next({ response: customerAnalyticsEntity.type});
+                next({ response: customerAnalyticsEntity});
 
             }else if (dataScienceEntity) {
-                next({ response: customerAnalyticsEntity.type});
+                next({ response: dataScienceEntity});
 
-            }else if (dataScienceEntity) {
-                next({ response: customerAnalyticsEntity.type});
+            }else if (financialAnalyticsEntity) {
+                next({ response: financialAnalyticsEntity});
 
-            }else if (dataScienceEntity) {
-                next({ response: customerAnalyticsEntity.type});
+            }else if (industryAnalyticsEntity) {
+                next({ response: industryAnalyticsEntity});
 
-            }else if (dataScienceEntity) {
-                next({ response: customerAnalyticsEntity.type});
+            }else if (itOperationsAnalyticsEntity) {
+                next({ response: itOperationsAnalyticsEntity});
 
-            }else if (dataScienceEntity) {
-                next({ response: customerAnalyticsEntity.type});
+            }else if (technologyEntity) {
+                next({ response: technologyEntity});
             }else{
                 builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
             }
@@ -118,14 +119,27 @@ lib.dialog('getContactPerson', [
     },
 
     function(session, results, next){
-        if (!results.response){
-            session.send("Die Angabe war falsch");
-            return;
+        var contactDepartment;
+
+/*        if(typeof results.response.type !== "undefined"){
+            contactDepartment = results.response;
+            results.response.type = results.response;
+        }*/ 
+
+        if (results.response.entity){
+            contactDepartment = results.response.entity;
         }
+        
+        if(typeof results.response.type !== "undefined"){
+            contactDepartment = results.response.type;
+        }
+        
+        session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(contactDepartment));
+        session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(contactDepartment));
+        console.log(results.response);
 
-         session.send("Ihr Ansprechpartner in diesem Bereich ist:")
 
-        switch(results.response){
+        switch(contactDepartment){
             case "customer analytics":
             
                 var contactCard = new builder.HeroCard(session);
