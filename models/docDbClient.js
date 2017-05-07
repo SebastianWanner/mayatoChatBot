@@ -2,7 +2,7 @@
  var docdbUtils = require('./docdbUtils');
 
 
- function docDbClient(documentDBClient, databaseId, collectionId) {
+ function DocDbClient(documentDBClient, databaseId, collectionId) {
    this.client = documentDBClient;
    this.databaseId = databaseId;
    this.collectionId = collectionId;
@@ -11,7 +11,7 @@
    this.collection = null;
  }
 
- docDbClient.prototype = {
+ DocDbClient.prototype = {
      init: function (callback) {
          var self = this;
 
@@ -48,8 +48,7 @@
      addItem: function (item, callback) {
          var self = this;
 
-         item.date = Date.now();
-         item.completed = false;
+         //TODO specify Answer
 
          self.client.createDocument(self.collection._self, item, function (err, doc) {
              if (err) {
@@ -105,6 +104,7 @@
      }
  };
 
+module.exports = DocDbClient;
 
 
 

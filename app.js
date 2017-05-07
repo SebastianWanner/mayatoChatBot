@@ -1,5 +1,9 @@
 var builder = require('botbuilder');
 var restify = require('restify');
+var DocumentDBClient = require('documentdb').DocumentClient;
+var config = require('./config');
+var BotStorage = require('./models/botStorage');
+var DocDbClient = require('./models/docDbClient');
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -19,7 +23,7 @@ var connector = new builder.ChatConnector({
 
 server.post('/api/messages', connector.listen());
 
-// Serve a static web page
+//Serve a static web page
 server.get(/.*/, restify.serveStatic({
         'directory': '.',
         'default': 'index.html'
@@ -56,6 +60,41 @@ bot.on('conversationUpdate', function (message) {
         });
     }
 });
+
+//=========================================================
+// Database
+//=========================================================
+
+var azureClient = new DocumentDBClient(config.host, {
+    masterKey: config.masterKey
+});
+
+
+var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
+var botStorage = new BotStorage(docDbClient);
+
+docDbClient.init();
+
+/*function function1(){
+    botStorage.getAnswerByIntent("Data Science", function (err, results) {
+             if (err) {
+                 throw (err);
+             }
+
+             // bla bla bla
+             //return the results
+            console.log(results);
+
+         });
+}
+
+*/
+
+
+//setTimeout(function1, 5000);
+
+
+  
 
 //=========================================================
 // Sub-Dialogs

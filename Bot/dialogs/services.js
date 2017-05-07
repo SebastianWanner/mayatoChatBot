@@ -3,7 +3,23 @@
 var builder = require('botbuilder');
 var botUtils = require("../utils/botUtils");
 
+
 var lib = new builder.Library('services');
+
+var BotStorage = require("../../models/botStorage");
+var DocDbClient = require("../../models/docDbClient");
+var DocumentDBClient = require('documentdb').DocumentClient;
+var config = require('../../config');
+
+var azureClient = new DocumentDBClient(config.host, {
+    masterKey: config.masterKey
+});
+
+
+var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
+var botStorage = new BotStorage(docDbClient);
+
+docDbClient.init();
 
 
 lib.dialog('getServiceInformation', [
@@ -15,13 +31,8 @@ lib.dialog('getServiceInformation', [
         var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'IT Operations Analytics');
         var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Technology');
 
-        //if(args.entities[0]){
-            //console.log(args.entities[0]["entity"]);
-            //console.log(args.entities[0]["type"]);
-        //}
-        
-    
-        if(customerAnalyticsEntity){
+       
+       if(customerAnalyticsEntity){
             //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(customerAnalyticsEntity.entity));
             //session.replaceDialog("customer:getContactPerson", {serviceInformation: customerAnalyticsEntity} );
             next({ response: customerAnalyticsEntity});
@@ -73,7 +84,34 @@ lib.dialog('getServiceInformation', [
     
         }*/
 
-        selection = results.response.entity;
+        console.log(results.response.entity);
+
+        session.sendTyping;
+
+        botStorage.getAnswerByIntent("Data Science", function (err, results) {
+             if (err) {
+                 console.log(err);
+                 throw (err);
+             }else{
+                 if(results.length === 0){
+
+                 }else{
+                    console.log(results);
+                    session.send(results[0].text);
+                 }
+             }
+
+
+
+/*             if(length(results)>1){
+
+             }else{
+
+             }*/
+
+         });
+
+/*        selection = results.response.entity;
 
            switch(selection){
                 case "Customer Analytics":
@@ -103,7 +141,7 @@ lib.dialog('getServiceInformation', [
                 default:
                     session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(results.response.entity));
                     session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
-            }
+            }*/
             
  
     }

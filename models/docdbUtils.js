@@ -12,6 +12,7 @@
 
          client.queryDatabases(querySpec).toArray(function (err, results) {
              if (err) {
+                 console.log(err);
                  callback(err);
 
              } else {
@@ -25,6 +26,9 @@
                      });
 
                  } else {
+                    //console.log("Query Results:");
+                    //console.log(results);
+
                      callback(null, results[0]);
                  }
              }
@@ -55,6 +59,9 @@
                      });
 
                  } else {
+                    //console.log("Query Results:");
+                    //console.log(results);
+
                      callback(null, results[0]);
                  }
              }

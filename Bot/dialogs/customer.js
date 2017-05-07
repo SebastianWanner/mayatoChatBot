@@ -4,6 +4,21 @@ var botUtils = require("../utils/botUtils");
 
 var lib = new builder.Library('customer');
 
+var BotStorage = require("../../models/botStorage");
+var DocDbClient = require("../../models/docDbClient");
+var DocumentDBClient = require('documentdb').DocumentClient;
+var config = require('../../config');
+
+var azureClient = new DocumentDBClient(config.host, {
+    masterKey: config.masterKey
+});
+
+
+var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
+var botStorage = new BotStorage(docDbClient);
+
+docDbClient.init();
+
 //departments of mayato
 var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "technology"];
 
@@ -119,27 +134,61 @@ lib.dialog('getContactPerson', [
     },
 
     function(session, results, next){
-        var contactDepartment;
-
-/*        if(typeof results.response.type !== "undefined"){
-            contactDepartment = results.response;
-            results.response.type = results.response;
-        }*/ 
 
         if (results.response.entity){
-            contactDepartment = results.response.entity;
+            session.sendTyping;
+
+            botStorage.getAnswerByTag(results.response.entity, function (err, dbResults) {
+                if (err) {
+                    console.log(err);
+                    throw (err);
+                }else{
+                    if(dbResults.length === 0){
+                        botStorage.getAnswerByTag(results.response.type, function (err, dbResults) {
+                            if (err) {
+                                console.log(err);
+                                throw (err);
+                            }else{
+                                session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(results.response.entity));
+
+                                var contactCard = new builder.HeroCard(session);
+                                contactCard.title(dbResults[0].name);
+                                contactCard.text("Tel-Nr.: %s \n E-Mail: %s", dbResults[0].phone, dbResults[0].email);
+                                //contactCard.images([
+                                   // builder.CardImage.create(session, "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_GH.jpg")
+                                //])
+                                var message = new builder.Message(session).addAttachment(contactCard);
+                                session.endDialog(message);
+                            }
+                        });
+
+                    }else{
+                        session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(results.response.entity));
+
+                        var contactCard = new builder.HeroCard(session);
+                        contactCard.title(dbResults[0].name);
+                        contactCard.text("Tel.: %s \n E-Mail: %s", dbResults[0].phone, dbResults[0].email);
+                        //contactCard.images([
+                          // builder.CardImage.create(session, "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_GH.jpg")
+                        //])
+                        var message = new builder.Message(session).addAttachment(contactCard);
+                        session.endDialog(message);
+                    }
+                }
+            });
         }
         
+/*        
         if(typeof results.response.type !== "undefined"){
             contactDepartment = results.response.type;
-        }
+        }*/
         
         //session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(contactDepartment));
-        session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(results.response.entity));
-        console.log(results.response);
+        //session.send("Sie haben Fragen? Dann kontaktieren Sie uns! Ihr Ansprechpartner für %s ist:", botUtils.toProperCase(results.response.entity));
+        //console.log(results.response);
+    },
 
-
-        switch(contactDepartment){
+/*        switch(contactDepartment){
             case "Customer Analytics":
             
                 var contactCard = new builder.HeroCard(session);
@@ -193,9 +242,9 @@ lib.dialog('getContactPerson', [
                 break;
             default:
                 session.endDialog("Sorry, leider konnte ich keinen passenden Ansprechpartner finden")
-            }
-    },
+            }*/
 
+/*
      function(session, results){
          if (results.response){
              switch(results.response){
@@ -221,7 +270,7 @@ lib.dialog('getContactPerson', [
 
              }
          }
-        }
+        }*/
 ]).triggerAction({
     matches:'getContactPerson'
 });

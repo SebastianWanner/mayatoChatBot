@@ -4,12 +4,12 @@
  var DocumentDBClient = require('documentdb').DocumentClient;
  var async = require('async');
 
- function botStorage(docDbClient) {
+ function BotStorage(docDbClient) {
    this.docDbClient = docDbClient;
  }
 
-  TaskList.prototype = {
-     getAnswerByIntent: function (intent, res) {
+  BotStorage.prototype = {
+     getAnswerByIntent: function (intent, callback) {
          var self = this;
 
          var querySpec = {
@@ -20,24 +20,30 @@
              }]
          };
 
+
          self.docDbClient.find(querySpec, function (err, items) {
              if (err) {
-                 throw (err);
+                 callback(err);
+             }else{
+                 
+             // bla bla bla
+             //return the results
+             callback(null, items)
+
              }
 
-             //return the results
 
          });
      },
 
-    getAnswerByEntity: function ( entity, res) {
+    getAnswerByEntity: function ( entity, callback) {
          var self = this;
 
          var querySpec = {
-             query: 'SELECT * FROM root r WHERE r.completed=@completed',
+             query: 'SELECT * FROM root r WHERE r.entity=@entity',
              parameters: [{
-                 name: '@completed',
-                 value: false
+                 name: '@entity',
+                 value: entity
              }]
          };
 
@@ -45,29 +51,33 @@
              if (err) {
                  throw (err);
              }
-
+             // bla bla bla
              //return the results
+             callback(items)
 
          });
      },
 
-    getAnswerByTag: function (intent, entity, res) {
+    getAnswerByTag: function (tag, callback) {
          var self = this;
 
          var querySpec = {
-             query: 'SELECT * FROM root r WHERE r.completed=@completed',
+             query: 'SELECT * FROM root r WHERE ARRAY_CONTAINS(r.tag, @tag)',
              parameters: [{
-                 name: '@completed',
-                 value: false
+                 name: '@tag',
+                 value: "Customer Analytics"
              }]
          };
 
          self.docDbClient.find(querySpec, function (err, items) {
              if (err) {
+                 console.log(err);
                  throw (err);
              }
-
-             //return the results
+             
+             // bla bla bla
+             //return the resultss
+             callback(null, items)
 
          });
      },
@@ -76,4 +86,4 @@
 
 
 
- module.exports = botStorage;
+ module.exports = BotStorage;
