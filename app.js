@@ -25,8 +25,8 @@ server.post('/api/messages', connector.listen());
 
 //Serve a static web page
 server.get(/.*/, restify.serveStatic({
-        'directory': '.',
-        'default': 'index.html'
+      'directory': '.',
+     'default': 'index.html'
 }));
 
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -68,6 +68,10 @@ bot.on('conversationUpdate', function (message) {
 var azureClient = new DocumentDBClient(config.host, {
     masterKey: config.masterKey
 });
+
+
+console.log(process.env.MICROSOFT_APP_ID);
+console.log(process.env.HOST);
 
 
 var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
