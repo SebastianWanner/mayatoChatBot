@@ -1,4 +1,4 @@
- var DocumentDBClient = require('documentdb').DocumentClient;
+/*  var DocumentDBClient = require('documentdb').DocumentClient;
  var docdbUtils = require('./docdbUtils');
 
 
@@ -118,3 +118,4 @@ module.exports = DocDbClient;
 
 
 
+ */

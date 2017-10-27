@@ -1,16 +1,18 @@
 var builder = require('botbuilder');
 var restify = require('restify');
-var DocumentDBClient = require('documentdb').DocumentClient;
+//var DocumentDBClient = require('documentdb').DocumentClient;
 var config = require('./config');
-var BotStorage = require('./models/botStorage');
-var DocDbClient = require('./models/docDbClient');
+//var BotStorage = require('./models/botStorage');
+//var DocDbClient = require('./models/docDbClient');
+
+
+var JSONStorage = require("./models/JSONStorage");
+
+var botStorage = new JSONStorage()
 
 // Setup Restify Server
 var server = restify.createServer();
 
-
-//departments of mayato
-var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "data science", "technology", "training"];
 
 // Create chat bot
 var connector = new builder.ChatConnector({
@@ -54,7 +56,7 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id === message.address.bot.id) {
                 var reply = new builder.Message()
                     .address(message.address)
-                    .text("Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein?");
+                    .text("Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein? Sie können sich gerne über unsere Beratungsleistungen informieren oder zum Beispiel Case Studies ansehen.");
                 bot.send(reply);
             }
         });
@@ -65,19 +67,17 @@ bot.on('conversationUpdate', function (message) {
 // Database
 //=========================================================
 
+
+/* 
 var azureClient = new DocumentDBClient(config.host, {
     masterKey: config.masterKey
 });
 
 
-console.log(process.env.MICROSOFT_APP_ID);
-console.log(process.env.HOST);
-
-
 var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
-var botStorage = new BotStorage(docDbClient);
+var botStorage = new BotStorage(docDbClient); 
 
-docDbClient.init();
+docDbClient.init();*/
 
 /*function function1(){
     botStorage.getAnswerByIntent("Data Science", function (err, results) {
@@ -128,7 +128,7 @@ bot.dialog('None',
 
 bot.dialog('getHelp', 
     function(session, args){    
-        session.send("Ich kann dir helfen alles über Mayato herauszufinden. Frag mich zum Beispiel Welchen Service die Mayato GmbH anbietet? Oder in welchen Bereichen wir für unsere Kunden IT-Lösungen anbieten.");
+        session.send("Kommst du nicht weiter? Suche noch mal nach Case Studies");
 
     }
 ).triggerAction({

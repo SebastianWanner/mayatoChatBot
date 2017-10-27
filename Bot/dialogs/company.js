@@ -60,7 +60,7 @@ lib.dialog('getManagementInformation', function(session, args){
 //=========================================================
 
 lib.dialog('getFoundationDate', function(session, args){
-    session.send('Die Mayato GmbH wurde im Jahre 2007 gegründet.')
+    session.send('Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt')
 
 
 }).triggerAction({

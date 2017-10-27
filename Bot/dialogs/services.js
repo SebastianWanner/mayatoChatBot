@@ -2,24 +2,26 @@
 
 var builder = require('botbuilder');
 var botUtils = require("../utils/botUtils");
-
+var config = require('../../config');
 
 var lib = new builder.Library('services');
 
-var BotStorage = require("../../models/botStorage");
-var DocDbClient = require("../../models/docDbClient");
-var DocumentDBClient = require('documentdb').DocumentClient;
-var config = require('../../config');
 
-var azureClient = new DocumentDBClient(config.host, {
+//var BotStorage = require("../../models/botStorage");
+//var DocDbClient = require("../../models/docDbClient");
+//var DocumentDBClient = require('documentdb').DocumentClient;
+
+/* var azureClient = new DocumentDBClient(config.host, {
     masterKey: config.masterKey
 });
-
-
+docDbClient.init(); 
 var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
-var botStorage = new BotStorage(docDbClient);
+var botStorage = new BotStorage(docDbClient);*/
 
-docDbClient.init();
+var JSONStorage = require("../../models/JSONStorage");
+var botStorage = new JSONStorage();
+
+var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "technology"];
 
 
 lib.dialog('getServiceInformation', [
@@ -70,13 +72,58 @@ lib.dialog('getServiceInformation', [
     },
 
     function (session, results, next) {
-        var selection;
-
-        if(!results.response.entity){
+        if(!results.response){
             return;
         }
 
-/*        if (typeof results.response.type !== "undefined"){
+        console.log(results.response);
+
+        session.sendTyping;
+
+        botStorage.getAnswerByEntityAndIntend("getServiceInformation", results.response.entity, function (err, dbResults) {
+             if (err) {
+                 console.log(err);
+                 throw (err);
+             }else{
+                 if(dbResults.length === 0){
+                     console.log(dbResults.length);
+                     next({response: results.response})
+
+                 }else{
+                    console.log(dbResults);
+                    session.send(dbResults[0].text);
+                    session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
+                 }
+             }
+         });
+    },
+
+
+     function (session, results) {
+        if(!results.response){
+            return;
+        }
+
+        session.sendTyping;
+
+        session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(results.response.entity));
+        session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
+
+
+ 
+    }
+]).triggerAction({
+    matches:'getServiceInformation'
+});
+
+module.exports.createLibrary = function(){
+    return lib.clone();
+}
+
+
+
+
+         /*        if (typeof results.response.type !== "undefined"){
             selection = results.response.type;
         } else{
             selection = results.response.entity;
@@ -84,32 +131,6 @@ lib.dialog('getServiceInformation', [
     
         }*/
 
-        console.log(results.response.entity);
-
-        session.sendTyping;
-
-        botStorage.getAnswerByIntent("Data Science", function (err, results) {
-             if (err) {
-                 console.log(err);
-                 throw (err);
-             }else{
-                 if(results.length === 0){
-
-                 }else{
-                    console.log(results);
-                    session.send(results[0].text);
-                 }
-             }
-
-
-
-/*             if(length(results)>1){
-
-             }else{
-
-             }*/
-
-         });
 
 /*        selection = results.response.entity;
 
@@ -143,12 +164,3 @@ lib.dialog('getServiceInformation', [
                     session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
             }*/
             
- 
-    }
-]).triggerAction({
-    matches:'getServiceInformation'
-});
-
-module.exports.createLibrary = function(){
-    return lib.clone();
-}

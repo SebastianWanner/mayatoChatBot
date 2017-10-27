@@ -1,0 +1,309 @@
+[
+    {
+        "id": "1",
+        "intent": "getServiceInformation",
+        "entity": "customer analytics",
+        "title": "",
+        "text": "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics"
+    },
+    {
+        "id": "2",
+        "intent": "getServiceInformation",
+        "entity": "data science",
+        "title": "",
+        "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
+        "tag": [
+            "tag1",
+            "tag2"
+        ]
+    },
+
+        {
+        "id": "4",
+        "intent": "getServiceInformation",
+        "entity": "industry analytics",
+        "title": "",
+        "text": "Mayato hilft Ihnen, Sensordaten, Wartungsberichten, Productions- und Reperaturhistorien zu analysieren und auszuwerten. Mayato besitzt langjährige Erfahrung im Aufbau von Big-Data-Architekturen un in der Analyse großer komplexer Datenmengen"
+    },
+    {
+        "id": "5",
+        "intent": "getServiceInformation",
+        "entity": "it operations analytics",
+        "title": "",
+        "text": "Operational Analytics lernt aus dem Verhalten und Ereignissen in Ihrer IT-Infrastruktur und kann so den Ausfall einzelner Komponenten ihrer IT-Infrastruktur vorhersagen"
+    },
+    {
+        "id": "6",
+        "intent": "getServiceInformation",
+        "entity": "financial analytics",
+        "title": "",
+        "text": "Wie lässt sich die Unternehmensentwicklung zielsicher planen? Ist beispielsweise eine Investition sinnvoll? In welchem Umfang können Kosten gespart werden. Unsere Lösungen für Performance Analytics sind eine einzigartige Kombination bewährter Analyse- und Planungswerkzeuge"
+    },
+    {
+        "id": "7",
+        "intent": "getServiceInformation",
+        "entity": "technology",
+        "title": "",
+        "text": "mayato hilft Ihnen und Ihrer IT, eine Gesamtstrategie und die richtige Organisation für Business Intelligence und Analytics zu entwerfen."
+    },
+
+    {
+        "id": "3",
+        "intent": "getServiceInformation",
+        "type": "text mining",
+        "title": "",
+        "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
+        "tag": [
+            "tag1",
+            "tag2"
+        ]
+    },
+
+
+
+
+    {
+        "id": "101",
+        "intent": "getContactPerson",
+        "name": "Peter Neckel",
+        "phone": "+49/30 4174 4270 10",
+        "email": "peter.neckel@mayato.com",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_PN-300x200.jpg",
+        "tag": [
+            "Customer Analytics",
+            "Media Analytics",
+            "Customer Prediction"
+        ]
+    },
+    {
+        "id": "102",
+        "intent": "getContactPerson",
+        "name": "Georg Heeren",
+        "phone": "+49/30 4174 4270 10",
+        "email": "georg.heeren@mayato.com",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_GH.jpg",
+        "tag": [
+            "Financial Analytics",
+            "Performance Analytics",
+            "Strategie und Methodik",
+            "Reporting, Planung und Analytics",
+            "Datenanalysen mit SAS",
+            "IT Security Analytics"
+        ]
+    },
+    {
+        "id": "103",
+        "intent": "getContactPerson",
+        "name": "Eric Ecker",
+        "phone": "+49/30 4174 4270 10",
+        "email": "eric.ecker@mayato.com",
+        "image": "https://www.mayato.com/wp-content/uploads/2016/06/Eric-Ecker-v1-300x200.jpg",
+        "tag": [
+            "IT Operations Analytics",
+            "Industry Analytics"
+        ]
+    },
+    {
+        "id": "104",
+        "intent": "getContactPerson",
+        "name": "Dr. Marcus Dill",
+        "phone": "+49/30 4174 4270 10",
+        "email": "marcus.dill@mayato.com",
+        "image": "https://www.mayato.com/wp-content/uploads/2016/07/CEO-Dr.-Marcus-Dill_300dpi.jpg",
+        "tag": [
+            "Data Science",
+            "DWH und Big Data",
+            "Datenanalysen mit SAP",
+            "Social Media Analytics",
+            "Feedback Analytics",
+            "Data Mining",
+            "Text Mining"
+        ]
+    },
+
+
+
+    {
+        "id": "201",
+        "intent": "getCaseStudies",
+        "title": "Erfolgsmessung im Kampagnenmanagement",
+        "company": "",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/CaseStudy_Kampagnenerfolgsmessung_Handel1.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Reporting"
+        ]
+    },
+
+    {
+        "id": "202",
+        "intent": "getCaseStudies",
+        "title": "In-Database-Analytics mit Exasol: Big-Data-Potentiale im E-Commerce nutzen",
+        "company": "",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics",
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2017/05/2017_05_Case-Study_Technologie-Exasol_Talend_BigData.pdf",
+        "tag": [
+            "Customer Analytics"
+        ]
+    },
+
+        {
+        "id": "203",
+        "intent": "getCaseStudies",
+        "title": "Customer Relationship Analytics: Konzeption & Erstellung einer Kundensegmentierung im Einzelhandel",
+        "company": "",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/CaseStudy_CRA_Handel.pdf",
+        "tag": [
+            "Customer Analytics",
+            ""
+        ]
+    },
+
+    {
+        "id": "204",
+        "intent": "getCaseStudies",
+        "title": "Kundenmanagement im B2B Handel: Klassisches Reporting und Data Mining Verfahren als Basis für Loyalitätskonzepte",
+        "company": "",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/casestudy_kundenmanagement_im_b2b-handel.pdf",
+        "tag": [
+            "Customer Analytics",
+            ""
+        ]
+    },
+
+        {
+        "id": "205",
+        "intent": "getCaseStudies",
+        "title": "Kündigeranalyse für eine Direktbank - mit dem Blick für das richtige Timing",
+        "company": "",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2016/03/2016_04_Case-Study_Customer-Analytics-K%C3%BCndigeranalyse_Direktbank_DE.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Data Mining",
+            "Churn Management"
+        ]
+    },
+
+            {
+        "id": "206",
+        "intent": "getCaseStudies",
+        "title": "Media Analytics - Werbewirkungsanalysen im crossmedialen Umfeld für 9flats",
+        "company": "9flats.com",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/9flats_success_story_final.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Media Analytics"
+        ]
+    },
+
+                {
+        "id": "207",
+        "intent": "getCaseStudies",
+        "title": "Anforderungsmanagement und Proof of Concept zur BI Werkzeugauswahl für das Sales Funnel Management und Customer Relationship Management",
+        "company": "BMW Group",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/CaseStudy_BMW_BI-Toolauswahl.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Business Intelligence"
+        ]
+    },
+
+    
+                {
+        "id": "209",
+        "intent": "getCaseStudies",
+        "title": "Media Analytics - Werbeerfolgsmessung im Mobile-App-Markt für JustBook",
+        "company": "just book!",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/justbook_success_story_final1.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Media Analytics"
+        ]
+    },
+
+        
+    {
+        "id": "210",
+        "intent": "getCaseStudies",
+        "title": "Erfolg und Wirkung von TV-Werbung auf das Online-Business",
+        "company": "twago",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2015/03/twago_Success_story_final1.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Media Analytics"
+        ]
+    },
+
+        {
+        "id": "211",
+        "intent": "getCaseStudies",
+        "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
+        "company": "twago",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Predictive Analytics",
+            "Data Mining"
+        ]
+    },
+
+
+
+    {
+        "id": "211",
+        "intent": "getCaseStudies",
+        "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
+        "company": "twago",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Predictive Analytics",
+            "Data Mining"
+        ]
+    }
+
+    
+]

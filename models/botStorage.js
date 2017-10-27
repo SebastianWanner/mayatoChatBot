@@ -36,14 +36,17 @@
          });
      },
 
-    getAnswerByEntity: function ( entity, callback) {
+    getAnswerByEntityAndIntend: function (intent, entity, callback) {
          var self = this;
 
          var querySpec = {
-             query: 'SELECT * FROM root r WHERE r.entity=@entity',
+             query: 'SELECT * FROM root r WHERE r.intent = @intent AND r.entity=@entity',
              parameters: [{
                  name: '@entity',
                  value: entity
+             },{
+                 name: '@intent',
+                 value: intent
              }]
          };
 
@@ -53,19 +56,22 @@
              }
              // bla bla bla
              //return the results
-             callback(items)
+             callback(null, items);
 
          });
      },
 
-    getAnswerByTag: function (tag, callback) {
+    getAnswerByTag: function (intent, tag, callback) {
          var self = this;
 
          var querySpec = {
-             query: 'SELECT * FROM root r WHERE ARRAY_CONTAINS(r.tag, @tag)',
+             query: 'SELECT * FROM root r WHERE r.intent = @intent AND ARRAY_CONTAINS(r.tag, @tag)',
              parameters: [{
+                 name: '@intent',
+                 value: intent
+             },{
                  name: '@tag',
-                 value: "Customer Analytics"
+                 value: tag
              }]
          };
 
