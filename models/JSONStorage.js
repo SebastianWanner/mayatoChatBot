@@ -28,8 +28,6 @@
 JSONStorage.prototype.getAnswerByIntentAndEntity =  function (intent, entity, callback) {
          var self = this;
 
-        var self = this;
-
         var results = [];
 
         for(var item of database){
@@ -42,9 +40,23 @@ JSONStorage.prototype.getAnswerByIntentAndEntity =  function (intent, entity, ca
         callback(null, results)
      }
 
+JSONStorage.prototype.getAnswerByIntentAndEntityName =  function (intent, entityName, entityValue, callback) {
+        var self = this;
+
+       var results = [];
+
+       for(var item of database){
+               if(item.intent == intent && item.entityName == entityValue){    
+                   results.push(item)    
+               }
+
+           }
+
+       callback(null, results)
+    }
+
 JSONStorage.prototype.getAnswerByIntentAndTag =  function (intent, tag, callback) {
          var self = this;
-
 
         var results = [];
 

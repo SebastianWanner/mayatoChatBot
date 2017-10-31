@@ -303,7 +303,178 @@
             "Predictive Analytics",
             "Data Mining"
         ]
+    },
+    
+    {
+        "id": "211",
+        "intent": "getCaseStudies",
+        "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
+        "company": "twago",
+        "text": "",
+        "industry": "",
+        "solution": "Customer Analytics", 
+        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
+        "tag": [
+            "Customer Analytics",
+            "Predictive Analytics",
+            "Data Mining"
+        ]
+    },
+
+    {
+        "id": "301",
+        "intent": "getCustomer",
+        "customer": "BWM Group",
+        "sector": "Automotive",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/125px-BMW.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "302",
+        "intent": "getCustomer",
+        "customer": "Volkswagen AG",
+        "sector": "Automotive",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Volkswagen_Logo_till_1995.svg/170px-Volkswagen_Logo_till_1995.svg.png",
+        "date": ""
+
+    },
+
+    {
+        "id": "303",
+        "intent": "getCustomer",
+        "customer": "Commerzbank",
+        "sector": "Banken",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Commerzbank_%282009%29.svg/270px-Commerzbank_%282009%29.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "304",
+        "intent": "getCustomer",
+        "customer": "Volkswagen Financial Services",
+        "sector": "Banken",
+        "logo": "?",
+        "date": ""
+    },
+
+    {
+        "id": "305",
+        "intent": "getCustomer",
+        "customer": "Volkswagen Financial Services",
+        "sector": "Banken",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Volkswagen_Financial_Services_logo.svg/200px-Volkswagen_Financial_Services_logo.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "306",
+        "intent": "getCustomer",
+        "customer": "Intersport Deutschland",
+        "sector": "Handel",
+        "logo": "https://upload.wikimedia.org/wikipedia/de/thumb/f/f6/Intersport-Logo.svg/250px-Intersport-Logo.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "307",
+        "intent": "getCustomer",
+        "customer": "Verlagsgruppe Weltbild",
+        "sector": "Handel",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/01/Logo_weltbild_de.gif",
+        "date": ""
+    },
+
+    {
+        "id": "308",
+        "intent": "getCustomer",
+        "customer": "Bosch",
+        "sector": "Industrie",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bosch-Logo.svg/250px-Bosch-Logo.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "309",
+        "intent": "getCustomer",
+        "customer": "Siemens Healthcare",
+        "sector": "Industrie",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Siemens_Healthineers_logo.svg/250px-Siemens_Healthineers_logo.svg.png" ,
+        "date": ""
+    },
+    {
+        "id": "310",
+        "intent": "getCustomer",
+        "customer": "9flats.com",
+        "sector": "Internet",
+        "logo": "",
+        "date": ""
+    },
+
+    {
+        "id": "311",
+        "intent": "getCustomer",
+        "customer": "twago",
+        "sector": "Internet",
+        "logo": "?",
+        "date": ""
+    },
+
+    {
+        "id": "312",
+        "intent": "getCustomer",
+        "customer": "adidas",
+        "sector": "Konsumgüter",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Adidas-group-logo-fr.svg/244px-Adidas-group-logo-fr.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "313",
+        "intent": "getCustomer",
+        "customer": "Nestle",
+        "sector": "Konsumgüter",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Old_Nestl%C3%A9_logo.svg/200px-Old_Nestl%C3%A9_logo.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "314",
+        "intent": "getCustomer",
+        "customer": "Bayer",
+        "sector": "Pharma",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_der_Bayer_AG.svg/125px-Logo_der_Bayer_AG.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "312",
+        "intent": "getCustomer",
+        "customer": "Volkswagen Financial Services",
+        "sector": "Banken",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Volkswagen_Financial_Services_logo.svg/200px-Volkswagen_Financial_Services_logo.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "313",
+        "intent": "getCustomer",
+        "customer": "Allianz SE",
+        "sector": "Versicherungen",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Allianz.svg/250px-Allianz.svg.png",
+        "date": ""
+    },
+
+    {
+        "id": "314",
+        "intent": "getCustomer",
+        "customer": "ERGO",
+        "sector": "Versicherungen",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/ERGO_Kindlustusgrupi_logo.svg/250px-ERGO_Kindlustusgrupi_logo.svg.png",
+        "date": ""
     }
+
 
     
 ]

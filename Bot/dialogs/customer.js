@@ -21,7 +21,7 @@ var JSONStorage = require("../../models/JSONStorage.js");
 
 var botStorage = new JSONStorage();
 
-var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "technology"];
+var departments = ["Customer Analytics", "Financial Analytics", "Industry Analytics", "IT Operations Analytics", "Technology"];
 
 //=========================================================
 // Get Customer
@@ -31,22 +31,50 @@ lib.dialog('getCustomer', [
 
     function(session, args){
 
-        session.send('Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche');
-        session.send('Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben.');
+        session.sendTyping;
+
+        var cards = [];
+        botStorage.getAnswerByIntent("getCustomer", function (err, dbResults) {
+            if (err) {
+                console.log(err);
+                throw (err);
+            }else{
+                if(dbResults.length === 0){
+                    session.send("Leider ist etwas schiefgelaufen. Probieren Sie es später noch einmal.")
+                }else{
+                    console.log(dbResults);
+
+                    for(var item of dbResults){
+                        var card =  new builder.HeroCard(session)
+                            .title(item.customer)
+                            .subtitle(item.sector)
+/*                             .images([
+                               builder.CardImage.create(session, item.logo)
+                            ]) */
+
+                        cards.push(card)
+                    }
+                }
+            }
+        });
+
+        if(cards){
+
+            session.send('Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche');
+            session.send('Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben.');
 
 
+            var message = new builder.Message(session)
+                .attachmentLayout(builder.AttachmentLayout.carousel)
+                .attachments(cards);
+
+            session.send(message);
+        }
 
         session.send('Tipp: Sie können auch nach Case-Studies suchen');
 
-        //builder.Prompts.confirm(session, "Wollen Sie sich auch Case Studies ansehen?");
-
-    },
-
-    function (session, results){
-        if(results.response){
-            session.beginDialog('CaseStudies')
-        }
     }
+
 ]).triggerAction({
     matches:'getCustomer'
 });
@@ -82,12 +110,14 @@ lib.dialog('getCaseStudies', [
                 }else{
                     if(dbResults.length === 0){
                         session.send("Leider haben wir keine Case Studies gefunden")
+                        session.replaceDialog('getCaseStudies')
                     }else{
                         console.log(dbResults);
 
                         for(var item of dbResults){
                             var card =  new builder.HeroCard(session)
                                 .title(item.title)
+                                .subtitle("test")
                                 .text(item.company)
                                 .images([
                                    builder.CardImage.create(session, item.image)
@@ -104,7 +134,7 @@ lib.dialog('getCaseStudies', [
 
             if(cards){
 
-                session.send('Hier eine Auswahl von Case Studies im Bereich' + botUtils.toProperCase(competence))
+                session.send('Hier eine Auswahl von Case Studies im Bereich ' + botUtils.toProperCase(competence))
 
                 var message = new builder.Message(session)
                     .attachmentLayout(builder.AttachmentLayout.carousel)
