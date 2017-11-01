@@ -12,6 +12,7 @@
     "botbuilder": "^3.7.0",
     "botbuilder-azure": "^3.0.2",
     "documentdb": "^1.11.0",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "winston-daily-rotate-file": "^1.7.2"
   }
 }

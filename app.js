@@ -1,11 +1,16 @@
 var builder = require('botbuilder');
 var restify = require('restify');
+
+'use strict';
+const winston = require('winston');
+const fs = require('fs');
+
+//create Azure DocumentDB 
 //var DocumentDBClient = require('documentdb').DocumentClient;
-var config = require('./config');
 //var BotStorage = require('./models/botStorage');
 //var DocDbClient = require('./models/docDbClient');
 
-
+//var config = require('./config');
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -17,9 +22,8 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-// Create connector for debug
-//var connector = new builder.ConsoleConnector().listen();
 
+//create server
 server.post('/api/messages', connector.listen());
 
 //Serve a static web page
@@ -31,6 +35,9 @@ server.get(/.*/, restify.serveStatic({
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
+
+
+
 
 var bot = new builder.UniversalBot(connector, function (session) { 
      session.send("Sorry, Ich konnte die Eingabe leider nicht verstehen. Bitte schreiben Sie \'Hilfe\' für mehr Informationen"); 
@@ -57,6 +64,77 @@ bot.on('conversationUpdate', function (message) {
                 bot.send(reply);
             }
         });
+    }
+});
+
+//=========================================================
+// logger
+//=========================================================
+const logDir = __dirname + '/logs';
+// Create the log directory if it does not exist
+if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir);
+  }
+const tsFormat = () => (new Date()).toLocaleTimeString();
+const customLevels = {
+    levels: {
+      incoming: 0,
+      outgoing: 1
+    }
+  };
+const logger = new (winston.Logger)({
+    exitOnError: false,
+    levels: customLevels.levels,
+    format: format.combine(
+        format.splat(),
+        format.simple()
+      ),
+    transports:[
+        new (winston.transports.Console)({
+            timestamp:tsFormat,
+            colorize:true,
+            level: 'error'
+        }),
+        new(require('winston-daily-rotate-file'))({
+            filename: `${logDir}/-incoming.log`,
+            name: 'incoming',
+            timestamp: tsFormat,
+            datePattern: 'yyyy-MM-dd',
+            prepend: true,
+            level: 'incoming'
+        }),
+         new(require('winston-daily-rotate-file'))({
+            filename: `${logDir}/-outcoming.log`,
+            name: 'outgoing',
+            timestamp: tsFormat,
+            datePattern: 'yyyy-MM-dd',
+            prepend: true,
+            level: 'outgoing'
+        }) 
+    ],
+    exceptionHandlers:[
+        new winston.transports.File({
+            filename: `${logDir}/-exceptions.log`,
+            timestamp: tsFormat,
+            datePattern: 'yyyy-MM-dd',
+            prepend: true,
+        })
+    ]
+});
+
+
+//Bot uses middleware for logging
+bot.use({
+    botbuilder: function(session, next){
+        logger.incoming(session.message.text);
+        //console.log('message: ' + session.message.text + ', user:' + session.message.user +  ', time: ' + session.message.timestamp);
+        next();
+    },
+
+    send: function(event, next){
+        logger.outgoing(event.text)
+        //console.log('message: ' + event.text + ', user: ' + event.address.user.name);
+        next();
     }
 });
 

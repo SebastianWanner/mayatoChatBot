@@ -41,7 +41,7 @@ lib.dialog('getCustomer', [
                 throw (err);
             }else{
                 if(dbResults.length === 0){
-                    session.send("Leider ist etwas schiefgelaufen. Probieren Sie es später noch einmal.")
+                    session.send(chatbotStrings.dbResultZero);
                 }else{
                     console.log(dbResults);
 
