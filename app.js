@@ -104,7 +104,7 @@ docDbClient.init();*/
 // Sub-Dialogs
 //=========================================================
 
-bot.library(require('./Bot/dialogs/basicDialogs').createLibrary());
+//bot.library(require('./Bot/dialogs/basicDialogs').createLibrary());
 bot.library(require('./Bot/dialogs/company').createLibrary());
 bot.library(require('./Bot/dialogs/customer').createLibrary());
 bot.library(require('./Bot/dialogs/services').createLibrary());
