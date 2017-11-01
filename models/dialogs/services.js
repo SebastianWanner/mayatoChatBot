@@ -21,7 +21,7 @@ var botStorage = new BotStorage(docDbClient);*/
 var JSONStorage = require("../../models/JSONStorage");
 var botStorage = new JSONStorage();
 
-var departments = ["customer analytics", "financial analytics", "industry analytics", "it operations analytics", "technology"];
+var departments = ["Customer Analytics", "Financial Analytics", "Industry Analytics", "IT Operations Analytics", "Technology"];
 
 
 lib.dialog('getServiceInformation', [
@@ -35,33 +35,21 @@ lib.dialog('getServiceInformation', [
 
        
        if(customerAnalyticsEntity){
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(customerAnalyticsEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: customerAnalyticsEntity} );
             next({ response: customerAnalyticsEntity});
 
         }else if (dataScienceEntity) {
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(dataScienceEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: dataScienceEntity} );
             next({ response: dataScienceEntity});
 
         }else if (financialAnalyticsEntity) {
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(financialAnalyticsEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: financialAnalyticsEntity} );
             next({ response: financialAnalyticsEntity});
 
         }else if (industryAnalyticsEntity) {
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(industryAnalyticsEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: industryAnalyticsEntity} );
             next({ response: industryAnalyticsEntity});
 
         }else if (itOperationsAnalyticsEntity) {
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(itOperationsAnalyticsEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: itOperationsAnalyticsEntity} );
             next({ response: itOperationsAnalyticsEntity});
 
         }else if (technologyEntity) {
-            //session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(technologyEntity.entity));
-            //session.replaceDialog("customer:getContactPerson", {serviceInformation: technologyEntity} );
             next({ response: technologyEntity});
         }else{
             session.send('Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics.')
@@ -80,7 +68,7 @@ lib.dialog('getServiceInformation', [
 
         session.sendTyping;
 
-        botStorage.getAnswerByEntityAndIntend("getServiceInformation", results.response.entity, function (err, dbResults) {
+        botStorage.getAnswerByIntentAndEntity("getServiceInformation", results.response.entity, function (err, dbResults) {
              if (err) {
                  console.log(err);
                  throw (err);

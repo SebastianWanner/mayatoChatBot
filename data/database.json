@@ -128,11 +128,12 @@
         "intent": "getCaseStudies",
         "title": "Erfolgsmessung im Kampagnenmanagement",
         "company": "",
-        "text": "",
+        "text": "Steigerung der Kampagnenrentabilität durch zielgruppenspezifische Kundenansprache",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/CaseStudy_Kampagnenerfolgsmessung_Handel1.pdf",
+        "date": "2016",
         "tag": [
             "Customer Analytics",
             "Reporting"
@@ -144,11 +145,12 @@
         "intent": "getCaseStudies",
         "title": "In-Database-Analytics mit Exasol: Big-Data-Potentiale im E-Commerce nutzen",
         "company": "",
-        "text": "",
+        "text": "Automatisierte Auswertung von Daten aus dem Webshop",
         "industry": "",
         "solution": "Customer Analytics",
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2017/05/2017_05_Case-Study_Technologie-Exasol_Talend_BigData.pdf",
+        "date": "2016",
         "tag": [
             "Customer Analytics"
         ]
@@ -175,11 +177,12 @@
         "intent": "getCaseStudies",
         "title": "Kundenmanagement im B2B Handel: Klassisches Reporting und Data Mining Verfahren als Basis für Loyalitätskonzepte",
         "company": "",
-        "text": "",
+        "text": "Ziel: Bestimmung trennscharfer Segmentierungskriterien zur Typisierung des Einkaufsverhaltens",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/casestudy_kundenmanagement_im_b2b-handel.pdf",
+        "date": "2016",
         "tag": [
             "Customer Analytics",
             ""
@@ -191,11 +194,12 @@
         "intent": "getCaseStudies",
         "title": "Kündigeranalyse für eine Direktbank - mit dem Blick für das richtige Timing",
         "company": "",
-        "text": "",
+        "text": "Ziel: Zuverlässige, frühzeitige und zeitpunktgenaue Erkennung abwanderungsgefährdeter Kunden",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2016/03/2016_04_Case-Study_Customer-Analytics-K%C3%BCndigeranalyse_Direktbank_DE.pdf",
+        "date": "2016",
         "tag": [
             "Customer Analytics",
             "Data Mining",
@@ -208,11 +212,12 @@
         "intent": "getCaseStudies",
         "title": "Media Analytics - Werbewirkungsanalysen im crossmedialen Umfeld für 9flats",
         "company": "9flats.com",
-        "text": "",
+        "text": "Ergebnis: Die Analyseergebnisse wurden als Planungsgrundlage für eine weitere TV-Werbekampagne mit einem Volumen von mehreren Millionen Euro genutzt.",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/9flats_success_story_final.pdf",
+        "date": "2017",
         "tag": [
             "Customer Analytics",
             "Media Analytics"
@@ -224,11 +229,12 @@
         "intent": "getCaseStudies",
         "title": "Anforderungsmanagement und Proof of Concept zur BI Werkzeugauswahl für das Sales Funnel Management und Customer Relationship Management",
         "company": "BMW Group",
-        "text": "",
+        "text": "Ergebnis: Dokumentierte, systematische und damit für Management und IT nachvollziehbare Werkzeugbewertung",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/CaseStudy_BMW_BI-Toolauswahl.pdf",
+        "date": "2017",
         "tag": [
             "Customer Analytics",
             "Business Intelligence"
@@ -241,11 +247,12 @@
         "intent": "getCaseStudies",
         "title": "Media Analytics - Werbeerfolgsmessung im Mobile-App-Markt für JustBook",
         "company": "just book!",
-        "text": "",
+        "text": "Ziel: Ermittlung von unmittelbaren Wirkungseffekten unter dem Aspekt Second Screen",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/justbook_success_story_final1.pdf",
+        "date": "2017",
         "tag": [
             "Customer Analytics",
             "Media Analytics"
@@ -258,11 +265,12 @@
         "intent": "getCaseStudies",
         "title": "Erfolg und Wirkung von TV-Werbung auf das Online-Business",
         "company": "twago",
-        "text": "",
+        "text": "Ergebnis: Ermittlung exakter Wirkungszusammenhänge zwischen TV-Werbung und direkten New Visits",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2015/03/twago_Success_story_final1.pdf",
+        "date": "2017",
         "tag": [
             "Customer Analytics",
             "Media Analytics"
@@ -274,11 +282,12 @@
         "intent": "getCaseStudies",
         "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
         "company": "twago",
-        "text": "",
+        "text": "Ergebnis: Erhöhte Kreditabschlusszahlen durch kundenindividuelles Produktangebot",
         "industry": "",
         "solution": "Customer Analytics", 
         "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
         "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
+        "date": "2017",
         "tag": [
             "Customer Analytics",
             "Predictive Analytics",
@@ -288,39 +297,9 @@
 
 
 
-    {
-        "id": "211",
-        "intent": "getCaseStudies",
-        "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
-        "company": "twago",
-        "text": "",
-        "industry": "",
-        "solution": "Customer Analytics", 
-        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
-        "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
-        "tag": [
-            "Customer Analytics",
-            "Predictive Analytics",
-            "Data Mining"
-        ]
-    },
+
     
-    {
-        "id": "211",
-        "intent": "getCaseStudies",
-        "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
-        "company": "twago",
-        "text": "",
-        "industry": "",
-        "solution": "Customer Analytics", 
-        "image": "https://www.prmitteilung.de/sites/default/files/field/image/mayato-logo-72dpi.jpg",
-        "url": "https://www.mayato.com/wp-content/uploads/2017/07/2017_07_Case-Study_Customer-Analytics-Konsumentenkreditmailings_DE.pdf",
-        "tag": [
-            "Customer Analytics",
-            "Predictive Analytics",
-            "Data Mining"
-        ]
-    },
+
 
     {
         "id": "301",

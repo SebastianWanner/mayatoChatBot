@@ -109,16 +109,19 @@ lib.dialog('getCaseStudies', [
                     throw (err);
                 }else{
                     if(dbResults.length === 0){
-                        session.send("Leider haben wir keine Case Studies gefunden")
+                        session.send("Leider haben wir keine Case Studies zu dem Thema gefunden")
                         session.replaceDialog('getCaseStudies')
                     }else{
                         console.log(dbResults);
 
+                        //https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
+                        //dbResults.sort(botUtils.sort_by('date', true, parseInt));
+
                         for(var item of dbResults){
                             var card =  new builder.HeroCard(session)
                                 .title(item.title)
-                                .subtitle("test")
-                                .text(item.company)
+                                .subtitle(item.company)
+                                .text(item.text)
                                 .images([
                                    builder.CardImage.create(session, item.image)
                                 ])
