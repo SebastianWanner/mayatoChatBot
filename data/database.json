@@ -2,14 +2,14 @@
     {
         "id": "1",
         "intent": "getServiceInformation",
-        "entity": "customer analytics",
+        "entity": "Customer Analytics",
         "title": "",
         "text": "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics"
     },
     {
         "id": "2",
         "intent": "getServiceInformation",
-        "entity": "data science",
+        "entity": "Data Science",
         "title": "",
         "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
         "tag": [
@@ -21,28 +21,28 @@
         {
         "id": "4",
         "intent": "getServiceInformation",
-        "entity": "industry analytics",
+        "entity": "Industry Analytics",
         "title": "",
         "text": "Mayato hilft Ihnen, Sensordaten, Wartungsberichten, Productions- und Reperaturhistorien zu analysieren und auszuwerten. Mayato besitzt langjährige Erfahrung im Aufbau von Big-Data-Architekturen un in der Analyse großer komplexer Datenmengen"
     },
     {
         "id": "5",
         "intent": "getServiceInformation",
-        "entity": "it operations analytics",
+        "entity": "IT Operations Analytics",
         "title": "",
         "text": "Operational Analytics lernt aus dem Verhalten und Ereignissen in Ihrer IT-Infrastruktur und kann so den Ausfall einzelner Komponenten ihrer IT-Infrastruktur vorhersagen"
     },
     {
         "id": "6",
         "intent": "getServiceInformation",
-        "entity": "financial analytics",
+        "entity": "Financial Analytics",
         "title": "",
         "text": "Wie lässt sich die Unternehmensentwicklung zielsicher planen? Ist beispielsweise eine Investition sinnvoll? In welchem Umfang können Kosten gespart werden. Unsere Lösungen für Performance Analytics sind eine einzigartige Kombination bewährter Analyse- und Planungswerkzeuge"
     },
     {
         "id": "7",
         "intent": "getServiceInformation",
-        "entity": "technology",
+        "entity": "Technology",
         "title": "",
         "text": "mayato hilft Ihnen und Ihrer IT, eine Gesamtstrategie und die richtige Organisation für Business Intelligence und Analytics zu entwerfen."
     },
@@ -50,7 +50,7 @@
     {
         "id": "3",
         "intent": "getServiceInformation",
-        "type": "text mining",
+        "type": "Text Mining",
         "title": "",
         "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
         "tag": [

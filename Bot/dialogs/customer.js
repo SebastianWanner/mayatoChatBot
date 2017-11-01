@@ -18,8 +18,9 @@ var azureClient = new DocumentDBClient(config.host, {
 //docDbClient.init();
 
 var JSONStorage = require("../../models/JSONStorage.js");
-
 var botStorage = new JSONStorage();
+
+var chatbotStrings = require('../../mayatoChatbot-strings.js');
 
 var departments = ["Customer Analytics", "Financial Analytics", "Industry Analytics", "IT Operations Analytics", "Technology"];
 
@@ -91,7 +92,7 @@ lib.dialog('getCaseStudies', [
         if(competence){
             next({ response: competence});
         }else{
-            builder.Prompts.choice(session, "Zu welchen Themen wollen Sie sich Case Studies anschauen?", departments, { listStyle: builder.ListStyle.button } ); 
+            builder.Prompts.choice(session, chatbotStrings.questionCaseStudies, departments, { listStyle: builder.ListStyle.button } ); 
         }
 
            

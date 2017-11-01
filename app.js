@@ -6,9 +6,6 @@ var config = require('./config');
 //var DocDbClient = require('./models/docDbClient');
 
 
-var JSONStorage = require("./models/JSONStorage");
-
-var botStorage = new JSONStorage()
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -104,7 +101,7 @@ docDbClient.init();*/
 // Sub-Dialogs
 //=========================================================
 
-//bot.library(require('./Bot/dialogs/basicDialogs').createLibrary());
+bot.library(require('./Bot/dialogs/basicDialogs').createLibrary());
 bot.library(require('./Bot/dialogs/company').createLibrary());
 bot.library(require('./Bot/dialogs/customer').createLibrary());
 bot.library(require('./Bot/dialogs/services').createLibrary());

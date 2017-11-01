@@ -18,45 +18,24 @@ docDbClient.init();
 var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
 var botStorage = new BotStorage(docDbClient);*/
 
-var JSONStorage = require("../../models/JSONStorage");
+var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
+
+var chatbotStrings = require('../../mayatoChatbot-strings.js');
 
 var departments = ["Customer Analytics", "Financial Analytics", "Industry Analytics", "IT Operations Analytics", "Technology"];
 
 
 lib.dialog('getServiceInformation', [
     function(session, args, next){
-        var customerAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Customer Analytics');
-        var dataScienceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Data Science');
-        var financialAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Financial Analytics');
-        var industryAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Industry Analytics');
-        var itOperationsAnalyticsEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'IT Operations Analytics');
-        var technologyEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Technology');
-
-       
-       if(customerAnalyticsEntity){
-            next({ response: customerAnalyticsEntity});
-
-        }else if (dataScienceEntity) {
-            next({ response: dataScienceEntity});
-
-        }else if (financialAnalyticsEntity) {
-            next({ response: financialAnalyticsEntity});
-
-        }else if (industryAnalyticsEntity) {
-            next({ response: industryAnalyticsEntity});
-
-        }else if (itOperationsAnalyticsEntity) {
-            next({ response: itOperationsAnalyticsEntity});
-
-        }else if (technologyEntity) {
-            next({ response: technologyEntity});
-        }else{
-            session.send('Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics.')
-            builder.Prompts.choice(session, "Wähle einen Bereich aus, um mehr Informationen zu erhalten", "Customer Analytics|Industry Analytics|IT Operations Analytics|Financial Analytics|Technology", {listStyle: builder.ListStyle.button}, {maxRetries: 2}); 
-        }
-
+        var competence = builder.EntityRecognizer.findEntity(args.intent.entities, 'competence');
         
+        if(competence){
+            next({ response: competence});
+        }else{
+            session.send(chatbotStrings.serviceInformation)
+            builder.Prompts.choice(session, chatbotStrings.serviceSelection, departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2}); 
+        }   
     },
 
     function (session, results, next) {
@@ -64,42 +43,29 @@ lib.dialog('getServiceInformation', [
             return;
         }
 
-        console.log(results.response);
+        competence = results.response.entity;
+        competence = botUtils.toProperCase(competence)
 
         session.sendTyping;
 
-        botStorage.getAnswerByIntentAndEntity("getServiceInformation", results.response.entity, function (err, dbResults) {
+        botStorage.getAnswerByIntentAndEntity("getServiceInformation", competence, function (err, dbResults) {
              if (err) {
                  console.log(err);
                  throw (err);
              }else{
                  if(dbResults.length === 0){
                      console.log(dbResults.length);
-                     next({response: results.response})
+                     session.send(chatbotStrings.dbResultZero);
 
                  }else{
                     console.log(dbResults);
                     session.send(dbResults[0].text);
-                    session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
+                    //session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
                  }
              }
          });
-    },
-
-
-     function (session, results) {
-        if(!results.response){
-            return;
-        }
-
-        session.sendTyping;
-
-        session.send("Die Mayato GmbH bietet Ihnen Beratungsleistungen im Bereich %s an.", botUtils.toProperCase(results.response.entity));
-        session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
-
-
- 
     }
+
 ]).triggerAction({
     matches:'getServiceInformation'
 });
