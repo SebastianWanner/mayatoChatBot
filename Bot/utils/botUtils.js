@@ -23,8 +23,13 @@ function sort_by (field, reverse, primer){
          } 
     };
 
+function sort_by_Date(a, b){
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+        };
+
 module.exports = {
     toProperCase: toProperCase,
-    sort_by: sort_by
+    sort_by: sort_by,
+    sort_by_Date: sort_by_Date
 };
 

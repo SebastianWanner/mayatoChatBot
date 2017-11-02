@@ -1,4 +1,17 @@
 [
+
+    {
+        "id": "0",
+        "intent": "getTip",
+        "text": "Hier ein Tipp wie Sie mich benutzen können.",
+        "tag": [
+            "Suche doch nach Beratungsleistungen von mayato.",
+            "Suche doch nach News oder Veröffentlichungen von mayato.",
+            "Finden sie etwas über das Unternehmen mayato heraus.",
+            "Suche doch nach Case Studies um einen Einblick von unseren Projekten zu bekommen."
+        ]
+    },
+
     {
         "id": "1",
         "intent": "getServiceInformation",
@@ -59,13 +72,12 @@
         ]
     },
 
-
-
-
     {
         "id": "101",
         "intent": "getContactPerson",
         "name": "Peter Neckel",
+        "job": "Manager",
+        "text":"",
         "phone": "+49/30 4174 4270 10",
         "email": "peter.neckel@mayato.com",
         "image": "https://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_PN-300x200.jpg",
@@ -79,6 +91,8 @@
         "id": "102",
         "intent": "getContactPerson",
         "name": "Georg Heeren",
+        "job": "Managing Director",
+        "text":"Seit 2007 geschäftsführender Gesellschafter der mayato GmbH, Coach (SG) and Organisationsberater. Langjährige erfolgreiche Tätigkeit in einer Vielzahl von BI-Beratungsprojekten, Internationale Projektleitung als PMP in Europa, Asien, Nord- und Südamerika.",
         "phone": "+49/30 4174 4270 10",
         "email": "georg.heeren@mayato.com",
         "image": "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_GH.jpg",
@@ -94,19 +108,24 @@
     {
         "id": "103",
         "intent": "getContactPerson",
-        "name": "Eric Ecker",
+        "name": "Sven Hensen",
+        "job": "Managing Director",
+        "text":"Seit 2007 geschäftsführender Gesellschafter der mayato GmbH. Über 20 Jahre Erfahrung in der Konzeption und Umsetzung von Strategien und Architekturen für BI & Analytics im internationel Umfeld.",
         "phone": "+49/30 4174 4270 10",
-        "email": "eric.ecker@mayato.com",
-        "image": "https://www.mayato.com/wp-content/uploads/2016/06/Eric-Ecker-v1-300x200.jpg",
+        "email": "sven.hensen@mayato.com",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_SH.jpg",
         "tag": [
             "IT Operations Analytics",
             "Industry Analytics"
         ]
     },
+
     {
         "id": "104",
         "intent": "getContactPerson",
         "name": "Dr. Marcus Dill",
+        "job": "Managing Director",
+        "text":"Seit 2007 geschäftsführender Gesellschafter der mayato GmbH. Mehr als zwei Jahrzehnte Erfahrung als Softwareentwickler, Berater, Architekt und Projektleiter. Experte für BI, Analytics, Technologie und Big Data.",
         "phone": "+49/30 4174 4270 10",
         "email": "marcus.dill@mayato.com",
         "image": "https://www.mayato.com/wp-content/uploads/2016/07/CEO-Dr.-Marcus-Dill_300dpi.jpg",
@@ -452,8 +471,158 @@
         "sector": "Versicherungen",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/ERGO_Kindlustusgrupi_logo.svg/250px-ERGO_Kindlustusgrupi_logo.svg.png",
         "date": ""
+    },
+
+    {
+        "id": "401",
+        "intent": "getSoftwareSystems",
+        "name": "Tableau",
+        "description": "",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/04/Tableau-300x62.png",
+        "date": ""
+    },
+
+    {
+        "id": "402",
+        "intent": "getSoftwareSystems",
+        "name": "Exasol",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/Exasol.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "403",
+        "intent": "getSoftwareSystems",
+        "name": "Graphomate",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/graphomate_logo_2014.png",
+        "date": ""
+    },
+
+    {
+        "id": "404",
+        "intent": "getSoftwareSystems",
+        "name": "IBM",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/ibm.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "405",
+        "intent": "getSoftwareSystems",
+        "name": "Informatica",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/Informatica.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "406",
+        "intent": "getSoftwareSystems",
+        "name": "kxen",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/KXEN.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "407",
+        "intent": "getSoftwareSystems",
+        "name": "Rapidminer",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/rapidminer_partner_logo_systems-integrator.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "408",
+        "intent": "getSoftwareSystems",
+        "name": "SAP",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/SAP.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "409",
+        "intent": "getSoftwareSystems",
+        "name": "SAS",
+        "description": "",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/11/mayato-SAS-Gold-Partner-Logo-300x84.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "410",
+        "intent": "getSoftwareSystems",
+        "name": "Yellowfin",
+        "description": "",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/05/YF_LOGO_RGB-300x81.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "411",
+        "intent": "getSoftwareSystems",
+        "name": "Talend",
+        "description": "",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/06/talend-300x107.jpg",
+        "date": ""
+    },
+
+    
+    {
+        "id": "412",
+        "intent": "getSoftwareSystems",
+        "name": "StatSoft",
+        "description": "",
+        "image": "http://www.mayato.com/wp-content/uploads/2015/04/StatSoft.jpg",
+        "date": ""
+    },
+
+    {
+        "id": "413",
+        "intent": "getSoftwareSystems",
+        "name": "Theobald",
+        "description": "",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/06/theobald_logo-2-300x153.png",
+        "date": ""
+    },
+
+
+    {
+        "id": "501",
+        "intent": "getNews",
+        "title": "Chatbots - Das Geheimnis ihres Erfolgs",
+        "text": "Als Markenbotschafter, Kundenbetreuer und persönliche Assistenten erobern Chatbots die digitale Welt. 1966 entwickelte Joseph Weizenbaum ...",
+        "image": "https://www.mayato.com/wp-content/uploads/2017/10/mayato-chatbots-entwicklung.jpg",
+        "url": "https://www.cio.de/a/chatbots-was-unternehmen-wissen-muessen,3563697",
+        "date": "2017/10/19"
+    },
+
+    {
+        "id": "502",
+        "intent": "getNews",
+        "title": "mayato baut SAP-Beratung strategisch aus: Eric Niedling wird neuer Bereichsleiter",
+        "text": "Eric Niedling übernimmt ab sofort die Führung des SAP-Bereichs bei mayato. Gemeinsam mit dem Business Solution Temas wird der international erfahrene Manager ...",
+        "image": "https://www.mayato.com/wp-content/uploads/2017/10/eric-niedling-mayato-150x150.jpg",
+        "url": "https://www.mayato.com/wp-content/uploads/2017/10/2017_10_Eric-Niedling-SAP-Bereichsleiter-mayato.pdf",
+        "date": "2017/10/05"
+    },
+
+    {
+        "id": "503",
+        "intent": "getNews",
+        "title": "Wie ergänzen sich BW/4Hanna and SAP HANA",
+        "text": "Seit der Einführung ihres ersten Business Warehouse Systems BIW 1.2A vor 20 Jahren, entwickelte SAP ...",
+        "image": "https://www.mayato.com/wp-content/uploads/2017/10/BW4HANA-Native-mixed-scenario-c-mayato-768x432.jpg",
+        "url": "https://www.it-daily.net/it-management/erp-sap/16992-wie-ergaenzen-sich-bw-4hana-und-sap-hana",
+        "date": "2017/10/23"
     }
 
 
-    
+
+
 ]

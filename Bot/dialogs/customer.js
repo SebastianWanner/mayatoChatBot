@@ -115,8 +115,6 @@ lib.dialog('getCaseStudies', [
                     }else{
                         console.log(dbResults);
 
-                        //https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
-                        //dbResults.sort(botUtils.sort_by('date', true, parseInt));
 
                         for(var item of dbResults){
                             var card =  new builder.HeroCard(session)

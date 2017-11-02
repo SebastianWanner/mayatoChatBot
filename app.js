@@ -1,6 +1,8 @@
 var builder = require('botbuilder');
 var restify = require('restify');
 
+var chatbotStrings = require('./mayatoChatbot-strings.js');
+
 'use strict';
 const winston = require('winston');
 const fs = require('fs');
@@ -46,7 +48,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
  // Set default locale
 bot.set('localizerSettings', {
     botLocalePath: './locale',
-    defaultLocale: 'en'
+    defaultLocale: 'de'
 })
  
 // Add global LUIS recognizer to bot 
@@ -60,7 +62,7 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id === message.address.bot.id) {
                 var reply = new builder.Message()
                     .address(message.address)
-                    .text("Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein? Sie können sich gerne über unsere Beratungsleistungen informieren oder zum Beispiel Case Studies ansehen.");
+                    .text(chatbotStrings.greeting);
                 bot.send(reply);
             }
         });
@@ -85,10 +87,6 @@ const customLevels = {
 const logger = new (winston.Logger)({
     exitOnError: false,
     levels: customLevels.levels,
-    format: format.combine(
-        format.splat(),
-        format.simple()
-      ),
     transports:[
         new (winston.transports.Console)({
             timestamp:tsFormat,
@@ -114,7 +112,7 @@ const logger = new (winston.Logger)({
     ],
     exceptionHandlers:[
         new winston.transports.File({
-            filename: `${logDir}/-exceptions.log`,
+            filename: `${logDir}/exceptions.log`,
             timestamp: tsFormat,
             datePattern: 'yyyy-MM-dd',
             prepend: true,

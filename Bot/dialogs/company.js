@@ -1,6 +1,11 @@
 
 var builder = require('botbuilder');
 
+var JSONStorage = require("../../models/JSONStorage.js");
+var botStorage = new JSONStorage();
+
+var chatbotStrings = require('../../mayatoChatbot-strings.js');
+
 var lib = new builder.Library('company');
 
 //=========================================================
@@ -10,7 +15,7 @@ var lib = new builder.Library('company');
 lib.dialog('mayato', 
     function(session, args){
 
-        session.send("Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien");
+        session.send(chatbotStrings.mayatoInfo);
 
     }
 ).triggerAction({
@@ -60,11 +65,65 @@ lib.dialog('getManagementInformation', function(session, args){
 //=========================================================
 
 lib.dialog('getFoundationDate', function(session, args){
-    session.send('Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt')
-
-
+    session.send(chatbotStrings.foundation)
 }).triggerAction({
     matches:'getFoundationDate'
+});
+
+//=========================================================
+// Get News and Publications
+//=========================================================
+
+lib.dialog('getNews', [
+
+    function(session, args){
+        
+        session.sendTyping;
+
+        var cards = [];
+        
+        botStorage.getAnswerByIntent("getNews",  function (err, dbResults) {
+            if (err) {
+                console.log(err);
+                throw (err);
+            }else{
+                if(dbResults.length === 0){
+                    session.send("Leider wurden keine News gefunden")
+
+                }else{
+
+                    for(var item of dbResults){
+                        var card =  new builder.HeroCard(session)
+                            .title(item.title)
+                            .subtitle(item.text)
+                            .text(item.date)
+                            .images([
+                               builder.CardImage.create(session, item.image)
+                            ])
+                            .buttons([
+                                builder.CardAction.openUrl(session, item.url, "Bitte hier klicken für mehr Informationen")
+                        ]);
+
+                        cards.push(card)
+                    }
+                }
+            }
+        });
+
+        if(cards){
+
+            session.send('Hier eine Auswahl von News und Veröffentlichungen bei mayato');
+
+            var message = new builder.Message(session)
+                .attachmentLayout(builder.AttachmentLayout.carousel)
+                .attachments(cards);
+
+            session.send(message);
+        }
+    }
+
+]).triggerAction({
+    matches:'getNews'
 });
 
 

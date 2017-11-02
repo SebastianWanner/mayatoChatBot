@@ -13,14 +13,24 @@
         var self = this;
 
         var results = [];
+        var hasDate = false;
+          
 
         for(var item of database){
                 if(item.intent == intent){    
-                    results.push(item)    
+                    results.push(item)  
+                    
+                    if(item.date){
+                        hasDate = true;
+                    }
                 }
 
             }
 
+        if(hasDate){
+            results.sort(botUtils.sort_by_Date);
+        }
+        
         callback(null, results)
         
      }

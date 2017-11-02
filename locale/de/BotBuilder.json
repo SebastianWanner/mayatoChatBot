@@ -1,5 +1,5 @@
 {
-    "default_text": "I didn't understand. Please try again.",
+    "default_text": "Leider habe ich Sie nicht verstanden. Bitte versuchen Sie es erneut.",
 
     "default_number": "I didn't recognize that as a number. Please enter a number.",
     "default_confirm": "I didn't understand. Please answer 'yes' or 'no'.",
