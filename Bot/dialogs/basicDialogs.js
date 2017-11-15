@@ -3,13 +3,87 @@ var builder = require('botbuilder');
 
 var lib = new builder.Library('basicDialogs');
 
+var JSONStorage = require("../../models/JSONStorage.js");
+var botStorage = new JSONStorage();
+
+var counter = 0;
+
+//=========================================================
+// None
+//=========================================================
+
+lib.dialog('None', 
+function(session, args){ 
+    if (counter == 2){   
+        session.send("Leider hab ich Sie nicht verstanden. Ich glaube, ich muss mal mit meinem Entwickler reden");
+        session.send("Schreiben Sie \"Tipp\" wenn sie nicht mehr weiter wissen.");
+        session.replaceDialog("Tip");
+        counter = 0;
+    }
+}
+).triggerAction({
+    matches:'None'
+});
+
+//=========================================================
+// Get a Tip
+//=========================================================
+
+lib.dialog('Tip', 
+function(session, args){ 
+
+    botStorage.getAnswerByIntent("getTip", function (err, dbResults) {
+        if (err) {
+            console.log(err);
+            throw (err);
+        }else{
+            if(dbResults.length === 0){
+                console.log(dbResults.length);
+                session.send(chatbotStrings.dbResultZero);
+
+            }else{
+               console.log(dbResults);
+               session.send(dbResults[0].text);
+               session.endDialog();
+            
+            }
+        }
+    });
+}
+).triggerAction({
+    matches:'Tip'
+});
+
+
+
+//=========================================================
+// GetHelp
+//=========================================================
+
+lib.dialog('getHelp', 
+function(session, args){    
+    session.send("Kommst du nicht weiter? Suche noch mal nach Case Studies");
+    session.replaceDialog("Tip");
+
+}
+).triggerAction({
+matches:'getHelp'
+});
+
+
 //=========================================================
 // Greeting
 //=========================================================
 
 lib.dialog('greeting', function(session, args){
 
-    session.send('Schönen Guten Tag! Was beschäftigt Sie?');
+    //session.send('Schönen Guten Tag! Was beschäftigt Sie?');
+    console.log(session.localizer.gettext(session.preferredLocale(), "greeting"));
+    console.log(session.localizer);
+    session.sendTyping();
+    session.send("greeting");
+    session.endDialog();
+    
 }).triggerAction({
     matches:'greeting'
 });
@@ -28,6 +102,7 @@ lib.dialog('feeling', [
 
     function(session, results){
         session.send('Was kann ich für Sie tun?')
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -41,6 +116,7 @@ lib.dialog('feeling', [
 lib.dialog('HumanOrMachine', 
     function(session, args){    
         session.send("Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!")
+        session.endDialog();
 
     }
 ).triggerAction({
@@ -54,6 +130,7 @@ lib.dialog('HumanOrMachine',
 lib.dialog('name', 
     function(session, args){    
         session.send("Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden")
+        session.endDialog();
 
     }
 ).triggerAction({
@@ -73,6 +150,7 @@ lib.dialog('age',
 
     
         session.send("Ehrlich gesagt bin ich genau %s Tage alt.", Math.ceil(timeDiff/(1000*60*60*24)));
+        session.endDialog();
 
     }
 ).triggerAction({

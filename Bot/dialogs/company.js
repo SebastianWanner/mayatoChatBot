@@ -55,6 +55,7 @@ lib.dialog('getManagementInformation', function(session, args){
         ]);
 
     session.send(message);
+    session.endDialog();
 
 }).triggerAction({
     matches:'getManagementInformation'
@@ -66,6 +67,7 @@ lib.dialog('getManagementInformation', function(session, args){
 
 lib.dialog('getFoundationDate', function(session, args){
     session.send(chatbotStrings.foundation)
+    session.endDialog();
 }).triggerAction({
     matches:'getFoundationDate'
 });
@@ -119,6 +121,7 @@ lib.dialog('getNews', [
                 .attachments(cards);
 
             session.send(message);
+            session.endDialog();
         }
     }
 

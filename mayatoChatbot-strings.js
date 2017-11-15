@@ -6,5 +6,6 @@ module.exports = {
     dbResultZero: "Leider wurden keine Informationen gefunden",
     questionCaseStudies: "Zu welchen Themen wollen Sie sich Case Studies anschauen?",
     mayatoInfo: "Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien",
-    foundation: "Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt"
+    foundation: "Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt",
+    error: "Leider lief irgendetwas schief. Ich glaube ich muss mal mit meinem Entwickler sprechen."
 }

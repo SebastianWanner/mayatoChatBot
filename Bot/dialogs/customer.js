@@ -73,6 +73,7 @@ lib.dialog('getCustomer', [
         }
 
         session.send('Tipp: Sie können auch nach Case-Studies suchen');
+        session.endDialog();
 
     }
 
@@ -143,6 +144,7 @@ lib.dialog('getCaseStudies', [
                     .attachments(cards);
 
                 session.send(message);
+                session.endDialog();
             }
         }
     }
@@ -190,7 +192,8 @@ lib.dialog('getContactPerson', [
                            builder.CardImage.create(session, dbResult[0].image)
                         ])
                         var message = new builder.Message(session).addAttachment(contactCard);
-                        session.endDialog(message);
+                        session.send(message);
+                        session.endDialog();
                         
                     }
                 }
