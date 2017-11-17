@@ -30,7 +30,7 @@ lib.dialog('getManagementInformation', function(session, args){
     
     var cards = [];
     
-    botStorage.getAnswerByIntent("getContactPerson", "job", "Managing Director",  function (err, dbResults) {
+    botStorage.getAnswerByIntentAndEntityName("getContactPerson", "job", "Managing Director",  function (err, dbResults) {
         if (err) {
             console.log(err);
             throw (err);

@@ -89,3 +89,24 @@
 {"level":"incoming","message":"bye","timestamp":"13:02:20"}
 {"level":"outgoing","message":"Leider habe ich keine Antwort gefunden","timestamp":"13:02:21"}
 {"level":"outgoing","message":"Suche doch nach \"Beratungsleistungen von mayato\".","timestamp":"13:02:21"}
+{"level":"incoming","message":"was macht mayato?","timestamp":"13:51:10"}
+{"level":"outgoing","message":"Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien","timestamp":"13:51:11"}
+{"level":"incoming","message":"wer ist der boss bei mayato","timestamp":"13:57:14"}
+{"level":"outgoing","message":"Leider ist irgendetwas schief gelaufen. Ich glaube, ich muss mal mit meinem Entwickler reden","timestamp":"13:57:33"}
+{"level":"outgoing","message":"","timestamp":"13:57:33"}
+{"level":"incoming","message":"wer ist der boss bei mayato","timestamp":"14:02:06"}
+{"level":"outgoing","message":"Leider ist irgendetwas schief gelaufen. Ich glaube, ich muss mal mit meinem Entwickler reden","timestamp":"14:02:36"}
+{"level":"outgoing","message":"","timestamp":"14:02:36"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"14:03:00"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"14:03:00"}
+{"level":"incoming","message":"wer ist der boss bei mayato","timestamp":"14:03:10"}
+{"level":"outgoing","message":"Keine Informationen zum Management gefunden","timestamp":"14:03:46"}
+{"level":"outgoing","message":"Die geschäftsführende Gesellschafter der mayato GmbH sind","timestamp":"14:03:46"}
+{"level":"outgoing","message":"","timestamp":"14:03:46"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:16:42"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:16:43"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:16:45"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:16:45"}
+{"level":"incoming","message":"wer ist der boss bei mayato","timestamp":"16:16:57"}
+{"level":"outgoing","message":"Die geschäftsführende Gesellschafter der mayato GmbH sind","timestamp":"16:25:05"}
+{"level":"outgoing","message":"","timestamp":"16:25:05"}

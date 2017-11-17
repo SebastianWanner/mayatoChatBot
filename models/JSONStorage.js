@@ -56,16 +56,13 @@ JSONStorage.prototype.getAnswerByIntentAndEntityName =  function (intent, entity
        var results = [];
 
        for(var item of database){
-/*             while(keys.hasNext()){
-                String currentKey = (String)keys.next();
-
-                
-            } */
-               if(item.intent == intent && item.entityName == entityValue){    
-                   results.push(item)    
-               }
-
-           }
+         
+            for(var key in item){
+                if( key == entityName && item[key] == entityValue){
+                    results.push(item)
+                }
+            }    
+        }
 
        callback(null, results)
     }
