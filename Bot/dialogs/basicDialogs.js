@@ -14,12 +14,14 @@ var counter = 0;
 
 lib.dialog('None', 
 function(session, args){ 
-    if (counter == 2){   
-        session.send("Leider hab ich Sie nicht verstanden. Ich glaube, ich muss mal mit meinem Entwickler reden");
-        session.send("Schreiben Sie \"Tipp\" wenn sie nicht mehr weiter wissen.");
-        session.replaceDialog("Tip");
+    if (counter == 1){   
+        session.send(session.localizer.gettext(session.preferredLocale(), "error"));
+        //session.send(session.localizer.gettext(session.preferredLocale(), "tip"));
+        session.replaceDialog("tip");
         counter = 0;
     }
+
+    counter += 1;
 }
 ).triggerAction({
     matches:'None'
@@ -29,7 +31,7 @@ function(session, args){
 // Get a Tip
 //=========================================================
 
-lib.dialog('Tip', 
+lib.dialog('tip', 
 function(session, args){ 
 
     botStorage.getAnswerByIntent("getTip", function (err, dbResults) {
@@ -39,19 +41,23 @@ function(session, args){
         }else{
             if(dbResults.length === 0){
                 console.log(dbResults.length);
-                session.send(chatbotStrings.dbResultZero);
+                session.send(session.localizer.gettext(session.preferredLocale(), "tipNoResult"));
+                session.endDialog();
 
             }else{
                console.log(dbResults);
-               session.send(dbResults[0].text);
-               session.endDialog();
-            
+               //session.send(session.localizer.gettext(session.preferredLocale(), "help"));
+
+               for(var item of dbResults){
+                    var number = Math.floor(Math.random()*(4-0)+0);
+                    session.send(item.tags[number]);
+            }
             }
         }
     });
 }
 ).triggerAction({
-    matches:'Tip'
+    matches:'tip'
 });
 
 
@@ -62,8 +68,8 @@ function(session, args){
 
 lib.dialog('getHelp', 
 function(session, args){    
-    session.send("Kommst du nicht weiter? Suche noch mal nach Case Studies");
-    session.replaceDialog("Tip");
+    session.send(session.localizer.gettext(session.preferredLocale(), "help"));
+    session.replaceDialog("tip");
 
 }
 ).triggerAction({
@@ -77,11 +83,9 @@ matches:'getHelp'
 
 lib.dialog('greeting', function(session, args){
 
-    //session.send('Schönen Guten Tag! Was beschäftigt Sie?');
-    console.log(session.localizer.gettext(session.preferredLocale(), "greeting"));
-    console.log(session.localizer);
+
     session.sendTyping();
-    session.send("greeting");
+    session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
     session.endDialog();
     
 }).triggerAction({
@@ -93,15 +97,10 @@ lib.dialog('greeting', function(session, args){
 //=========================================================
 
 lib.dialog('feeling', [
-    function(session, args){
-        var feeling = ['Mir geht`s super und selber?', 'ein bisschen müde und selber?', 'danke gut und selber?'];
-        
+    function(session, args){       
         session.sendTyping();
-        builder.Prompts.text(session, feeling[Math.floor(Math.random()*(3-0)+0)]);
-    },
-
-    function(session, results){
-        session.send('Was kann ich für Sie tun?')
+        session.send(session.localizer.gettext(session.preferredLocale(), "feeling_") + Math.floor(Math.random() * (3 - 1 + 1)) + 1);
+        //session.send(session.localizer.gettext(session.preferredLocale(), "help_2"))
         session.endDialog();
     }
 
@@ -115,7 +114,7 @@ lib.dialog('feeling', [
 
 lib.dialog('HumanOrMachine', 
     function(session, args){    
-        session.send("Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!")
+        session.send(session.localizer.gettext(session.preferredLocale(), "humanOrMachine"))
         session.endDialog();
 
     }
@@ -129,7 +128,7 @@ lib.dialog('HumanOrMachine',
 
 lib.dialog('name', 
     function(session, args){    
-        session.send("Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden")
+        session.send(session.localizer.gettext(session.preferredLocale(), "name"))
         session.endDialog();
 
     }
@@ -149,7 +148,7 @@ lib.dialog('age',
         var timeDiff = Math.abs(today.getTime() - birthday.getTime());
 
     
-        session.send("Ehrlich gesagt bin ich genau %s Tage alt.", Math.ceil(timeDiff/(1000*60*60*24)));
+        session.send(session.localizer.gettext(session.preferredLocale(), "age"), Math.ceil(timeDiff/(1000*60*60*24)));
         session.endDialog();
 
     }
@@ -163,7 +162,7 @@ lib.dialog('age',
 //=========================================================
 
 lib.dialog('goodbye', function(session, args){
-    session.endDialog('Auf Wiedersehen. Ich wünsche Ihnen einen schönen Tag')
+    session.endDialog(session.localizer.gettext(session.preferredLocale(), "goodbye"))
 
 
 }).triggerAction({

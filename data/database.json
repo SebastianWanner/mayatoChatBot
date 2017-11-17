@@ -3,12 +3,12 @@
     {
         "id": "0",
         "intent": "getTip",
-        "text": "Hier ein Tipp wie Sie mich benutzen können.",
-        "tag": [
-            "Suche doch nach Beratungsleistungen von mayato.",
-            "Suche doch nach News oder Veröffentlichungen von mayato.",
-            "Finden sie etwas über das Unternehmen mayato heraus.",
-            "Suche doch nach Case Studies um einen Einblick von unseren Projekten zu bekommen."
+        "text": "Hier ein Tipp wie du mich benutzen kannst.",
+        "tags": [
+            "Suche doch nach \"Beratungsleistungen von mayato\".",
+            "Suche doch nach \"News oder Veröffentlichungen von mayato\".",
+            "Informiere dich über das Management",
+            "Suche doch nach \"Case Studies\", um einen Einblick von unseren Projekten zu bekommen."
         ]
     },
 

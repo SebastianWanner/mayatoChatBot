@@ -29,17 +29,12 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 });
 
 //create Chatbot
-var bot = new builder.UniversalBot(connector,
-    function(session){
-        session.preferredLocale('de', function(err){
-            if (!err) {
-                console.log("Locale: de");
-            } else {
-                console.log(err);
-            }
-        });
-
-    });
+var bot = new builder.UniversalBot(connector, {
+    localizerSettings: {
+        botLocalePath: path.join(__dirname, './locale'),
+        defaultLocale: 'de'
+    }
+});
 
 // Set default locale
 bot.set('localizerSettings', {
@@ -58,9 +53,13 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id === message.address.bot.id) {
                 var reply = new builder.Message()
                     .address(message.address)
-                    .text("Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein? Sie können sich gerne über unsere Beratungsleistungen informieren oder zum Beispiel Case Studies ansehen.");
+                    .text("Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.");           
+                    bot.send(reply);
+                
+                var reply = new builder.Message()
+                .address(message.address)
+                .text("Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ");
                 bot.send(reply);
-                //console.log(bot.preferredLocale());
             }
         });
     }

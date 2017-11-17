@@ -5,24 +5,9 @@ var botUtils = require("../utils/botUtils");
 var lib = new builder.Library('customer');
 var config = require('../../config');
 
-/*
-var BotStorage = require("../../models/botStorage");
-var DocDbClient = require("../../models/docDbClient");
-var DocumentDBClient = require('documentdb').DocumentClient;
-var azureClient = new DocumentDBClient(config.host, {
-    masterKey: config.masterKey
-});*/
-
-//var docDbClient = new DocDbClient(azureClient, config.databaseId, config.collectionId);
-//var botStorage = new BotStorage(docDbClient);
-//docDbClient.init();
-
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
-var chatbotStrings = require('../../mayatoChatbot-strings.js');
-
-var departments = ["Customer Analytics", "Financial Analytics", "Industry Analytics", "IT Operations Analytics", "Technology"];
 
 //=========================================================
 // Get Customer
@@ -41,7 +26,7 @@ lib.dialog('getCustomer', [
                 throw (err);
             }else{
                 if(dbResults.length === 0){
-                    session.send(chatbotStrings.dbResultZero);
+                    session.send(session.localizer.gettext(session.preferredLocale(), "getCustomerNoResult"));
                 }else{
                     console.log(dbResults);
 
@@ -61,9 +46,7 @@ lib.dialog('getCustomer', [
 
         if(cards){
 
-            session.send('Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche');
-            session.send('Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben.');
-
+            session.send(session.localizer.gettext(session.preferredLocale(), "getCustomer"));
 
             var message = new builder.Message(session)
                 .attachmentLayout(builder.AttachmentLayout.carousel)
@@ -72,7 +55,7 @@ lib.dialog('getCustomer', [
             session.send(message);
         }
 
-        session.send('Tipp: Sie können auch nach Case-Studies suchen');
+        session.send(session.localizer.gettext(session.preferredLocale(), "tipCaseStudies"));
         session.endDialog();
 
     }
@@ -93,7 +76,7 @@ lib.dialog('getCaseStudies', [
         if(competence){
             next({ response: competence});
         }else{
-            builder.Prompts.choice(session, chatbotStrings.questionCaseStudies, departments, { listStyle: builder.ListStyle.button } ); 
+            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "questionCaseStudies"), session.localizer.gettext(session.preferredLocale(), "departments"), { listStyle: builder.ListStyle.button } ); 
         }
 
            
@@ -111,7 +94,7 @@ lib.dialog('getCaseStudies', [
                     throw (err);
                 }else{
                     if(dbResults.length === 0){
-                        session.send("Leider haben wir keine Case Studies zu dem Thema gefunden")
+                        session.send(session.localizer.gettext(session.preferredLocale(), "questionCaseStudies"));
                         session.replaceDialog('getCaseStudies')
                     }else{
                         console.log(dbResults);
@@ -126,7 +109,7 @@ lib.dialog('getCaseStudies', [
                                    builder.CardImage.create(session, item.image)
                                 ])
                                 .buttons([
-                                    builder.CardAction.openUrl(session, item.url, "Bitte hier klicken")
+                                    builder.CardAction.openUrl(session, item.url, session.localizer.gettext(session.preferredLocale(), "click_here"))
                             ]);
 
                             cards.push(card)
@@ -137,7 +120,7 @@ lib.dialog('getCaseStudies', [
 
             if(cards){
 
-                session.send('Hier eine Auswahl von Case Studies im Bereich ' + botUtils.toProperCase(competence))
+                session.send(session.localizer.gettext(session.preferredLocale(), "caseStudiesSelection"), botUtils.toProperCase(competence))
 
                 var message = new builder.Message(session)
                     .attachmentLayout(builder.AttachmentLayout.carousel)
@@ -164,7 +147,7 @@ lib.dialog('getContactPerson', [
         if(competence){
             next({ response: competence});
         }else{
-                builder.Prompts.choice(session, "Wählen Sie einen Bereich aus.", departments, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
+                builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "selection") , session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}, {maxRetries: 2});
             }
     },
 
@@ -180,17 +163,18 @@ lib.dialog('getContactPerson', [
                     throw (err);
                 }else{
                     if(dbResults.length === 0){
-                        session.send("Leider wurde kein Ansprechpartner gefunden")
+                        session.send(session.localizer.gettext(session.preferredLocale(), "getContactPersonNoResult"));
 
                     }else{
-                        session.send("Ihr Ansprechpartner im Bereich %s ist:", botUtils.toProperCase(competence));
+                        session.send(session.localizer.gettext(session.preferredLocale(), "getContactPerson") , botUtils.toProperCase(competence));
 
                         var contactCard = new builder.HeroCard(session);
                         contactCard.title(dbResults[0].name);
-                        contactCard.text("Tel.: %s \n E-Mail: %s", dbResults[0].phone, dbResults[0].email);
+                        contactCard.text(session.localizer.gettext(session.preferredLocale(), "contact"), dbResults[0].phone, dbResults[0].email);
                         contactCard.images([
                            builder.CardImage.create(session, dbResult[0].image)
-                        ])
+                        ]);
+
                         var message = new builder.Message(session).addAttachment(contactCard);
                         session.send(message);
                         session.endDialog();

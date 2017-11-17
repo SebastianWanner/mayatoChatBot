@@ -1,0 +1,16 @@
+{
+    "greeting": "Hallo, wie kann ich helfen?",
+    "error": "Leider habe ich keine Antwort gefunden",
+    "tip": "Schreiben Sie einfach \"Tipp\" wenn sie nicht mehr weiter wissen oder wenn sie Anregungen benötigen.",
+    "help": "Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:",
+    "help_2": "Wie kann ich weiterhelfen",
+    "feeling_1": "Mir geht`s super und selber?",
+    "feeling_2": "ein bisschen müde und selber?",
+    "feeling_3": "ein bisschen müde und selber?",
+    "humanOrMachine": "Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!",
+    "name": "Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden",
+    "age": "Ehrlich gesagt bin ich genau %s Tage alt.",
+    "goodbye": "Bis zum nächsten Mal",
+    "tipNoResult": "Leider ist ein Fehler aufgetreten. Ich muss mal mit meinem Entwickler sprechen."
+
+}   

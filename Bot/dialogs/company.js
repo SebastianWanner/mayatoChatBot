@@ -15,7 +15,7 @@ var lib = new builder.Library('company');
 lib.dialog('mayato', 
     function(session, args){
 
-        session.send(chatbotStrings.mayatoInfo);
+        session.send(session.localizer.gettext(session.preferredLocale(), "mayatoInfo"));
 
     }
 ).triggerAction({
@@ -27,9 +27,51 @@ lib.dialog('mayato',
 //=========================================================
 
 lib.dialog('getManagementInformation', function(session, args){
-    session.send('Die geschäftsführende Gesellschafter der Mayato GmbH sind')
+    
+    var cards = [];
+    
+    botStorage.getAnswerByIntent("getContactPerson", "job", "Managing Director",  function (err, dbResults) {
+        if (err) {
+            console.log(err);
+            throw (err);
+        }else{
+            if(dbResults.length === 0){
+                session.send(session.localizer.gettext(session.preferredLocale(), "getManagementError"));
 
-    var message = new builder.Message(session)
+            }else{
+
+                for(var item of dbResults){
+                    var card =  new builder.HeroCard(session)
+                        .title(item.name)
+                        .text(item.text)
+                        .images([
+                            builder.CardImage.create(session, item.image)
+                        
+                        ]);
+
+
+                    cards.push(card)
+                }
+            }
+        }
+    });
+    
+    if(cards){
+
+        session.send(session.localizer.gettext(session.preferredLocale(), "management"));
+
+        var message = new builder.Message(session)
+            .attachmentLayout(builder.AttachmentLayout.carousel)
+            .attachments(cards);
+
+        session.send(message);
+        session.endDialog();
+    }
+      
+
+
+
+/*     var message = new builder.Message(session)
         .attachmentLayout(builder.AttachmentLayout.carousel)
         .attachments([
             new builder.HeroCard(session)
@@ -55,7 +97,7 @@ lib.dialog('getManagementInformation', function(session, args){
         ]);
 
     session.send(message);
-    session.endDialog();
+    session.endDialog(); */
 
 }).triggerAction({
     matches:'getManagementInformation'
@@ -66,7 +108,7 @@ lib.dialog('getManagementInformation', function(session, args){
 //=========================================================
 
 lib.dialog('getFoundationDate', function(session, args){
-    session.send(chatbotStrings.foundation)
+    session.send(session.localizer.gettext(session.preferredLocale(), "foundation"));
     session.endDialog();
 }).triggerAction({
     matches:'getFoundationDate'
@@ -80,7 +122,7 @@ lib.dialog('getNews', [
 
     function(session, args){
         
-        session.sendTyping;
+        session.sendTyping();
 
         var cards = [];
         
@@ -90,7 +132,7 @@ lib.dialog('getNews', [
                 throw (err);
             }else{
                 if(dbResults.length === 0){
-                    session.send("Leider wurden keine News gefunden")
+                    session.send(session.localizer.gettext(session.preferredLocale(), "noNews"));
 
                 }else{
 
@@ -103,7 +145,7 @@ lib.dialog('getNews', [
                                builder.CardImage.create(session, item.image)
                             ])
                             .buttons([
-                                builder.CardAction.openUrl(session, item.url, "Bitte hier klicken für mehr Informationen")
+                                builder.CardAction.openUrl(session, item.url, session.localizer.gettext(session.preferredLocale(), "click"))
                         ]);
 
                         cards.push(card)
@@ -114,7 +156,7 @@ lib.dialog('getNews', [
 
         if(cards){
 
-            session.send('Hier eine Auswahl von News und Veröffentlichungen bei mayato');
+            session.send(session.localizer.gettext(session.preferredLocale(), "news"));
 
             var message = new builder.Message(session)
                 .attachmentLayout(builder.AttachmentLayout.carousel)

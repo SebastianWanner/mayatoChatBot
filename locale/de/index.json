@@ -1,4 +1,40 @@
 {
-    "greeting": "Hallo, ich bin Mike der Mayato ChatBot! Wie kann ich Ihnen behilflich sein? Sie können sich gerne über unsere Beratungsleistungen informieren oder zum Beispiel Case Studies ansehen."
+    "greeting": "Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Frage über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche nach Case Studies.",
+    "bot": "Ich bin nur ein Bot, aber ich werde dir antworten so gut ich kann. ",
+
+    "greetingBasicDialog": "Hallo, wie kann ich helfen?",
+    "error": "Leider habe ich keine Antwort gefunden",
+    "tip": "Schreiben Sie einfach \"Tipp\" wenn sie nicht mehr weiter wissen oder wenn sie Anregungen benötigen.",
+    "help": "Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:",
+    "help_2": "Wie kann ich weiterhelfen",
+    "feeling_1": "Mir geht`s super und selber?",
+    "feeling_2": "ein bisschen müde und selber?",
+    "feeling_3": "geht so und selber?",
+    "humanOrMachine": "Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!",
+    "name": "Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden",
+    "age": "Ehrlich gesagt bin ich genau %s Tage alt.",
+    "goodbye": "Bis zum nächsten Mal",
+    "tipNoResult": "Leider ist ein Fehler aufgetreten. Ich muss mal mit meinem Entwickler sprechen.",
+
+    "mayatoInfo": "Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien",
+    "foundation": "Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt",
+    "noNews": "Leider wurden keine News gefunden",
+    "click": "Bitte hier klicken für mehr Informationen",
+    "news": "Hier eine Auswahl von News und Veröffentlichungen bei mayato",
+    "management": "Die geschäftsführende Gesellschafter der mayato GmbH sind",
+    "getManagementError": "Keine Informationen zum Management gefunden",
+
+    "questionCaseStudies": "Zu welchen Themen wollen Sie sich Case Studies anschauen?",
+    "getCustomerNoResult": "Leider keine Kunden gefunden",
+    "getCustomer": ["Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche", "Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben"],
+    "tipCaseStudies": "Tipp: Sie können auch nach Case-Studies suchen",
+    "departments": "Customer Analytics|Financial Analytics|Industry Analytics|IT Operations Analytics|Technology",
+    "getCaseStudiesNoResult": "Leider haben wir keine Case Studies zu diesem Thema gefunden",
+    "click_here": "Bitte hier klicken",
+    "caseStudiesSelection": "Hier eine Auswahl von Case Studies im Bereich %s ",
+    "selection": "Wählen Sie einen Bereich aus.",
+    "getContactPersonNoResult": "Leider wurde kein Ansprechpartner gefunden",
+    "getContactPerson": "Ihr Ansprechpartner im Bereich %s ist:",
+    "contact": "Tel.: %s \n E-Mail: %s"
 
 }   

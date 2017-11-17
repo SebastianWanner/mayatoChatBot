@@ -1,0 +1,91 @@
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"08:37:00"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"08:37:00"}
+{"level":"incoming","message":"Hallo","timestamp":"08:37:22"}
+{"level":"outgoing","message":"","timestamp":"08:37:26"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:37:26"}
+{"level":"incoming","message":"what","timestamp":"08:40:06"}
+{"level":"incoming","message":"asdfasdfasdf","timestamp":"08:40:15"}
+{"level":"outgoing","message":"Leider habe ich keine Antwort gefunden","timestamp":"08:43:35"}
+{"level":"outgoing","message":"Schreiben Sie einfach \"Tipp\" wenn sie nicht mehr weiter wissen oder wenn sie Anregungen benötigen.","timestamp":"08:43:35"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"08:43:35"}
+{"level":"outgoing","message":"Suche doch nach \"Beratungsleistungen von mayato\".","timestamp":"08:43:35"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"08:45:35"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"08:45:35"}
+{"level":"incoming","message":"hallo","timestamp":"08:45:43"}
+{"level":"outgoing","message":"","timestamp":"08:45:45"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:45:45"}
+{"level":"incoming","message":"hallo","timestamp":"08:46:02"}
+{"level":"outgoing","message":"","timestamp":"08:46:03"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:46:03"}
+{"level":"incoming","message":"hallo","timestamp":"08:46:24"}
+{"level":"outgoing","message":"","timestamp":"08:52:31"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:52:31"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"08:56:08"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"08:56:08"}
+{"level":"incoming","message":"hallo","timestamp":"08:56:14"}
+{"level":"outgoing","message":"","timestamp":"08:56:20"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:56:20"}
+{"level":"incoming","message":"hallo","timestamp":"08:56:32"}
+{"level":"outgoing","message":"","timestamp":"08:57:10"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"08:57:10"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"09:48:49"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"09:48:49"}
+{"level":"incoming","message":"Hallo","timestamp":"09:48:53"}
+{"level":"outgoing","message":"","timestamp":"09:49:02"}
+{"level":"outgoing","message":"greetingBasicDialog","timestamp":"09:49:02"}
+{"level":"incoming","message":"wie gehts?","timestamp":"09:49:14"}
+{"level":"outgoing","message":"","timestamp":"09:49:15"}
+{"level":"outgoing","message":"feeling_0","timestamp":"09:49:15"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"10:51:07"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"10:51:07"}
+{"level":"incoming","message":"tipp","timestamp":"10:51:16"}
+{"level":"incoming","message":"tip","timestamp":"10:52:16"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"11:13:09"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"11:13:09"}
+{"level":"incoming","message":"Hallo","timestamp":"11:13:13"}
+{"level":"outgoing","message":"","timestamp":"11:13:40"}
+{"level":"outgoing","message":"Hallo, wie kann ich helfen?","timestamp":"11:13:40"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"11:14:34"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"11:14:34"}
+{"level":"incoming","message":"Hallo","timestamp":"11:14:38"}
+{"level":"outgoing","message":"","timestamp":"11:14:42"}
+{"level":"outgoing","message":"Hallo, wie kann ich helfen?","timestamp":"11:14:42"}
+{"level":"incoming","message":"asdfasdfasdffasdf","timestamp":"11:14:56"}
+{"level":"incoming","message":"asdfasdfaserew3434343434","timestamp":"11:15:04"}
+{"level":"outgoing","message":"Leider habe ich keine Antwort gefunden","timestamp":"11:15:30"}
+{"level":"outgoing","message":"Schreiben Sie einfach \"Tipp\" wenn sie nicht mehr weiter wissen oder wenn sie Anregungen benötigen.","timestamp":"11:15:30"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"11:15:30"}
+{"level":"outgoing","message":"Informiere dich über das Management","timestamp":"11:15:30"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"11:35:54"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"11:35:54"}
+{"level":"incoming","message":"Hallo","timestamp":"11:36:09"}
+{"level":"outgoing","message":"","timestamp":"11:38:45"}
+{"level":"outgoing","message":"Hallo, wie kann ich helfen?","timestamp":"11:38:45"}
+{"level":"incoming","message":"Hilfe","timestamp":"12:25:31"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"12:25:32"}
+{"level":"incoming","message":"wie gehts?","timestamp":"12:26:42"}
+{"level":"outgoing","message":"","timestamp":"12:26:43"}
+{"level":"outgoing","message":"feeling_0","timestamp":"12:26:43"}
+{"level":"incoming","message":"bist du ein Mensch?","timestamp":"12:30:00"}
+{"level":"outgoing","message":"Mensch oder Computer? Das ist eine gute Frage. Finde es selber heraus!","timestamp":"12:30:06"}
+{"level":"incoming","message":"wie heißt du?","timestamp":"12:30:13"}
+{"level":"outgoing","message":"Ich bin Mike der Mayato ChatBot. Ich helfe dir alles über Mayato rauszufinden","timestamp":"12:30:14"}
+{"level":"incoming","message":"bye","timestamp":"12:30:23"}
+{"level":"incoming","message":"bye","timestamp":"12:30:37"}
+{"level":"outgoing","message":"Leider habe ich keine Antwort gefunden","timestamp":"12:30:38"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"12:30:38"}
+{"level":"outgoing","message":"Suche doch nach \"Beratungsleistungen von mayato\".","timestamp":"12:30:38"}
+{"level":"incoming","message":"bye","timestamp":"12:32:59"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"12:33:01"}
+{"level":"outgoing","message":"Informiere dich über das Management","timestamp":"12:33:01"}
+{"level":"incoming","message":"bye","timestamp":"12:33:46"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"12:34:57"}
+{"level":"outgoing","message":"Suche doch nach \"Case Studies\", um einen Einblick von unseren Projekten zu bekommen.","timestamp":"12:35:05"}
+{"level":"incoming","message":"machs gut","timestamp":"12:35:05"}
+{"level":"incoming","message":"machs gut","timestamp":"12:35:05"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"13:02:10"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"13:02:10"}
+{"level":"incoming","message":"bye","timestamp":"13:02:14"}
+{"level":"incoming","message":"bye","timestamp":"13:02:20"}
+{"level":"outgoing","message":"Leider habe ich keine Antwort gefunden","timestamp":"13:02:21"}
+{"level":"outgoing","message":"Suche doch nach \"Beratungsleistungen von mayato\".","timestamp":"13:02:21"}

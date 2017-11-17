@@ -1,5 +1,16 @@
 {
 
     "questionCaseStudies": "Zu welchen Themen wollen Sie sich Case Studies anschauen?",
+    "getCustomerNoResult": "Leider keine Kunden gefunden",
+    "getCustomer": ["Mayato betreut Kunden aus vielen Branchen wie der Automotive-, Bank- oder Industrie-Branche", "Hier eine Auswahl von Kunden, welche mit Mayato zusammengearbeitet haben"],
+    "tipCaseStudies": "Tipp: Sie können auch nach Case-Studies suchen",
+    "departments": "Customer Analytics|Financial Analytics|Industry Analytics|IT Operations Analytics|Technology",
+    "getCaseStudiesNoResult": "Leider haben wir keine Case Studies zu diesem Thema gefunden",
+    "click_here": "Bitte hier klicken",
+    "caseStudiesSelection": "Hier eine Auswahl von Case Studies im Bereich %s ",
+    "selection": "Wählen Sie einen Bereich aus.",
+    "getContactPersonNoResult": "Leider wurde kein Ansprechpartner gefunden",
+    "getContactPerson": "Ihr Ansprechpartner im Bereich %s ist:",
+    "contact": "Tel.: %s \n E-Mail: %s"
 
 }   

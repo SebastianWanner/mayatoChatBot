@@ -1,5 +1,9 @@
 {
     "serviceInformation": "Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics, IT Operations Analytics und Technolgy.",
-    "serviceSelection": "Wähle einen Bereich aus, um mehr Informationen zu erhalten"
+    "serviceSelection": "Wähle einen Bereich aus, um mehr Informationen zu erhalten",
+    "departments": "Customer Analytics|Financial Analytics|Industry Analytics|IT Operations Analytics|Technology",
+    "db_error": "Leider haben wir keine Informationen gefunden",
+    "getSoftwareSystem": ["mayato arbeitet mit verschiedenen Technologien und Software Systemen", "Hier eine kleine Auswahl:"],
+    "getSoftwareSystem_name": "mayato hat mit %s 'eine Partnerschaft"
 
 }   
