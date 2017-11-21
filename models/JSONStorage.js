@@ -55,17 +55,33 @@ JSONStorage.prototype.getAnswerByIntentAndEntityName =  function (intent, entity
 
        var results = [];
 
-       for(var item of database){
-         
+       for(var item of database){   
+            if(item.intent !== intent){
+                continue;
+            }
+
             for(var key in item){
-                if( key == entityName && item[key] == entityValue){
-                    results.push(item)
+                if(key === entityName){
+                    if(typeof(key == "object")){
+                        for(var tag in item[key]){
+                            if(item[key][tag] == botUtils.toProperCase(entityValue)){
+                                results.push(item)
+                        }
+
+                        break;
+                    }
+
+                    if( item[key] == botUtils.toProperCase(entityValue)){
+                        results.push(item)
+                    }
                 }
             }    
         }
+    }
 
        callback(null, results)
     }
+
 
 JSONStorage.prototype.getAnswerByIntentAndTag =  function (intent, tag, callback) {
          var self = this;

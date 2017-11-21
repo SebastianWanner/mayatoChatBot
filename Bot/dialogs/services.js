@@ -1,6 +1,6 @@
 var builder = require('botbuilder');
 var botUtils = require("../utils/botUtils");
-var config = require('../../config');
+
 
 var lib = new builder.Library('services');
 
@@ -16,11 +16,11 @@ lib.dialog('getServiceInformation', [
             next({ response: competence});
         }else{
             session.send(session.localizer.gettext(session.preferredLocale(), "serviceInformation"));
-            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "serviceSelection"), session.localizer.gettext(session.preferredLocale(), "departments"),, {listStyle: builder.ListStyle.button}, {maxRetries: 2}); 
+            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "serviceSelection"), session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}); 
         }   
     },
 
-    function (session, results, next) {
+    function (session, results) {
         if(!results.response){
             return;
         }
@@ -131,7 +131,7 @@ lib.dialog('getSoftwareSystems', [
                     session.send(session.localizer.gettext(session.preferredLocale(), "db_error"));
 
                 }else{
-                    session.send('mayato hat mit %s eine Partnerschaft', botUtils.toProperCase(system) )
+                    session.send(session.localizer.gettext(session.preferredLocale(), "getSoftwareSystem_name"), botUtils.toProperCase(system) )
                     //session.send('mayato hat mit ' + botUtils.toProperCase(system) + 'eine Partnerschaft')
                     session.endDialog();
                 }

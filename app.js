@@ -36,14 +36,17 @@ var bot = new builder.UniversalBot(connector, {
     }
 });
 
-// Set default locale
+// Enable Conversation Data persistence
+bot.set('persistConversationData', true);
+
+/* // Set default locale
 bot.set('localizerSettings', {
     botLocalePath: path.join(__dirname, './locale'),
     defaultLocale: 'de'
-});
+}); */
  
 // Add global LUIS recognizer to bot 
-var model = process.env.model || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/19fd82bb-c6a8-4ed7-ba2b-eabe2ff3edf5?subscription-key=6db68835a1ec41518c5ac8b77c8aea58&staging=true&verbose=true&timezoneOffset=0.0&q='; 
+var model = process.env.model || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/19fd82bb-c6a8-4ed7-ba2b-eabe2ff3edf5?subscription-key=6db68835a1ec41518c5ac8b77c8aea58&staging=true&spellCheck=true&verbose=true&timezoneOffset=0&q='; 
 bot.recognizer(new builder.LuisRecognizer(model)); 
 
 //Sends greeting message when the bot is first added to a conversation
@@ -87,6 +90,14 @@ const logger = new (winston.Logger)({
         new (winston.transports.Console)({
             timestamp:tsFormat,
             colorize:true,
+            level: 'error'
+        }),
+        new(require('winston-daily-rotate-file'))({
+            filename: `${logDir}/-console_exceptions.log`,
+            name: 'console_exceptions',
+            timestamp: tsFormat,
+            datePattern: 'yyyy-MM-dd',
+            prepend: true,
             level: 'error'
         }),
         new(require('winston-daily-rotate-file'))({

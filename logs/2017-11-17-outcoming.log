@@ -110,3 +110,53 @@
 {"level":"incoming","message":"wer ist der boss bei mayato","timestamp":"16:16:57"}
 {"level":"outgoing","message":"Die geschäftsführende Gesellschafter der mayato GmbH sind","timestamp":"16:25:05"}
 {"level":"outgoing","message":"","timestamp":"16:25:05"}
+{"level":"incoming","message":"was ist hier los","timestamp":"16:26:23"}
+{"level":"incoming","message":"was ist hier los","timestamp":"16:26:28"}
+{"level":"outgoing","message":"Leider habe ich keine Informationen gefunden","timestamp":"16:26:29"}
+{"level":"outgoing","message":"Informiere dich über das Management","timestamp":"16:26:29"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:31:28"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:31:28"}
+{"level":"incoming","message":"wer ist der boss von mayato","timestamp":"16:32:02"}
+{"level":"outgoing","message":"Die geschäftsführende Gesellschafter der mayato GmbH sind","timestamp":"16:32:08"}
+{"level":"outgoing","message":"","timestamp":"16:32:08"}
+{"level":"incoming","message":"wie alt ist mayato","timestamp":"16:32:28"}
+{"level":"outgoing","message":"Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt","timestamp":"16:32:29"}
+{"level":"incoming","message":"welche news gibt es über mayato","timestamp":"16:33:24"}
+{"level":"outgoing","message":"","timestamp":"16:33:25"}
+{"level":"outgoing","message":"Hier eine Auswahl von News und Veröffentlichungen bei mayato","timestamp":"16:33:25"}
+{"level":"outgoing","message":"","timestamp":"16:33:25"}
+{"level":"incoming","message":"ok danke","timestamp":"16:34:02"}
+{"level":"incoming","message":"was gibts sonst zu wissen?","timestamp":"16:34:23"}
+{"level":"outgoing","message":"Leider habe ich keine Informationen gefunden","timestamp":"16:34:24"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"16:34:24"}
+{"level":"outgoing","message":"Informiere dich über das Management","timestamp":"16:34:24"}
+{"level":"incoming","message":"welche leistungen bietet mayato","timestamp":"16:39:12"}
+{"level":"outgoing","message":"Suche doch nach \"Case Studies\", um einen Einblick von unseren Projekten zu bekommen.","timestamp":"16:39:14"}
+{"level":"incoming","message":"welche leistungen bietet mayato","timestamp":"16:41:19"}
+{"level":"outgoing","message":"Suche doch nach \"News oder Veröffentlichungen von mayato\".","timestamp":"16:41:21"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:42:15"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:42:15"}
+{"level":"incoming","message":"welche leistungen bietet mayato","timestamp":"16:42:24"}
+{"level":"incoming","message":"hallo","timestamp":"16:43:16"}
+{"level":"outgoing","message":"","timestamp":"16:43:28"}
+{"level":"outgoing","message":"Hallo, wie kann ich helfen?","timestamp":"16:43:28"}
+{"level":"incoming","message":"welche leistungen hat mayato","timestamp":"16:43:35"}
+{"level":"incoming","message":"welche leistungen hat mayato","timestamp":"16:43:42"}
+{"level":"incoming","message":"session.endDialog();","timestamp":"16:44:01"}
+{"level":"incoming","message":"welche leistungen hat mayato","timestamp":"16:44:08"}
+{"level":"outgoing","message":"Leider habe ich keine Informationen gefunden","timestamp":"16:44:09"}
+{"level":"outgoing","message":"Brauchst du Hilfe? Ich gebe dir ein paar Suchtipps:","timestamp":"16:44:09"}
+{"level":"outgoing","message":"Suche doch nach \"Beratungsleistungen von mayato\".","timestamp":"16:44:09"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato","timestamp":"16:45:43"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:46:08"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:46:20"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:46:33"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:46:37"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:46:45"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:46:45"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:46:47"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:46:47"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:46:50"}
+{"level":"outgoing","message":"Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Fragen über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche doch einfach mal nach Case Studies.","timestamp":"16:47:59"}
+{"level":"outgoing","message":"Ich bin nur ein Bot, aber ich werde dir antworten, so gut ich kann. ","timestamp":"16:47:59"}
+{"level":"incoming","message":"mit welchen software systemen arbeitet mayato?","timestamp":"16:48:02"}

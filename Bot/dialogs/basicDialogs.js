@@ -16,7 +16,7 @@ lib.dialog('None',
 function(session, args){ 
     if (counter == 1){   
         session.send(session.localizer.gettext(session.preferredLocale(), "error"));
-        //session.send(session.localizer.gettext(session.preferredLocale(), "tip"));
+        session.send(session.localizer.gettext(session.preferredLocale(), "help"));
         session.replaceDialog("tip");
         counter = 0;
     }
@@ -49,8 +49,9 @@ function(session, args){
                //session.send(session.localizer.gettext(session.preferredLocale(), "help"));
 
                for(var item of dbResults){
-                    var number = Math.floor(Math.random()*(4-0)+0);
+                    var number = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
                     session.send(item.tags[number]);
+                    session.endDialog();
             }
             }
         }

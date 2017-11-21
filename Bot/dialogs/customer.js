@@ -3,7 +3,6 @@ var builder = require('botbuilder');
 var botUtils = require("../utils/botUtils");
 
 var lib = new builder.Library('customer');
-var config = require('../../config');
 
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
@@ -143,21 +142,30 @@ lib.dialog('getContactPerson', [
 
     function(session, args, next){
         var competence = builder.EntityRecognizer.findEntity(args.intent.entities, 'competence');
+        var contactPerson = builder.EntityRecognizer.findEntity(args.intent.entities, 'contactPerson');
 
         if(competence){
+            //competence entity detected, continue to next step
+            session.dialogData.searchType = 'competence';
             next({ response: competence});
+        } else if(contactPerson){
+            //contactPerson entity detected, continue to next step
+            session.dialogData.searchType = 'name';
+            next({ response: contactPerson});
         }else{
-                builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "selection") , session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}, {maxRetries: 2});
+            session.dialogData.searchType = 'competence';
+            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "selection") , session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}, {maxRetries: 2});
             }
     },
 
     function(session, results, next){
-        var competence = results.response.entity;
+        var entity = results.response.entity; 
+        var searchType = session.dialogData.searchType;
 
-        if (competence){
-            session.sendTyping;
+        if (entity && searchType){
+            session.sendTyping();
 
-            botStorage.getAnswerByIntentAndTag("getContactPerson", competence, function (err, dbResults) {
+            botStorage.getAnswerByIntentAndEntityName("getContactPerson", searchType, entity, function (err, dbResults) {
                 if (err) {
                     console.log(err);
                     throw (err);
@@ -166,13 +174,16 @@ lib.dialog('getContactPerson', [
                         session.send(session.localizer.gettext(session.preferredLocale(), "getContactPersonNoResult"));
 
                     }else{
-                        session.send(session.localizer.gettext(session.preferredLocale(), "getContactPerson") , botUtils.toProperCase(competence));
+                        if(session.dialogData.searchType === 'competence'){
+                            session.send(session.localizer.gettext(session.preferredLocale(), "getContactPerson") , botUtils.toProperCase(entity));
+                        } 
 
                         var contactCard = new builder.HeroCard(session);
                         contactCard.title(dbResults[0].name);
+                        contactCard.subtitle(dbResults[0].text);
                         contactCard.text(session.localizer.gettext(session.preferredLocale(), "contact"), dbResults[0].phone, dbResults[0].email);
                         contactCard.images([
-                           builder.CardImage.create(session, dbResult[0].image)
+                           builder.CardImage.create(session, dbResults[0].image)
                         ]);
 
                         var message = new builder.Message(session).addAttachment(contactCard);
@@ -189,6 +200,9 @@ lib.dialog('getContactPerson', [
 ]).triggerAction({
     matches:'getContactPerson'
 });
+
+
+
 
 module.exports.createLibrary = function(){
     return lib.clone();

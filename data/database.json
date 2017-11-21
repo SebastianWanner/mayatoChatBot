@@ -7,8 +7,10 @@
         "tags": [
             "Suche doch nach \"Beratungsleistungen von mayato\".",
             "Suche doch nach \"News oder Veröffentlichungen von mayato\".",
-            "Informiere dich über das Management",
-            "Suche doch nach \"Case Studies\", um einen Einblick von unseren Projekten zu bekommen."
+            "Suche doch nach \"Management von mayato\"",
+            "Suche doch nach \"Case Studies\", um einen Einblick von unseren Projekten zu bekommen.",
+            "Suche doch nach \"Software Systemen die bei mayato eingesetzt werden\"",
+            "Suche doch nach \"Kunden für die mayato schon Projekte umgesetzt hat\""
         ]
     },
 
@@ -17,7 +19,14 @@
         "intent": "getServiceInformation",
         "entity": "Customer Analytics",
         "title": "",
-        "text": "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics"
+        "text": "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics",
+        "tag": [
+            "Media Analytics",
+            "Customer Analytics",
+            "Customer Prediction",
+            "Social Media Analytics",
+            "Feedback Analytics"
+        ]
     },
     {
         "id": "2",
@@ -61,15 +70,22 @@
     },
 
     {
-        "id": "3",
+        "id": "8",
         "intent": "getServiceInformation",
-        "type": "Text Mining",
+        "type": "Media Analytics",
         "title": "",
-        "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
+        "text": "Wir können durch unseren eigenen, vielfach erprobten Analyseansatz unterschiedlichste Online- und Offlinedaten kombiniert auswerten und grafisch eingängig visualisieren. So lassen sich bisher unbekannte Zusammenhänge aufzeigen, der Werbeerfolg einzelner Produkte vorhersagen und die Voraussetzungen für eine effiziente Mediaplanung schaffen.",
         "tag": [
             "tag1",
             "tag2"
         ]
+    },
+    {
+        "id": "9",
+        "intent": "getServiceInformation",
+        "type": "Customer Analytics",
+        "title": "",
+        "text": "Basierend auf unserer langjährigen Praxiserfahrung erarbeiten wir gemeinsam Ihre individuelle Customer-Analytics-Roadmap. Neben der Frage, welche Analyseszenarien in welchem zeitlichen Abstand durchgeführt werden sollten, werden zahlreiche weitere Themen berücksichtigt: Von den erforderlichen personellen und finanziellen Ressourcen über die zu erwartenden Analyseergebnisse bis hin zur Frage, welches Analysewerkzeug für die geplanten Aufgaben das passende ist."
     },
 
     {
@@ -77,11 +93,11 @@
         "intent": "getContactPerson",
         "name": "Peter Neckel",
         "job": "Manager",
-        "text":"",
+        "text":"Senior Consultant für die Bereiche Customer Analytics, Media Analytics und Customer Prediction",
         "phone": "+49/30 4174 4270 10",
         "email": "peter.neckel@mayato.com",
         "image": "https://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_PN-300x200.jpg",
-        "tag": [
+        "competence": [
             "Customer Analytics",
             "Media Analytics",
             "Customer Prediction"
@@ -96,7 +112,7 @@
         "phone": "+49/30 4174 4270 10",
         "email": "georg.heeren@mayato.com",
         "image": "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_GH.jpg",
-        "tag": [
+        "competence": [
             "Financial Analytics",
             "Performance Analytics",
             "Strategie und Methodik",
@@ -114,7 +130,7 @@
         "phone": "+49/30 4174 4270 10",
         "email": "sven.hensen@mayato.com",
         "image": "http://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_SH.jpg",
-        "tag": [
+        "competence": [
             "IT Operations Analytics",
             "Industry Analytics"
         ]
@@ -129,7 +145,7 @@
         "phone": "+49/30 4174 4270 10",
         "email": "marcus.dill@mayato.com",
         "image": "https://www.mayato.com/wp-content/uploads/2016/07/CEO-Dr.-Marcus-Dill_300dpi.jpg",
-        "tag": [
+        "competence": [
             "Data Science",
             "DWH und Big Data",
             "Datenanalysen mit SAP",
@@ -138,6 +154,17 @@
             "Data Mining",
             "Text Mining"
         ]
+    },
+
+    {
+        "id": "105",
+        "intent": "getContactPerson",
+        "name": "Nils-Henrik Wolf",
+        "job": "Managing Director",
+        "text":"Seit 2013 Geschäftsführer der mayato AT GmbH mit Sitz in Wien. Arrivierter Kenner analytischer Lösungen mit Fokus auf Analytics, Risikomanagement und Banken.",
+        "phone": "+43 1 93087 3072",
+        "email": "nils-henrik.wolf@mayato.com",
+        "image": "https://www.mayato.com/wp-content/uploads/2015/05/Mayato_Portrait_NHW.jpg"
     },
 
 

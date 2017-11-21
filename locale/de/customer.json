@@ -11,6 +11,6 @@
     "selection": "Wählen Sie einen Bereich aus.",
     "getContactPersonNoResult": "Leider wurde kein Ansprechpartner gefunden",
     "getContactPerson": "Ihr Ansprechpartner im Bereich %s ist:",
-    "contact": "Tel.: %s \n E-Mail: %s"
+    "contact": "Tel.: %s \n\n E-Mail: %s"
 
 }   

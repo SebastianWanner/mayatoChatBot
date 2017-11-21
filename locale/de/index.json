@@ -17,10 +17,10 @@
     "tipNoResult": "Leider ist ein Fehler aufgetreten. Ich muss mal mit meinem Entwickler sprechen.",
 
     "mayatoInfo": "Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien",
-    "foundation": "Die Mayato GmbH wurde im Jahre 2007 gegründet. Sie ist demnach 10 Jahre halt",
+    "foundation": "Die Mayato GmbH wurde im Jahre 2007 gegründet. mayato ist demnach 10 Jahre alt.",
     "noNews": "Leider wurden keine News gefunden",
     "click": "Bitte hier klicken für mehr Informationen",
-    "news": "Hier eine Auswahl von News und Veröffentlichungen bei mayato",
+    "news": "Hier eine Auswahl von News und Veröffentlichungen von mayato",
     "management": "Die geschäftsführende Gesellschafter der mayato GmbH sind",
     "getManagementError": "Keine Informationen zum Management gefunden",
 
@@ -35,6 +35,8 @@
     "selection": "Wählen Sie einen Bereich aus.",
     "getContactPersonNoResult": "Leider wurde kein Ansprechpartner gefunden",
     "getContactPerson": "Ihr Ansprechpartner im Bereich %s ist:",
-    "contact": "Tel.: %s \n E-Mail: %s"
+    "contact": "Tel.: %s \n\n E-Mail: %s"
+
+    
 
 }   
