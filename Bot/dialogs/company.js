@@ -6,6 +6,8 @@ var botStorage = new JSONStorage();
 
 var lib = new builder.Library('company');
 
+var timeout = 5000;
+
 //=========================================================
 // mayato
 //=========================================================
@@ -13,7 +15,10 @@ var lib = new builder.Library('company');
 lib.dialog('mayato', 
     function(session, args){
 
-        session.send(session.localizer.gettext(session.preferredLocale(), "mayatoInfo"));
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "mayatoInfo"));            
+        }, timeout);   
 
     }
 ).triggerAction({
@@ -56,14 +61,22 @@ lib.dialog('getManagementInformation', function(session, args){
     
     if(cards){
 
-        session.send(session.localizer.gettext(session.preferredLocale(), "management"));
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "management"));     
+        }, timeout);   
+
 
         var message = new builder.Message(session)
             .attachmentLayout(builder.AttachmentLayout.carousel)
             .attachments(cards);
 
-        session.send(message);
-        session.endDialog();
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(message);
+            session.endDialog();
+        }, timeout);   
+
     }
       
 }).triggerAction({
@@ -75,8 +88,12 @@ lib.dialog('getManagementInformation', function(session, args){
 //=========================================================
 
 lib.dialog('getFoundationDate', function(session, args){
-    session.send(session.localizer.gettext(session.preferredLocale(), "foundation"));
-    session.endDialog();
+    session.sendTyping();
+    setTimeout(function () {
+        session.send(session.localizer.gettext(session.preferredLocale(), "foundation"));
+        session.endDialog();
+    }, timeout);   
+
 }).triggerAction({
     matches:'getFoundationDate'
 });
@@ -89,8 +106,6 @@ lib.dialog('getNews', [
 
     function(session, args){
         
-        session.sendTyping();
-
         var cards = [];
         
         botStorage.getAnswerByIntent("getNews",  function (err, dbResults) {
@@ -123,14 +138,22 @@ lib.dialog('getNews', [
 
         if(cards){
 
-            session.send(session.localizer.gettext(session.preferredLocale(), "news"));
+            session.sendTyping();
+            setTimeout(function () {
+                session.send(session.localizer.gettext(session.preferredLocale(), "news"));
+            }, timeout);   
+
 
             var message = new builder.Message(session)
                 .attachmentLayout(builder.AttachmentLayout.carousel)
                 .attachments(cards);
 
-            session.send(message);
-            session.endDialog();
+            session.sendTyping();
+            setTimeout(function () {
+                session.send(message);
+                session.endDialog();
+            }, timeout);   
+
         }
     }
 

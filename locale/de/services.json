@@ -1,5 +1,9 @@
 {
     "serviceInformation": "Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics, IT Operations Analytics und Technolgy.",
+    "serviceInformation_image":"http://www.mayato.com/wp-content/uploads/2015/01/strategirue.png",
+    "serviceInformation_1":"Unsere Technologieberater analysieren und optimieren Ihre fachlichen Prozesse und erarbeiten mit Ihnen die Anforderungen an deren technische Umsetzung.",
+    "serviceInformation_2":"Sie helfen bei der Auswahl der geeigneten Werkzeuge, entwickeln erfolgreiche Strategien und konzipieren bewährte und moderne Architekturen. ",
+    "serviceInformation_3": "Natürlich helfen mayato Berater auch bei deren praktischer Umsetzung. Technische Standards und methodische Vorgaben (Governance) ermöglichen sparsame, effektive Projekte und einen effizienten, nachhaltigen Betrieb.",
     "serviceSelection": "Wähle einen Bereich aus, um mehr Informationen zu erhalten",
     "departments": "Customer Analytics|Financial Analytics|Industry Analytics|IT Operations Analytics|Technology",
     "db_error": "Leider haben wir keine Informationen gefunden",

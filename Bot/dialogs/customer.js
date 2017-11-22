@@ -7,6 +7,8 @@ var lib = new builder.Library('customer');
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
+var timeout = 5000;
+
 
 //=========================================================
 // Get Customer
@@ -45,7 +47,11 @@ lib.dialog('getCustomer', [
 
         if(cards){
 
-            session.send(session.localizer.gettext(session.preferredLocale(), "getCustomer"));
+            session.sendTyping();
+            setTimeout(function () {
+                session.send(session.localizer.gettext(session.preferredLocale(), "getCustomer"));
+            }, timeout);   
+        
 
             var message = new builder.Message(session)
                 .attachmentLayout(builder.AttachmentLayout.carousel)
@@ -54,8 +60,12 @@ lib.dialog('getCustomer', [
             session.send(message);
         }
 
-        session.send(session.localizer.gettext(session.preferredLocale(), "tipCaseStudies"));
-        session.endDialog();
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "tipCaseStudies"));
+            session.endDialog();
+        }, timeout);   
+
 
     }
 
@@ -75,8 +85,11 @@ lib.dialog('getCaseStudies', [
         if(competence){
             next({ response: competence});
         }else{
-            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "questionCaseStudies"), session.localizer.gettext(session.preferredLocale(), "departments"), { listStyle: builder.ListStyle.button } ); 
-        }
+            session.sendTyping();
+            setTimeout(function () {
+                builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "questionCaseStudies"), session.localizer.gettext(session.preferredLocale(), "departments"), { listStyle: builder.ListStyle.button } );  
+            }, timeout);   
+             }
 
            
     },
@@ -101,8 +114,8 @@ lib.dialog('getCaseStudies', [
 
                         for(var item of dbResults){
                             var card =  new builder.HeroCard(session)
-                                .title(item.title)
-                                .subtitle(item.company)
+                                .title(item.company)
+                                .subtitle(item.title)
                                 .text(item.text)
                                 .images([
                                    builder.CardImage.create(session, item.image)
@@ -119,14 +132,22 @@ lib.dialog('getCaseStudies', [
 
             if(cards){
 
-                session.send(session.localizer.gettext(session.preferredLocale(), "caseStudiesSelection"), botUtils.toProperCase(competence))
+                session.sendTyping();
+                setTimeout(function () {
+                    session.send(session.localizer.gettext(session.preferredLocale(), "caseStudiesSelection"), botUtils.toProperCase(competence))
+                }, timeout); 
+                
 
                 var message = new builder.Message(session)
                     .attachmentLayout(builder.AttachmentLayout.carousel)
                     .attachments(cards);
 
-                session.send(message);
-                session.endDialog();
+                session.sendTyping();
+                setTimeout(function () {
+                    session.send(message);
+                    session.endDialog();
+                }, timeout); 
+
             }
         }
     }
@@ -153,17 +174,19 @@ lib.dialog('getContactPerson', [
             session.dialogData.searchType = 'name';
             next({ response: contactPerson});
         }else{
-            session.dialogData.searchType = 'competence';
-            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "selection") , session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}, {maxRetries: 2});
-            }
+            session.sendTyping();
+            setTimeout(function () {
+                session.dialogData.searchType = 'competence';
+                builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "selection") , session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}, {maxRetries: 2});    
+            }, timeout); 
+ }
     },
 
-    function(session, results, next){
+    function(session, results){
         var entity = results.response.entity; 
         var searchType = session.dialogData.searchType;
 
         if (entity && searchType){
-            session.sendTyping();
 
             botStorage.getAnswerByIntentAndEntityName("getContactPerson", searchType, entity, function (err, dbResults) {
                 if (err) {
@@ -175,7 +198,10 @@ lib.dialog('getContactPerson', [
 
                     }else{
                         if(session.dialogData.searchType === 'competence'){
-                            session.send(session.localizer.gettext(session.preferredLocale(), "getContactPerson") , botUtils.toProperCase(entity));
+                            session.sendTyping();
+                            setTimeout(function () {
+                                session.send(session.localizer.gettext(session.preferredLocale(), "getContactPerson") , botUtils.toProperCase(entity));
+                            }, timeout); 
                         } 
 
                         var contactCard = new builder.HeroCard(session);
@@ -187,9 +213,13 @@ lib.dialog('getContactPerson', [
                         ]);
 
                         var message = new builder.Message(session).addAttachment(contactCard);
-                        session.send(message);
-                        session.endDialog();
-                        
+
+                        session.sendTyping();
+                        setTimeout(function () {
+                            session.send(message);
+                            session.endDialog();    
+                        }, timeout); 
+
                     }
                 }
             });

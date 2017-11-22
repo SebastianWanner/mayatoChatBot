@@ -8,17 +8,23 @@ var botStorage = new JSONStorage();
 
 var counter = 0;
 
+var timeout = 5000;
+
 //=========================================================
 // None
 //=========================================================
 
 lib.dialog('None', 
 function(session, args){ 
-    if (counter == 1){   
-        session.send(session.localizer.gettext(session.preferredLocale(), "error"));
-        session.send(session.localizer.gettext(session.preferredLocale(), "help"));
-        session.replaceDialog("tip");
-        counter = 0;
+    if (counter == 1){
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "error"));
+            session.send(session.localizer.gettext(session.preferredLocale(), "help"));
+            session.replaceDialog("tip");
+            counter = 0;
+        }, timeout);   
+
     }
 
     counter += 1;
@@ -50,8 +56,13 @@ function(session, args){
 
                for(var item of dbResults){
                     var number = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-                    session.send(item.tags[number]);
-                    session.endDialog();
+
+                    session.sendTyping();
+                    setTimeout(function () {
+                        session.send(item.tags[number]);
+                        session.endDialog();
+                    }, timeout);   
+
             }
             }
         }
@@ -68,10 +79,12 @@ function(session, args){
 //=========================================================
 
 lib.dialog('getHelp', 
-function(session, args){    
-    session.send(session.localizer.gettext(session.preferredLocale(), "help"));
-    session.replaceDialog("tip");
-
+function(session, args){   
+    session.sendTyping();
+    setTimeout(function () {
+        session.send(session.localizer.gettext(session.preferredLocale(), "help"));
+        session.replaceDialog("tip");
+    }, timeout);    
 }
 ).triggerAction({
 matches:'getHelp'
@@ -86,8 +99,11 @@ lib.dialog('greeting', function(session, args){
 
 
     session.sendTyping();
-    session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
-    session.endDialog();
+    setTimeout(function () {
+        session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
+        session.endDialog();
+    }, timeout);   
+
     
 }).triggerAction({
     matches:'greeting'
@@ -100,9 +116,12 @@ lib.dialog('greeting', function(session, args){
 lib.dialog('feeling', [
     function(session, args){       
         session.sendTyping();
-        session.send(session.localizer.gettext(session.preferredLocale(), "feeling_") + Math.floor(Math.random() * (3 - 1 + 1)) + 1);
-        //session.send(session.localizer.gettext(session.preferredLocale(), "help_2"))
-        session.endDialog();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "feeling_") + Math.floor(Math.random() * (3 - 1 + 1)) + 1);
+            //session.send(session.localizer.gettext(session.preferredLocale(), "help_2"))
+            session.endDialog();
+        }, timeout);   
+
     }
 
 ]).triggerAction({
@@ -129,8 +148,11 @@ lib.dialog('HumanOrMachine',
 
 lib.dialog('name', 
     function(session, args){    
-        session.send(session.localizer.gettext(session.preferredLocale(), "name"))
-        session.endDialog();
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
+            session.endDialog();
+        }, timeout);   
 
     }
 ).triggerAction({
@@ -148,9 +170,12 @@ lib.dialog('age',
 
         var timeDiff = Math.abs(today.getTime() - birthday.getTime());
 
-    
-        session.send(session.localizer.gettext(session.preferredLocale(), "age"), Math.ceil(timeDiff/(1000*60*60*24)));
-        session.endDialog();
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(session.localizer.gettext(session.preferredLocale(), "age"), Math.ceil(timeDiff/(1000*60*60*24)));
+            session.endDialog();
+        }, timeout);       
+
 
     }
 ).triggerAction({

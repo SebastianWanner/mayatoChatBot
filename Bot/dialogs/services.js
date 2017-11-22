@@ -7,6 +7,8 @@ var lib = new builder.Library('services');
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
+var timeout = 5000;
+
 
 lib.dialog('getServiceInformation', [
     function(session, args, next){
@@ -15,12 +17,42 @@ lib.dialog('getServiceInformation', [
         if(competence){
             next({ response: competence});
         }else{
-            session.send(session.localizer.gettext(session.preferredLocale(), "serviceInformation"));
-            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "serviceSelection"), session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}); 
+
+            session.sendTyping();
+            setTimeout(function () {
+                session.send(session.localizer.gettext(session.preferredLocale(), "serviceInformation"));
+            }, timeout);
+            
+
+            var contactCard = new builder.HeroCard(session);
+            contactCard.images([
+               builder.CardImage.create(session, session.localizer.gettext(session.preferredLocale(), "serviceInformation_image"))
+            ]);
+
+            var message = new builder.Message(session).addAttachment(contactCard);
+            //Picture is not working
+            //session.send(message);
+
+            
+            
+            setTimeout(function () {
+                session.send(session.localizer.gettext(session.preferredLocale(), "serviceInformation_1"));
+            }, (timeout * 1.5));
+            
+
+           
+            setTimeout(function () {
+                session.send(session.localizer.gettext(session.preferredLocale(), "serviceInformation_2"));
+            }, (timeout * 2));
+            
+
+            session.endDialog();
+
+            //builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "serviceSelection"), session.localizer.gettext(session.preferredLocale(), "departments"), {listStyle: builder.ListStyle.button}); 
         }   
     },
 
-    function (session, results) {
+    function (session, results, next) {
         if(!results.response){
             return;
         }
@@ -28,7 +60,6 @@ lib.dialog('getServiceInformation', [
         competence = results.response.entity;
         competence = botUtils.toProperCase(competence)
 
-        session.sendTyping();
 
         botStorage.getAnswerByIntentAndEntity("getServiceInformation", competence, function (err, dbResults) {
              if (err) {
@@ -40,10 +71,59 @@ lib.dialog('getServiceInformation', [
                      session.send(session.localizer.gettext(session.preferredLocale(), "db_error"));
 
                  }else{
-                    console.log(dbResults);
-                    session.send(dbResults[0].text);
+                     if(dbResults[0].tags.length > 1){
+                        var tags = dbResults[0].tags[0];
+
+                        for(i=1; i<dbResults[0].tags.length; i++){
+                            tags += "|" + dbResults[0].tags[i];
+                        }
+
+                        session.sendTyping();
+                        setTimeout(function () {
+                            session.send(dbResults[0].text);
+                            builder.Prompts.choice(session, session.localizer.gettext(session.preferredLocale(), "serviceSelection") , tags, {listStyle: builder.ListStyle.button}, {maxRetries: 2});
+                        }, timeout);
+                        
+                        
+                    }else{
+                        session.sendTyping();
+                        setTimeout(function () {
+                            session.send(dbResults[0].text);
+                            session.endDialog();
+                        }, timeout);
+
+                    }
+                 }
+             }
+         });
+    },
+
+    function (session, results) {
+        var entity = results.response.entity; 
+
+        if(!entity){
+            return;
+        }
+
+
+        botStorage.getAnswerByIntentAndEntity("getServiceInformation", entity, function (err, dbResults) {
+             if (err) {
+                 console.log(err);
+                 throw (err);
+             }else{
+                 if(dbResults.length === 0){
+                     session.send(session.localizer.gettext(session.preferredLocale(), "db_error"));
+
+                 }else{
+                    for(let i=0; i<dbResults[0].text.length; i++){
+                        session.sendTyping();
+                        setTimeout(function () {
+                            session.send(dbResults[0].text[i]);       
+                        }, (i+1) * timeout);
+                               
+                    }                    
+                
                     session.endDialog();
-                    //session.replaceDialog("customer:getContactPerson", {serviceInformation: results.response} );
                  }
              }
          });
@@ -65,7 +145,6 @@ lib.dialog('getSoftwareSystems', [
         if(system){
             next({ response: system});
         }else{
-            session.sendTyping();
     
             var cards = [];
             
@@ -97,14 +176,22 @@ lib.dialog('getSoftwareSystems', [
             
             if(cards){
     
-                session.send(session.localizer.gettext(session.preferredLocale(), "getSoftwareSystem"));
+                session.sendTyping();
+                setTimeout(function () {
+                    session.send(session.localizer.gettext(session.preferredLocale(), "getSoftwareSystem"));
+                }, timeout);
+
 
                 var message = new builder.Message(session)
                     .attachmentLayout(builder.AttachmentLayout.carousel)
                     .attachments(cards);
     
-                session.send(message);
-                session.endDialog();
+                session.sendTyping();
+                setTimeout(function () {
+                    session.send(message);
+                    session.endDialog();
+                }, timeout);
+
             }
               
         }   
@@ -118,8 +205,6 @@ lib.dialog('getSoftwareSystems', [
         var system = results.response.entity;
         system = botUtils.toProperCase(system)
             
-        session.sendTyping;
-
         var cards = [];
         
         botStorage.getAnswerByIntentAndEntityName("getSoftwareSystems", "name", system,  function (err, dbResults) {
@@ -131,9 +216,13 @@ lib.dialog('getSoftwareSystems', [
                     session.send(session.localizer.gettext(session.preferredLocale(), "db_error"));
 
                 }else{
-                    session.send(session.localizer.gettext(session.preferredLocale(), "getSoftwareSystem_name"), botUtils.toProperCase(system) )
-                    //session.send('mayato hat mit ' + botUtils.toProperCase(system) + 'eine Partnerschaft')
-                    session.endDialog();
+                    session.sendTyping();
+                    setTimeout(function () {
+                        session.send(session.localizer.gettext(session.preferredLocale(), "getSoftwareSystem_name"), botUtils.toProperCase(system) )
+                        //session.send('mayato hat mit ' + botUtils.toProperCase(system) + 'eine Partnerschaft')
+                        session.endDialog();
+                    }, timeout);
+
                 }
             }
         });

@@ -19,25 +19,35 @@
         "intent": "getServiceInformation",
         "entity": "Customer Analytics",
         "title": "",
-        "text": "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics",
-        "tag": [
+        "text": [
+            "Wir unterstützen Sie im Bereich Media Analytics, Customer Analytics, Customer Prediction oder Social Medial Analytics"
+        ],
+        "tags": [
             "Media Analytics",
-            "Customer Analytics",
+            "Customer Analytics Strategy",
             "Customer Prediction",
             "Social Media Analytics",
             "Feedback Analytics"
         ]
     },
+
+
+
     {
         "id": "2",
         "intent": "getServiceInformation",
         "entity": "Data Science",
         "title": "",
-        "text": "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
-        "tag": [
-            "tag1",
-            "tag2"
+        "text": [
+            "mayato bietet Ihnen brandaktuelles Wissen und optimale Lösungen zur weiterführenden und zukunftsgerichteten Analyse Ihrer Datenbestände",
+            "Mit mayato finden Sie heraus",
+            "Welche Marken oder Produkte im Trend liegen. \n\n Wie zufrieden die Anwender sind. \n\n Wie bekannt ihr Unternehmen ist."
+        ],
+        "tags": [
+            "Data Mining",
+            "Text Mining"
         ]
+
     },
 
         {
@@ -45,51 +55,154 @@
         "intent": "getServiceInformation",
         "entity": "Industry Analytics",
         "title": "",
-        "text": "Mayato hilft Ihnen, Sensordaten, Wartungsberichten, Productions- und Reperaturhistorien zu analysieren und auszuwerten. Mayato besitzt langjährige Erfahrung im Aufbau von Big-Data-Architekturen un in der Analyse großer komplexer Datenmengen"
-    },
+        "text": [
+            "Mayato hilft Ihnen, Sensordaten, Wartungsberichten, Productions- und Reperaturhistorien zu analysieren und auszuwerten. Mayato besitzt langjährige Erfahrung im Aufbau von Big-Data-Architekturen un in der Analyse großer komplexer Datenmengen",
+            "Wir helfen Ihnen Fragen wie  welche Maschine oder welches Bauteil ausfallen wird? Und warum dieses Bauteil Probleme machen wird?"
+        ],
+        "video": "https://youtu.be/Q-TaWcPlOTU"
+        },
     {
         "id": "5",
         "intent": "getServiceInformation",
         "entity": "IT Operations Analytics",
         "title": "",
-        "text": "Operational Analytics lernt aus dem Verhalten und Ereignissen in Ihrer IT-Infrastruktur und kann so den Ausfall einzelner Komponenten ihrer IT-Infrastruktur vorhersagen"
+        "text": [
+            "Operational Analytics lernt aus dem Verhalten und Ereignissen in Ihrer IT-Infrastruktur und kann so den Ausfall einzelner Komponenten ihrer IT-Infrastruktur vorhersagen. \n\n Dies ermöglicht präventive Maßnahmen, reduziert Ausfallzeiten signifikant und verringert das Vorhalten teurer Reservekomponenten. ",
+            "Security Analytics kombiniert vorhandene Daten mit dem Log Management und vorhandenen SIEM Lösungen (Security Information and Event Management), der Netzwerküberwachung und threat detection mit dem Ziel, sicherheitsrelevante Vorfälle zu minimieren und präventiv und zeitnah zu (re-)agieren."
+        ],
+        "video": "https://youtu.be/6D9VZ70Lk-c"
     },
+
     {
         "id": "6",
         "intent": "getServiceInformation",
         "entity": "Financial Analytics",
         "title": "",
-        "text": "Wie lässt sich die Unternehmensentwicklung zielsicher planen? Ist beispielsweise eine Investition sinnvoll? In welchem Umfang können Kosten gespart werden. Unsere Lösungen für Performance Analytics sind eine einzigartige Kombination bewährter Analyse- und Planungswerkzeuge"
+        "text": [
+            "Wie lässt sich die Unternehmensentwicklung zielsicher planen? Ist beispielsweise eine Investition sinnvoll?",
+            "In welchem Umfang können Kosten gespart werden. Unsere Lösungen für Performance Analytics sind eine einzigartige Kombination bewährter Analyse- und Planungswerkzeuge",
+            "Mit unserem Lösungskonzept Financial Analytics erzielen unsere Kunden massive Wettbewerbsvorteile.",
+             "Die Methodik beruht auf der Analyse kaufmännischer Daten, der Erkennung bisher unbekannter Zusammenhänge und der Vorhersage zukünftiger Entwicklungen mit Hilfe moderner Prognoseverfahren."
+        ]
     },
     {
         "id": "7",
         "intent": "getServiceInformation",
         "entity": "Technology",
         "title": "",
-        "text": "mayato hilft Ihnen und Ihrer IT, eine Gesamtstrategie und die richtige Organisation für Business Intelligence und Analytics zu entwerfen."
+        "text":[ 
+            "mayato hilft Ihnen und Ihrer IT, eine Gesamtstrategie und die richtige Organisation für Business Intelligence und Analytics zu entwerfen."
+        ]
     },
 
     {
         "id": "8",
         "intent": "getServiceInformation",
-        "type": "Media Analytics",
+        "entity": "Media Analytics",
         "title": "",
-        "text": "Wir können durch unseren eigenen, vielfach erprobten Analyseansatz unterschiedlichste Online- und Offlinedaten kombiniert auswerten und grafisch eingängig visualisieren. So lassen sich bisher unbekannte Zusammenhänge aufzeigen, der Werbeerfolg einzelner Produkte vorhersagen und die Voraussetzungen für eine effiziente Mediaplanung schaffen.",
-        "tag": [
-            "tag1",
-            "tag2"
-        ]
-    },
-    {
-        "id": "9",
-        "intent": "getServiceInformation",
-        "type": "Customer Analytics",
-        "title": "",
-        "text": "Basierend auf unserer langjährigen Praxiserfahrung erarbeiten wir gemeinsam Ihre individuelle Customer-Analytics-Roadmap. Neben der Frage, welche Analyseszenarien in welchem zeitlichen Abstand durchgeführt werden sollten, werden zahlreiche weitere Themen berücksichtigt: Von den erforderlichen personellen und finanziellen Ressourcen über die zu erwartenden Analyseergebnisse bis hin zur Frage, welches Analysewerkzeug für die geplanten Aufgaben das passende ist."
+        "text": [
+            "Wir können durch unseren eigenen, vielfach erprobten Analyseansatz unterschiedlichste Online- und Offlinedaten kombiniert auswerten und grafisch eingängig visualisieren.",
+            "So lassen sich bisher unbekannte Zusammenhänge aufzeigen, der Werbeerfolg einzelner Produkte vorhersagen und die Voraussetzungen für eine effiziente Mediaplanung schaffen."
+        ],
+        "video": "https://youtu.be/huWHYiRB8Co"
     },
 
     {
-        "id": "101",
+        "id": "9",
+        "intent": "getServiceInformation",
+        "entity": "Customer Analytics Strategy",
+        "title": "",
+        "text": [
+            "Sie verfügen über Kundendatenbestände, in denen Sie wichtige Informationen vermuten, die aber bisher noch nicht ausgewertet werden oder die klassischem Reporting nicht zugänglich sind?",
+            "Sie benötigen eine fundierte Einschätzung darüber, welche Fragestellungen sich mit modernen Analyseverfahren mit welchem Aufwand aus Ihren Daten beantworten lassen?",
+            "Basierend auf unserer langjährigen Praxiserfahrung erarbeiten wir gemeinsam Ihre individuelle Customer-Analytics-Roadmap."]
+ 
+    },
+
+    {
+        "id": "11",
+        "intent": "getServiceInformation",
+        "entity": "Customer Prediction",
+        "title": "",
+        "text": [
+            "Folgende Fragen haben wir bereits für zahlreiche kleine und große Unternehmen aus unterschiedlichsten Branchen beantwortet:", 
+            "Welche Produkte sollte ich wann welchen Kunden bevorzugt anbieten?",
+            "Welcher Ansprachekanal ist für welche Kunden wann am Erfolg versprechendsten?",
+            "Welche Kunden werden voraussichtlich wann abwandern?"
+        ]
+
+    },
+
+    {
+        "id": "12",
+        "intent": "getServiceInformation",
+        "entity": "Social Media Analytics",
+        "title": "",
+        "text": [
+            "Social Media Analytics erlaubt beispielsweise die folgenden Fragestellungen:", 
+            "Welche Marken, Produkte oder Themen liegen im Trend?",
+            "Wie zufrieden sind die Anwender? (Sentimentanalyse)"
+        ]
+
+    },
+
+    {
+        "id": "13",
+        "intent": "getServiceInformation",
+        "entity": "Feedback Analytics",
+        "title": "",
+        "text": [
+            "Mit Hilfe von Textmining können die enthaltenen Informationen - Themen, Stimmungen, Trends oder Vorschläge - strukturiert und ausgewertet werden.", 
+            "Erkennen Sie die Themen, die Ihren Kunden am Herzen liegen", "Erkennen Sie die Stimmungen (Tonalität), die in den Nachrichten enthalten sind"
+        ]
+
+    },
+
+    {
+        "id": "14",
+        "intent": "getServiceInformation",
+        "entity": "Feedback Analytics",
+        "title": "",
+        "text": [
+            "Mit Hilfe von Textmining können die enthaltenen Informationen - Themen, Stimmungen, Trends oder Vorschläge - strukturiert und ausgewertet werden.", 
+            "Erkennen Sie die Themen, die Ihren Kunden am Herzen liegen", "Erkennen Sie die Stimmungen (Tonalität), die in den Nachrichten enthalten sind"
+        ]
+    },
+
+    {
+        "id": "15",
+        "intent": "getServiceInformation",
+        "entity": "Data Mining",
+        "title": "",
+        "text": [
+            "Unsere erfahrenen Data Scientists begleiten Sie gerne bei folgenden Aufgaben die für Data Mining charakteristisch sind:",
+            "Prognosemodellierungen und Klassifikationen",
+            "Clustering und Segmentierungen",
+            "Anomalien- und Ausreißeranalysen"
+        ]
+    },
+
+    {
+        "id": "10",
+        "intent": "getServiceInformation",
+        "entity": "Text Mining",
+        "title": "",
+        "text": [
+            "Auch in Texten stecken viele wertvolle Informationen für ein Unternehmen. Um gezielt Daten zu erheben und unstrukturierte Daten auszuwerten wird Text Mining eingesetzt. \n\n Typische Anwendungen sind dabei:",
+            "Social Media Analysen und Sentiment-/Tonalitätsanalysen",
+            "Textklassifikation, automatische Verschlagwortun und Automatische Textzusammenfassung",
+            "Auswertung von Feedbackfeldern/Freitextfeldern und Vorklassifizierung von E-Mails "
+        ]
+    },
+
+
+
+
+
+
+
+    {
+        "id": "1001",
         "intent": "getContactPerson",
         "name": "Peter Neckel",
         "job": "Manager",
@@ -104,7 +217,7 @@
         ]
     },
     {
-        "id": "102",
+        "id": "1002",
         "intent": "getContactPerson",
         "name": "Georg Heeren",
         "job": "Managing Director",
@@ -122,7 +235,7 @@
         ]
     },
     {
-        "id": "103",
+        "id": "1003",
         "intent": "getContactPerson",
         "name": "Sven Hensen",
         "job": "Managing Director",
@@ -137,7 +250,7 @@
     },
 
     {
-        "id": "104",
+        "id": "1004",
         "intent": "getContactPerson",
         "name": "Dr. Marcus Dill",
         "job": "Managing Director",
@@ -157,7 +270,7 @@
     },
 
     {
-        "id": "105",
+        "id": "1005",
         "intent": "getContactPerson",
         "name": "Nils-Henrik Wolf",
         "job": "Managing Director",
@@ -170,7 +283,7 @@
 
 
     {
-        "id": "201",
+        "id": "2001",
         "intent": "getCaseStudies",
         "title": "Erfolgsmessung im Kampagnenmanagement",
         "company": "",
@@ -187,7 +300,7 @@
     },
 
     {
-        "id": "202",
+        "id": "2002",
         "intent": "getCaseStudies",
         "title": "In-Database-Analytics mit Exasol: Big-Data-Potentiale im E-Commerce nutzen",
         "company": "",
@@ -203,7 +316,7 @@
     },
 
         {
-        "id": "203",
+        "id": "2003",
         "intent": "getCaseStudies",
         "title": "Customer Relationship Analytics: Konzeption & Erstellung einer Kundensegmentierung im Einzelhandel",
         "company": "",
@@ -219,7 +332,7 @@
     },
 
     {
-        "id": "204",
+        "id": "2004",
         "intent": "getCaseStudies",
         "title": "Kundenmanagement im B2B Handel: Klassisches Reporting und Data Mining Verfahren als Basis für Loyalitätskonzepte",
         "company": "",
@@ -236,7 +349,7 @@
     },
 
         {
-        "id": "205",
+        "id": "2005",
         "intent": "getCaseStudies",
         "title": "Kündigeranalyse für eine Direktbank - mit dem Blick für das richtige Timing",
         "company": "",
@@ -254,7 +367,7 @@
     },
 
             {
-        "id": "206",
+        "id": "2006",
         "intent": "getCaseStudies",
         "title": "Media Analytics - Werbewirkungsanalysen im crossmedialen Umfeld für 9flats",
         "company": "9flats.com",
@@ -271,7 +384,7 @@
     },
 
                 {
-        "id": "207",
+        "id": "2007",
         "intent": "getCaseStudies",
         "title": "Anforderungsmanagement und Proof of Concept zur BI Werkzeugauswahl für das Sales Funnel Management und Customer Relationship Management",
         "company": "BMW Group",
@@ -289,7 +402,7 @@
 
     
                 {
-        "id": "209",
+        "id": "2009",
         "intent": "getCaseStudies",
         "title": "Media Analytics - Werbeerfolgsmessung im Mobile-App-Markt für JustBook",
         "company": "just book!",
@@ -307,7 +420,7 @@
 
         
     {
-        "id": "210",
+        "id": "2010",
         "intent": "getCaseStudies",
         "title": "Erfolg und Wirkung von TV-Werbung auf das Online-Business",
         "company": "twago",
@@ -324,7 +437,7 @@
     },
 
         {
-        "id": "211",
+        "id": "2011",
         "intent": "getCaseStudies",
         "title": "Passgenaues Direktmarketing: Zielgruppenoptimierung unter Berücksichtigung kundenindividueller Bedürfnisse durch Prognosemodellierung",
         "company": "twago",
@@ -348,7 +461,7 @@
 
 
     {
-        "id": "301",
+        "id": "3001",
         "intent": "getCustomer",
         "customer": "BWM Group",
         "sector": "Automotive",
@@ -357,7 +470,7 @@
     },
 
     {
-        "id": "302",
+        "id": "3002",
         "intent": "getCustomer",
         "customer": "Volkswagen AG",
         "sector": "Automotive",
@@ -367,7 +480,7 @@
     },
 
     {
-        "id": "303",
+        "id": "3003",
         "intent": "getCustomer",
         "customer": "Commerzbank",
         "sector": "Banken",
@@ -376,7 +489,7 @@
     },
 
     {
-        "id": "304",
+        "id": "3004",
         "intent": "getCustomer",
         "customer": "Volkswagen Financial Services",
         "sector": "Banken",
@@ -385,7 +498,7 @@
     },
 
     {
-        "id": "305",
+        "id": "3005",
         "intent": "getCustomer",
         "customer": "Volkswagen Financial Services",
         "sector": "Banken",
@@ -394,7 +507,7 @@
     },
 
     {
-        "id": "306",
+        "id": "3006",
         "intent": "getCustomer",
         "customer": "Intersport Deutschland",
         "sector": "Handel",
@@ -403,7 +516,7 @@
     },
 
     {
-        "id": "307",
+        "id": "3007",
         "intent": "getCustomer",
         "customer": "Verlagsgruppe Weltbild",
         "sector": "Handel",
@@ -412,7 +525,7 @@
     },
 
     {
-        "id": "308",
+        "id": "3008",
         "intent": "getCustomer",
         "customer": "Bosch",
         "sector": "Industrie",
@@ -421,7 +534,7 @@
     },
 
     {
-        "id": "309",
+        "id": "3009",
         "intent": "getCustomer",
         "customer": "Siemens Healthcare",
         "sector": "Industrie",
@@ -429,7 +542,7 @@
         "date": ""
     },
     {
-        "id": "310",
+        "id": "3010",
         "intent": "getCustomer",
         "customer": "9flats.com",
         "sector": "Internet",
@@ -438,7 +551,7 @@
     },
 
     {
-        "id": "311",
+        "id": "3011",
         "intent": "getCustomer",
         "customer": "twago",
         "sector": "Internet",
@@ -447,7 +560,7 @@
     },
 
     {
-        "id": "312",
+        "id": "3012",
         "intent": "getCustomer",
         "customer": "adidas",
         "sector": "Konsumgüter",
@@ -456,7 +569,7 @@
     },
 
     {
-        "id": "313",
+        "id": "3013",
         "intent": "getCustomer",
         "customer": "Nestle",
         "sector": "Konsumgüter",
@@ -465,7 +578,7 @@
     },
 
     {
-        "id": "314",
+        "id": "3014",
         "intent": "getCustomer",
         "customer": "Bayer",
         "sector": "Pharma",
@@ -474,7 +587,7 @@
     },
 
     {
-        "id": "312",
+        "id": "3012",
         "intent": "getCustomer",
         "customer": "Volkswagen Financial Services",
         "sector": "Banken",
@@ -483,7 +596,7 @@
     },
 
     {
-        "id": "313",
+        "id": "3013",
         "intent": "getCustomer",
         "customer": "Allianz SE",
         "sector": "Versicherungen",
@@ -492,7 +605,7 @@
     },
 
     {
-        "id": "314",
+        "id": "3014",
         "intent": "getCustomer",
         "customer": "ERGO",
         "sector": "Versicherungen",
@@ -501,7 +614,7 @@
     },
 
     {
-        "id": "401",
+        "id": "4001",
         "intent": "getSoftwareSystems",
         "name": "Tableau",
         "description": "",
@@ -510,7 +623,7 @@
     },
 
     {
-        "id": "402",
+        "id": "4002",
         "intent": "getSoftwareSystems",
         "name": "Exasol",
         "description": "",
@@ -519,7 +632,7 @@
     },
 
     {
-        "id": "403",
+        "id": "4003",
         "intent": "getSoftwareSystems",
         "name": "Graphomate",
         "description": "",
@@ -528,7 +641,7 @@
     },
 
     {
-        "id": "404",
+        "id": "4004",
         "intent": "getSoftwareSystems",
         "name": "IBM",
         "description": "",
@@ -537,7 +650,7 @@
     },
 
     {
-        "id": "405",
+        "id": "4005",
         "intent": "getSoftwareSystems",
         "name": "Informatica",
         "description": "",
@@ -546,7 +659,7 @@
     },
 
     {
-        "id": "406",
+        "id": "4006",
         "intent": "getSoftwareSystems",
         "name": "kxen",
         "description": "",
@@ -555,7 +668,7 @@
     },
 
     {
-        "id": "407",
+        "id": "4007",
         "intent": "getSoftwareSystems",
         "name": "Rapidminer",
         "description": "",
@@ -564,7 +677,7 @@
     },
 
     {
-        "id": "408",
+        "id": "4008",
         "intent": "getSoftwareSystems",
         "name": "SAP",
         "description": "",
@@ -573,7 +686,7 @@
     },
 
     {
-        "id": "409",
+        "id": "4009",
         "intent": "getSoftwareSystems",
         "name": "SAS",
         "description": "",
@@ -582,7 +695,7 @@
     },
 
     {
-        "id": "410",
+        "id": "4010",
         "intent": "getSoftwareSystems",
         "name": "Yellowfin",
         "description": "",
@@ -591,7 +704,7 @@
     },
 
     {
-        "id": "411",
+        "id": "4011",
         "intent": "getSoftwareSystems",
         "name": "Talend",
         "description": "",
@@ -601,7 +714,7 @@
 
     
     {
-        "id": "412",
+        "id": "4012",
         "intent": "getSoftwareSystems",
         "name": "StatSoft",
         "description": "",
@@ -610,7 +723,7 @@
     },
 
     {
-        "id": "413",
+        "id": "4013",
         "intent": "getSoftwareSystems",
         "name": "Theobald",
         "description": "",
@@ -620,7 +733,7 @@
 
 
     {
-        "id": "501",
+        "id": "5001",
         "intent": "getNews",
         "title": "Chatbots - Das Geheimnis ihres Erfolgs",
         "text": "Als Markenbotschafter, Kundenbetreuer und persönliche Assistenten erobern Chatbots die digitale Welt. 1966 entwickelte Joseph Weizenbaum ...",
@@ -630,7 +743,7 @@
     },
 
     {
-        "id": "502",
+        "id": "5002",
         "intent": "getNews",
         "title": "mayato baut SAP-Beratung strategisch aus: Eric Niedling wird neuer Bereichsleiter",
         "text": "Eric Niedling übernimmt ab sofort die Führung des SAP-Bereichs bei mayato. Gemeinsam mit dem Business Solution Temas wird der international erfahrene Manager ...",
@@ -640,7 +753,7 @@
     },
 
     {
-        "id": "503",
+        "id": "5003",
         "intent": "getNews",
         "title": "Wie ergänzen sich BW/4Hanna and SAP HANA",
         "text": "Seit der Einführung ihres ersten Business Warehouse Systems BIW 1.2A vor 20 Jahren, entwickelte SAP ...",

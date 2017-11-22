@@ -2,6 +2,8 @@
     "greeting": "Hallo, ich bin Mike der mayato ChatBot.\n\n Du kannst mir einfache Frage über mayato stellen. \n\n Zum Beispiel: Welche Beratungsleistungen wir anbieten oder suche nach Case Studies.",
     "bot": "Ich bin nur ein Bot, aber ich werde dir antworten so gut ich kann. ",
 
+
+
     "greetingBasicDialog": "Hallo, wie kann ich helfen?",
     "error": "Leider habe ich keine Informationen gefunden",
     "tip": "Schreiben Sie einfach \"Tipp\" wenn sie nicht mehr weiter wissen oder wenn sie Anregungen benötigen.",
@@ -16,7 +18,7 @@
     "goodbye": "Bis zum nächsten Mal",
     "tipNoResult": "Leider ist ein Fehler aufgetreten. Ich muss mal mit meinem Entwickler sprechen.",
 
-    "mayatoInfo": "Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien",
+    "mayatoInfo": "Mayato ist eine IT-Beratung für die Bereiche Financial Analytics, Customer Analytics Strategy, Industry Analytics und Security Analytics. Sie wurde 2007 gegründet und hat ihren Sitz in Berlin. Weitere Standorte sind Bielefeld, Mannheim und Wien",
     "foundation": "Die Mayato GmbH wurde im Jahre 2007 gegründet. mayato ist demnach 10 Jahre alt.",
     "noNews": "Leider wurden keine News gefunden",
     "click": "Bitte hier klicken für mehr Informationen",
@@ -35,8 +37,13 @@
     "selection": "Wählen Sie einen Bereich aus.",
     "getContactPersonNoResult": "Leider wurde kein Ansprechpartner gefunden",
     "getContactPerson": "Ihr Ansprechpartner im Bereich %s ist:",
-    "contact": "Tel.: %s \n\n E-Mail: %s"
+    "contact": "Tel.: %s \n\n E-Mail: %s",
 
-    
+    "serviceInformation": "Gemeinsam mit seinen Kunden entwirft und realisiert mayato Lösungen in den Bereichen Financial Analytics, Customer Analytics, Industry Analytics, IT Operations Analytics und Technolgy.",
+    "serviceInformation_image":"http://www.mayato.com/wp-content/uploads/2015/01/strategirue.png",
+    "serviceInformation_1":"Unsere Technologieberater analysieren und optimieren Ihre fachlichen Prozesse und erarbeiten mit Ihnen die Anforderungen an deren technische Umsetzung.",
+    "serviceInformation_2":"Sie helfen bei der Auswahl der geeigneten Werkzeuge, entwickeln erfolgreiche Strategien und konzipieren bewährte und moderne Architekturen. ",
+    "serviceInformation_3": "Natürlich helfen mayato Berater auch bei deren praktischer Umsetzung. Technische Standards und methodische Vorgaben (Governance) ermöglichen sparsame, effektive Projekte und einen effizienten, nachhaltigen Betrieb."   
+
 
 }   
