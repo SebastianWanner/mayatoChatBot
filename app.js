@@ -1,6 +1,6 @@
 // This loads the environment variables from the .env file
-require('dotenv-extended').load();
-console.log(process.env.APP_ID);
+//require('dotenv-extended').load();
+//sconsole.log(process.env.APP_ID);
 
 // loads the microsoft bot framework
 var builder = require('botbuilder');
