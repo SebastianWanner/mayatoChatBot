@@ -1,9 +1,12 @@
 
+//loads microsoft bot framwork
 var builder = require('botbuilder');
 var botUtils = require("../utils/botUtils");
 
+//creates library for exporting
 var lib = new builder.Library('customer');
 
+//loads JSON Data Storage
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
@@ -11,14 +14,12 @@ var timeout = 5000;
 
 
 //=========================================================
-// Get Customer
+// Intent Get Customer
 //=========================================================
 
 lib.dialog('getCustomer', [
 
     function(session, args){
-
-        session.sendTyping;
 
         var cards = [];
         botStorage.getAnswerByIntent("getCustomer", function (err, dbResults) {
@@ -65,8 +66,6 @@ lib.dialog('getCustomer', [
             session.send(session.localizer.gettext(session.preferredLocale(), "tipCaseStudies"));
             session.endDialog();
         }, timeout);   
-
-
     }
 
 ]).triggerAction({
@@ -74,7 +73,7 @@ lib.dialog('getCustomer', [
 });
 
 //=========================================================
-// Get Case Studies
+// Intent Get Case Studies
 //=========================================================
 
 lib.dialog('getCaseStudies', [

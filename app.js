@@ -1,19 +1,25 @@
+// This loads the environment variables from the .env file
+require('dotenv-extended').load();
+console.log(process.env.APP_ID);
+
+// loads the microsoft bot framework
 var builder = require('botbuilder');
+//loads server library
 var restify = require('restify');
 const path = require('path');
-const winston = require('winston');
 const fs = require('fs');
+//loads logging framework
+const winston = require('winston');
 
 // Setup Restify Server
 var server = restify.createServer();
 
-
 // Create chatbot connector
 var connector = new builder.ChatConnector({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORDs
-});
+    appId: 'APP_ID',
+    appPassword: 'APP_PASSWORD'
 
+});
 
 //create server
 server.post('/api/messages', connector.listen());
@@ -24,6 +30,7 @@ server.get(/.*/, restify.serveStatic({
      'default': 'index.html'
 }));
 
+//server listening
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
@@ -38,12 +45,6 @@ var bot = new builder.UniversalBot(connector, {
 
 // Enable Conversation Data persistence
 bot.set('persistConversationData', true);
-
-/* // Set default locale
-bot.set('localizerSettings', {
-    botLocalePath: path.join(__dirname, './locale'),
-    defaultLocale: 'de'
-}); */
  
 // Add global LUIS recognizer to bot 
 var model = process.env.model || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/19fd82bb-c6a8-4ed7-ba2b-eabe2ff3edf5?subscription-key=6db68835a1ec41518c5ac8b77c8aea58&staging=true&spellCheck=true&verbose=true&timezoneOffset=0&q='; 

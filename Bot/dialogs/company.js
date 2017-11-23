@@ -1,32 +1,34 @@
 
+//loads the microsoft bot framework
 var builder = require('botbuilder');
 
+//loads the JSON Database
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
+//creates the library for exporting
 var lib = new builder.Library('company');
 
+//timeout for function sendTyping()
 var timeout = 5000;
 
 //=========================================================
-// mayato
+// Intent mayato
 //=========================================================
 
 lib.dialog('mayato', 
     function(session, args){
-
         session.sendTyping();
         setTimeout(function () {
             session.send(session.localizer.gettext(session.preferredLocale(), "mayatoInfo"));            
         }, timeout);   
-
     }
 ).triggerAction({
     matches:'mayato'
 });
 
 //=========================================================
-// Get Management Information
+// Intent Get Management Information
 //=========================================================
 
 lib.dialog('getManagementInformation', function(session, args){
@@ -40,18 +42,14 @@ lib.dialog('getManagementInformation', function(session, args){
         }else{
             if(dbResults.length === 0){
                 session.send(session.localizer.gettext(session.preferredLocale(), "getManagementError"));
-
             }else{
-
                 for(var item of dbResults){
                     var card =  new builder.HeroCard(session)
                         .title(item.name)
                         .text(item.text)
                         .images([
                             builder.CardImage.create(session, item.image)
-                        
                         ]);
-
 
                     cards.push(card)
                 }
@@ -60,12 +58,10 @@ lib.dialog('getManagementInformation', function(session, args){
     });
     
     if(cards){
-
         session.sendTyping();
         setTimeout(function () {
             session.send(session.localizer.gettext(session.preferredLocale(), "management"));     
         }, timeout);   
-
 
         var message = new builder.Message(session)
             .attachmentLayout(builder.AttachmentLayout.carousel)
@@ -76,7 +72,6 @@ lib.dialog('getManagementInformation', function(session, args){
             session.send(message);
             session.endDialog();
         }, timeout);   
-
     }
       
 }).triggerAction({
@@ -84,7 +79,7 @@ lib.dialog('getManagementInformation', function(session, args){
 });
 
 //=========================================================
-// Get FoundationDate
+//Intent Get FoundationDate
 //=========================================================
 
 lib.dialog('getFoundationDate', function(session, args){
@@ -97,9 +92,9 @@ lib.dialog('getFoundationDate', function(session, args){
 }).triggerAction({
     matches:'getFoundationDate'
 });
-
+ 
 //=========================================================
-// Get News and Publications
+//  Intent Get News and Publications
 //=========================================================
 
 lib.dialog('getNews', [

@@ -1,17 +1,21 @@
 
+//loads microsoft bot framwork
 var builder = require('botbuilder');
 
+//creates library to export intents
 var lib = new builder.Library('basicDialogs');
 
+//connects to JSON Database
 var JSONStorage = require("../../models/JSONStorage.js");
 var botStorage = new JSONStorage();
 
 var counter = 0;
 
+//timeout for the function sendTyping()
 var timeout = 5000;
 
 //=========================================================
-// None
+// Intent None
 //=========================================================
 
 lib.dialog('None', 
@@ -24,9 +28,7 @@ function(session, args){
             session.replaceDialog("tip");
             counter = 0;
         }, timeout);   
-
     }
-
     counter += 1;
 }
 ).triggerAction({
@@ -34,12 +36,13 @@ function(session, args){
 });
 
 //=========================================================
-// Get a Tip
+// Intent Get a Tip
 //=========================================================
 
 lib.dialog('tip', 
 function(session, args){ 
 
+    //search for the intent
     botStorage.getAnswerByIntent("getTip", function (err, dbResults) {
         if (err) {
             console.log(err);
@@ -52,7 +55,6 @@ function(session, args){
 
             }else{
                console.log(dbResults);
-               //session.send(session.localizer.gettext(session.preferredLocale(), "help"));
 
                for(var item of dbResults){
                     var number = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
@@ -62,8 +64,7 @@ function(session, args){
                         session.send(item.tags[number]);
                         session.endDialog();
                     }, timeout);   
-
-            }
+                }
             }
         }
     });
@@ -75,7 +76,7 @@ function(session, args){
 
 
 //=========================================================
-// GetHelp
+// Intent GetHelp
 //=========================================================
 
 lib.dialog('getHelp', 
@@ -92,25 +93,21 @@ matches:'getHelp'
 
 
 //=========================================================
-// Greeting
+// Intent Greeting
 //=========================================================
 
 lib.dialog('greeting', function(session, args){
-
-
     session.sendTyping();
     setTimeout(function () {
         session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
         session.endDialog();
     }, timeout);   
-
-    
 }).triggerAction({
     matches:'greeting'
 });
 
 //=========================================================
-// Feeling
+// Intent Feeling
 //=========================================================
 
 lib.dialog('feeling', [
@@ -121,31 +118,27 @@ lib.dialog('feeling', [
             //session.send(session.localizer.gettext(session.preferredLocale(), "help_2"))
             session.endDialog();
         }, timeout);   
-
     }
-
 ]).triggerAction({
     matches:'feeling'
 });
 
 //=========================================================
-// Humanor Machine
+// Intent Human or Machine
 //=========================================================
 
 lib.dialog('HumanOrMachine', 
     function(session, args){    
         session.send(session.localizer.gettext(session.preferredLocale(), "humanOrMachine"))
         session.endDialog();
-
     }
 ).triggerAction({
     matches:'HumanOrMachine'
 });
 
 //=========================================================
-// Bot-Question
+// Intent Bot-Question
 //=========================================================
-
 lib.dialog('name', 
     function(session, args){    
         session.sendTyping();
@@ -153,21 +146,20 @@ lib.dialog('name',
             session.send(session.localizer.gettext(session.preferredLocale(), "greetingBasicDialog"));
             session.endDialog();
         }, timeout);   
-
     }
 ).triggerAction({
     matches:'name'
 });
 
 //=========================================================
-// Age
+// Intent Age
 //=========================================================
 
 lib.dialog('age', 
-    function(session, args){    
+    function(session, args){   
+        //calculate the time difference between start programming bot and today
         var today = new Date();
         var birthday = new Date(2017, 3, 20);
-
         var timeDiff = Math.abs(today.getTime() - birthday.getTime());
 
         session.sendTyping();
@@ -175,8 +167,6 @@ lib.dialog('age',
             session.send(session.localizer.gettext(session.preferredLocale(), "age"), Math.ceil(timeDiff/(1000*60*60*24)));
             session.endDialog();
         }, timeout);       
-
-
     }
 ).triggerAction({
     matches:'age'
@@ -184,18 +174,17 @@ lib.dialog('age',
 
 
 //=========================================================
-// Goodbye
+// Intent Goodbye
 //=========================================================
 
 lib.dialog('goodbye', function(session, args){
     session.endDialog(session.localizer.gettext(session.preferredLocale(), "goodbye"))
-
-
 }).triggerAction({
     matches:'goodbye'
 });
 
 
+//exports the library
 module.exports.createLibrary = function(){
     return lib.clone();
 }
