@@ -16,10 +16,8 @@ var server = restify.createServer();
 
 // Create chatbot connector
 var connector = new builder.ChatConnector({
-    //appId: 'APP_ID',
-    //appPassword: 'APP_PASSWORD'
-    appId: 'b025f271-1d0b-425e-b0ea-4b3ebdd9b563',
-    appPassword: 'woqcQWSE075*{^pggLPN60)'
+    appId: 'APP_ID',
+    appPassword: 'APP_PASSWORD'
 
 });
 
