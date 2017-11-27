@@ -1,0 +1,2912 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "MayatoChatBot",
+  "desc": "",
+  "culture": "de-de",
+  "intents": [
+    {
+      "name": "age"
+    },
+    {
+      "name": "feeling"
+    },
+    {
+      "name": "getCaseStudies"
+    },
+    {
+      "name": "getCompanyContact"
+    },
+    {
+      "name": "getContactPerson"
+    },
+    {
+      "name": "getCustomer"
+    },
+    {
+      "name": "getFoundationDate"
+    },
+    {
+      "name": "getHelp"
+    },
+    {
+      "name": "getInformation"
+    },
+    {
+      "name": "getJobOffers"
+    },
+    {
+      "name": "getManagementInformation"
+    },
+    {
+      "name": "getNews"
+    },
+    {
+      "name": "getServiceInformation"
+    },
+    {
+      "name": "getSoftwareSystems"
+    },
+    {
+      "name": "goodbye"
+    },
+    {
+      "name": "greeting"
+    },
+    {
+      "name": "HumanOrMachine"
+    },
+    {
+      "name": "makeAppointment"
+    },
+    {
+      "name": "mayato"
+    },
+    {
+      "name": "name"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "competence"
+    },
+    {
+      "name": "contactPerson"
+    },
+    {
+      "name": "customer"
+    },
+    {
+      "name": "location"
+    },
+    {
+      "name": "management"
+    },
+    {
+      "name": "softwareSystem"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "contactPerson",
+      "mode": true,
+      "words": "Peter Neckel,Georg Heeren,Sven Hensen,Marcus Dill,Nils - Henrik Wolf",
+      "activated": true
+    },
+    {
+      "name": "customer analytics",
+      "mode": true,
+      "words": "crm analytics,media analytics,customer prediction,churn prediction,social media analytics,feedback analytics",
+      "activated": true
+    },
+    {
+      "name": "data science",
+      "mode": true,
+      "words": "advanced analytics,predictive analytics,künstliche Intelligenz,Artificial Intelligence,machine learning,data mining,Classification,Klassifikation,Clustering Segmentierung,Prognose modellierung,Anomalienanalysen,Ausreißeranalysen,Anomalie detection,outlier detection,assoziations analysen,sequenz analyse,Text mining,Sentimentanalyse,Sentiment analytics,Text classification,Text klassifikation,Informationextraction,Chatbot,Trend - Erkennung,Deep Learning,Muster erkennung,Crawling,Scraping,Information Retrieval",
+      "activated": true
+    },
+    {
+      "name": "financial analytics",
+      "mode": true,
+      "words": "Performance analytics,betrugs erkennung,fraud detection",
+      "activated": true
+    },
+    {
+      "name": "industry analytics",
+      "mode": true,
+      "words": "predictive maintenance,Industrie 4 . 0,predicitive asset maintenance,sensor daten analyse",
+      "activated": true
+    },
+    {
+      "name": "it operations analytics",
+      "mode": true,
+      "words": "Operation analytics,security analytics,operational analytics,security intelligence,it governance",
+      "activated": true
+    },
+    {
+      "name": "software",
+      "mode": true,
+      "words": "SAP,SAP BW,SAP HANA,SAP Data services,SAP Lumira,ERP,CRM,SAP Business Objects,SAS,Reporting,Datawarehouse,Exasolution,Talend,Informatica,Hadoop,NoSQL,ETL,Daten modellierung,Tableau,Qlik,tableau,exasol,graphomate,ibm,informatica,kxen,rapid miner,rapidminer,sap,sas,yellowfin,talend,statsoft,theobald",
+      "activated": true
+    },
+    {
+      "name": "technologie",
+      "mode": true,
+      "words": "Business intelligence,Business intelligence und analytics,Big Data,Governance,Data LifeCycle Management Strategie,BI",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hallo",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "grüß gott",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "ciao",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "test",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wie gehts",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "huhu",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "alter",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "ich brauche hilfe",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "guten abend",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "wir sehen uns",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "ja",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "guten tag",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "servus",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "was",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tschüss",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "hilfe",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "helf mir",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "wie kannst du mir helfen?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "gut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wie gehts?",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "name",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "guten morgen",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "wie ist dein name?",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "bye",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "was kannst du?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "cool",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "auf wiedersehen",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "keine ahnung",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "asdfasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "asdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "1",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "see you",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "ok danke",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wie läufts?",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "bis bald",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "machs gut",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "wie geht's?",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "wie heisst du?",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "wer bist du?",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "hai",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "was soll ich machen",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bieten sie an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen werden angeboten?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "rückruf",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "wie alt bist du?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "was ist dein name?",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "bist du ein mensch?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "cya",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "alles klar?",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "nichts",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bist du ein computer?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "wie ist dein alter?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "leistungen",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "asf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bist du echt?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "ich will was kaufen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "neuer tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "na gut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wer ist mein ansprechpartner?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "bist du ein bot?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "ade",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "wie geht's dir heute",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "seit wann gibt es dass unternehmen?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "in welchem jahr wurde die mayato gegründet?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "wann wurde das unternehmen gegründet?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "wie alt ist die mayato gmbh?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "in welchem jahr wurde das unternehmen gegründet?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "wer ist der chef im unternehmen?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer sitzt im vorstand von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer befindet sich im management?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer der mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der vorstandsvorsitzender?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer leitet das unternehmen?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "aus wem besteht das management bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "ich weiß nicht was ich machen soll?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "welche werden im security analytics angeboten?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 17,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "was bietet mayato im bereich industry analytics an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 29,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "welche leistungen gibt es im customer analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 29,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "welche lösungen werden im bereich financial analytics angeboten?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 34,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "welche lösungen werden angeboten?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche lösungen kann mayato realisieren?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistung gibt es bei der mayato?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "was kann ich bei der mayato kaufen?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "was bietet das unternehmen an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bietet sie an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist mein berater?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "bei welchen unternehmen hat die mayato schon projekte durchgeführt?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wie heißen die kunden von mayato?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "welche projekte hat die mayato schon durchgeführt?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wer sind ihre kunden?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "welche kunden hat mayato?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wo hat die mayato schon projekte erfolgreich umgesetzt?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wer sitzt im management von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer sitzt den im management von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist im management von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer der mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der boss bei mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist geschäftsführer von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wie lange gibt es mayato schon",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "ich möchte gerne wissen, welche leistungen mayato anbietet?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "mich würde interessieren, welche leistungen mayato anbietet?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist mein berater im bereich financial analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "ich benötige einen ansprechpartner?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wen kann ich im bereich industry analytics sprechen?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 24,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "wer ist der ansprechpartner im bereich customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 39,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "wer ist mein ansprechpartner für financial analytics lösungen?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 33,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "ich möchte meinen berater für customer analytics lösungen sprechen.",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 30,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "wer ist leiter in der abteilung customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "nenne bitte mein ansprechpartner für customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 37,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "wer ist zuständig für sap?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wer ist",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "nenne mir alle geschäftsführer",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "nenne mir alle vorstandsmitglieder",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wie heißen die vorstände?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wie heißt der geschäftsführer?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "nenne mir das management von mayato.",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "was willst von mir?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "manegement von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "was bietet die mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "seit wann gibt es mayato",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "wer ist geschäftsführer bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "welche kunden hat mayato",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wann wurde mayato gegründet?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "wie alt ist mayato?",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "auch gut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "customer analytics",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "it operations analytics",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wie sind die leistungen von mayato?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer von mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der manager von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der chef bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wie alt ist mayato",
+      "intent": "getFoundationDate",
+      "entities": []
+    },
+    {
+      "text": "was für kunden hat mayato?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "ok danke tschau",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "wer ist marketingleiter von mayato",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "danke gut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leistungen von mayato?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der kappo von mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen werden bei mayato angeboten",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "ich möchte gerne wissen, welche leistungen mayato anbietet",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der chef bei mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist den geschäftsführer?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bietet den mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist mein ansprechpartner für customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 33,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "wer ist mein ansprechpartner im bereich customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 40,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "wer ist mein ansprechpartner im bereich customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 40,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "ich brauche einen ansprechpartner?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wie ist mein ansprechpartner?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wer ist mein ansprechpartner für customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 33,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "wer ist den der boss bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der geschäftsführer",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist den der ansprechpartner für customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 36,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "gut eigentlich",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ich brauche einen ansprechpartner",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wer ist den der ansprechpartner in customer analytics?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 35,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "schreibe ich mit einem computer?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "mensch oder maschine?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "bist du real?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "unterhalte ich mich mit einem computerprogramm?",
+      "intent": "HumanOrMachine",
+      "entities": []
+    },
+    {
+      "text": "wie ist die telefonnummer meines beraters?",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "wie funktionierst du?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "was soll ich tun?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "sag mir wie du heisst?",
+      "intent": "name",
+      "entities": []
+    },
+    {
+      "text": "wann wurdest du geboren?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "wie alt?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "asdfasefsadfasdfasdfasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "mike, wie alt bist du?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "was für kunden habt ir",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "was bietet mayato denn an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "soooorrrryyy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "asdfasdfasdfasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ich suche einen ansprechpartner",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "asdfasdfasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "suche einen ansprechpartner",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "welche projekte gab es",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "welche projekte wurden von mayato umgesetzt?",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "case studies",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "welche case studies hast du denn?",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "hast du auch casestudies?",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "gebe mir information über mayato",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "erzähl mir was über das unternehmen.",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "wer ist mayato?",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "was ist mayato?",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "was macht mayato?",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "asdfasdfasfdasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leistungen von mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "ich nehm nummer 3",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "case study",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "habt ihr erfolgreich umgesetzte projekte?",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "kunden von mayato?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wer sind die kunden von mayato?",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "wie sind ihre leistungen",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "habt ihr auch case studies für customer analytics?",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 31,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "welche leistungen werden den angeboten?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bietet die mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "nummer 1 bitte",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hallo mike! was ist mayato?",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "ich benötige einen ansprechpartner",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "man sieht sich",
+      "intent": "goodbye",
+      "entities": []
+    },
+    {
+      "text": "machen sie auch social media analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "bieten sie data mining an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 11,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "macht mayato auch text mining?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 18,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "können sie auch data mining?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "bietet mayato auch social media analytics an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 19,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "machen sie auch text mining?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "macht mayato auch media analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 18,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "machen sie auch churn prediction?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "bieten sie auch performance analytics an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "wie sieht es mit predictive analytics aus?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 17,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "machen sie auch operational analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "bieten sie auch beratung im bereich big data an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 36,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "welche platformen haben sie für business intelligence?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "\"machen sie auch text mining\"",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 17,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "was macht mayato",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "wer ist der boss bei mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "\"machen sie auch churn prediciton\"",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 17,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "\"machen sie auch churn prediction\"",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "macht mayato auch customer analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 18,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "kann mayato auch text mining?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "macht ihr auch text mining?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "macht ihr auch customer analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 15,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner für advanced analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner für big data",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "macht mayato auch text mining",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bietet mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistungen hat mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "beratungsleistungen von mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "customer",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ansprechpartner für text mining",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "welcher leistungen werden angeboten?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "kann ich bitte einen ansprechpartner im bereich customer analytics haben?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 48,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner von mayato",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "beratlungsleistungen von mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungleistungen werden angebotenß",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistungen bietet mayato im bereich text mining an?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 52,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "welche beratungsleistungen bietet mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistungen hat mayato?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistungen werden im bereich text mining angeboten?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 45,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner für customer analytics bitte",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "welche beratungsleistung bietet mayato an",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "in welchen bereichen bietet ihr lösungen an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "macht ihr auch customer analytics",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 15,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner im bereich customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 27,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "ansprechpartner für customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "welche dienstleistungen bietet mayato an?",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "habt ihr crm analytics projekte umgesetzt?`",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 9,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "nach case study im data mining",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 19,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "suche nach case study im business intelligence",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 25,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "suche nach fallstudien im bereich data science",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 34,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "suche nach falllstudien",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "haben sie fallstudien?",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "projekte im bereich financial analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "habt ihr projekte im bereich social media analytics umgesetzt",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 29,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "case studies in data science",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "suche nach case studies im bereich data science",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 35,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "machen sie auch churn prediciton",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 16,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "arbeitet ihr mit bmw zusammen",
+      "intent": "getCustomer",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "hattet ihr die commerzbank als kunden",
+      "intent": "getCustomer",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 15,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "habt ihr projekte mit commerzbank umgesetzt",
+      "intent": "getCustomer",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 22,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "arbeitet ihr mit mercedes zusammen?",
+      "intent": "getCustomer",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 17,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "habt ihr bwm als kunde?",
+      "intent": "getCustomer",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "kann ich mir case studies im bereich custommer analytics ansehen",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 37,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "haben sie case studies im bereich customer analytics vorzuweisen?",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 34,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "können sie case studies im bereich predicitve maintenance anbieten",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 35,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "habt ihr beispiel projekte über crm analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "suche nach case studies mit bmw",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 28,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "gibt es case studies mit der commerzbank",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 29,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "gibt es case studies mit bwm",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "customer",
+          "startPos": 25,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "termin vereinbaren",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "welche kunden betreut mayato",
+      "intent": "getCustomer",
+      "entities": []
+    },
+    {
+      "text": "gibt es case studies im bereich customer analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "was macht das unternehmen",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "kennt sich mayato mit rapid miner aus?",
+      "intent": "getSoftwareSystems",
+      "entities": [
+        {
+          "entity": "softwareSystem",
+          "startPos": 22,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "nutzt mayato tableau?",
+      "intent": "getSoftwareSystems",
+      "entities": [
+        {
+          "entity": "softwareSystem",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "welche software systeme werden benutzt",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche it systeme kennt sich mayato aus",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "mit welchen software systemen führt mayato projekte aus",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "mit welchen technologieanbietern hat mayato eine partnerschaft",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "mit welchen softwareanbieter hat das unternehmen eine partnerschaft",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche partner hat mayato?",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche technologien wendet mayato an",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche it lösungen werden von mayato angewandt",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche software systeme nutzt mayato",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "wird tableau von mayato eingesetzt?",
+      "intent": "getSoftwareSystems",
+      "entities": [
+        {
+          "entity": "softwareSystem",
+          "startPos": 5,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "setzt mayato auch exasol ein?",
+      "intent": "getSoftwareSystems",
+      "entities": [
+        {
+          "entity": "softwareSystem",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "welche it lösungen werden in projekten eingesetzt?",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche software wird von mayato eingesetzt?",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche news gibt es über das unternehmen",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "gib mir die neusten neuigkeiten",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "gib mir die news von mayato",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "was gibts neues bei mayato",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "suche nach neuigkeiten",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "sende mir die neusten news",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "welche neuigkeiten gibt es bei mayato?",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "welche artikel hat mayato veröffentlicht",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "welche news gibt es über mayato",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "suche nach veröffentlichungen",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "suche nach news",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "was sind die news",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "was sind die neuigkeiten",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "was gibts neues über das unternehmen",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "habt ihr offene jobstellen",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "welche stellenangebote hat mayato",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "suche nach jobangebote",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "suche nach offenen stellen",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "welche jobs hat mayato?",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "gibt es offene stellen bei mayato?",
+      "intent": "getJobOffers",
+      "entities": []
+    },
+    {
+      "text": "software systeme",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "ich suche case studies im bereich [ $competence ]",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "welche leistungen bietet mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "asdfasdfasdffasdf",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leistungen über mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "wer ist der boss von mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "welche software tools gibt es",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "welche news gibt es",
+      "intent": "getNews",
+      "entities": []
+    },
+    {
+      "text": "ich brauche einen ansprechpartner für customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 38,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "sag mir mehr über mayato",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "sag mir mehr",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "was gibt es sonst noch so über mayato",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "sag mir mehr über mayato?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "was gibt es sonst noch zu wissen?",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "wie lautet die adresse von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie lauten die kontaktdaten",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "gib mir die kontaktdaten",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wo ist der hauptsitz von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "welche standorte hat mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wo sitzt mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "was ist die adresse von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "bring mich in kontakt mit mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie lautet die telefonnummer von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "ruf mayato an",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "ich möchte kontakt zu mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie erreiche ich mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie lauten die kontakt daten von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie erreiche ich mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "wie erreicht man mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "gib mir die kontaktdaten aus location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 29,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "wie lauten die kontakt daten in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 32,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "wie lautet die adresse von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 37,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "wie erreicht man mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "wie erreicht man mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "adresse von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "telefonnummer von mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "wie lautet die telefonnummer von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 43,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "wie lautet die adresse in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "wie lautet die telefonnummer in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 32,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "ruf mayato in location an",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "telefonnummer von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 28,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "adresse von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "gib mir die adresse von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 34,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "gib mir die telefonnummer von mayato in location",
+      "intent": "getCompanyContact",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 40,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "wo ist mayato",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "kontaktiere marcus dill",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 12,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "wie kann ich marcus dill erreichen?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 13,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "arbeitet peter neckel bei mayato?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 9,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "arbeitet peter neckel bei euch?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 9,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "gibt es einen peter neckel?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 14,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "wie kann ich peter neckel erreichen?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 13,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "kann ich mit peter neckel sprechen`?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 13,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "wer ist georg heeren?",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 8,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "kontaktdaten von peter neckel",
+      "intent": "getContactPerson",
+      "entities": []
+    },
+    {
+      "text": "sende mir ein tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "tipp zum suchen",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "gib mir ein neuer tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "ich brauche ein tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "gib mir ein tipp",
+      "intent": "getHelp",
+      "entities": []
+    },
+    {
+      "text": "können sie mich kontaktieren?",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "ruf mich zurück",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "bitte um einen rückruf",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "kann mich jemand zurückrufen",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "ich möchte gerne jemand im bereich customer analytics kontaktieren",
+      "intent": "makeAppointment",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 35,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "ich möchte gerne jemand kontaktieren",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "kann ich einen kontakt herstellen",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "ich möchte einen rückruf",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "ich möchte gerne jemand kontaktieren?",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "kann ich einen termin vereinbaren?",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "telefongespräch vereinbaren",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "ich möchte gerne einen termin",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "kontaktvereinbarung",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "bitte um einen telefonanruf",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "bitte kontaktiere mich",
+      "intent": "makeAppointment",
+      "entities": []
+    },
+    {
+      "text": "kann mich peter neckel zurückrufen",
+      "intent": "makeAppointment",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 10,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "wer ist peter neckel",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "contactPerson",
+          "startPos": 8,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "wie alt bist?",
+      "intent": "age",
+      "entities": []
+    },
+    {
+      "text": "'wie lautet die telefonnummer von mayato'",
+      "intent": "getCompanyContact",
+      "entities": []
+    },
+    {
+      "text": "hi wie gehts dir?",
+      "intent": "feeling",
+      "entities": []
+    },
+    {
+      "text": "zeige mir case studies für den bereich customer analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 39,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "wer ist der ansprechpartner für customer analytics",
+      "intent": "getContactPerson",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "wer ist mayato",
+      "intent": "mayato",
+      "entities": []
+    },
+    {
+      "text": "gibt es software lösungen",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "wo liegt mannheim?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "haben sie auch case studies",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "technology",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "welche beratungsleistungen bietet mayato",
+      "intent": "getServiceInformation",
+      "entities": []
+    },
+    {
+      "text": "case studies im bereich customer analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 24,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "software lösungen",
+      "intent": "getSoftwareSystems",
+      "entities": []
+    },
+    {
+      "text": "gibt es case studies",
+      "intent": "getCaseStudies",
+      "entities": []
+    },
+    {
+      "text": "gibt es case studies im bereich industry analytics",
+      "intent": "getCaseStudies",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 32,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "gibt es mayato auch in anderen ländern?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "was macht mayato im bereich customer analytics",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 28,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "was versteht man unter customer analytics",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 23,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "was ist media analytics",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 8,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "ich will mehr über customer analytics wissen",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 19,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "was bedeutet customer analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 13,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "erzähl mir was über customer analytics",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 20,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "was ist customer analytics?",
+      "intent": "getServiceInformation",
+      "entities": [
+        {
+          "entity": "competence",
+          "startPos": 8,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "wer sind die inhaber von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer gründete mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "suche nach den inhabern von mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "suche nach management",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "von wem wird mayato geführt?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wem gehört mayato?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "management von mayato",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "aus welchen leuten setzt sich das managment zusammen?",
+      "intent": "getManagementInformation",
+      "entities": []
+    },
+    {
+      "text": "wer sitzt im managment?",
+      "intent": "getManagementInformation",
+      "entities": []
+    }
+  ]
+}
